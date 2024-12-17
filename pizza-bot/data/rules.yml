@@ -1,12 +1,29 @@
 version: "3.1"
 
 rules:
-- rule: Say goodbye anytime the user says goodbye
+- rule: Activate pizza order form
+  steps:
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+
+- rule: Submit pizza order form
+  condition:
+  - active_loop: pizza_order_form
+  steps:
+  - action: form_continue
+  - active_loop: null
+  - action: action_order_pizza
+
+- rule: Cancel pizza order form
+  condition:
+  - active_loop: pizza_order_form
+  steps:
+  - intent: cancel_order
+  - action: action_deactivate_form
+  - action: utter_order_cancelled
+
+- rule: Say goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
-
-- rule: handle out of scope
-  steps:
-  - intent: out_of_scope
-  - action: utter_out_of_scope

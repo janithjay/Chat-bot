@@ -6,12 +6,9 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: order_pizza
-  - action: utter_ask_pizza_type
-  - intent: pizza_type
-  - action: utter_ask_pizza_size
-  - intent: pizza_size
-  - action: utter_ask_pizza_crust
-  - intent: pizza_crust
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - active_loop: null
   - action: action_order_pizza
   - intent: confirm_order
   - action: utter_order_confirmed
@@ -19,6 +16,13 @@ stories:
 - story: pizza order cancellation
   steps:
   - intent: order_pizza
-  - action: utter_ask_pizza_type
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
   - intent: cancel_order
+  - action: action_deactivate_form
   - action: utter_order_cancelled
+
+- story: use_gpt2
+  steps:
+  - intent: ask_question
+  - action: action_gpt2_response

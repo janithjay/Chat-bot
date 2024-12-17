@@ -4,47 +4,69 @@ intents:
   - greet
   - goodbye
   - order_pizza
+  - confirm_order
+  - cancel_order
+  - ask_question
   - pizza_type
   - pizza_size
   - pizza_crust
-  - confirm_order
-  - cancel_order
+  - request_help
 
 actions:
   - action_order_pizza
+  - action_deactivate_form
+  - validate_pizza_order_form
+  - action_gpt2_response
 
 responses:
   utter_greet:
-    - text: "Hello! Welcome to our Pizza Order Bot. How can I help you today?"
+    - text: "👋 Welcome to PizzaBot! Ready to satisfy your pizza craving?"
+    - text: "Hello there! Want to order a delicious pizza today?"
   
   utter_goodbye:
-    - text: "Goodbye! Enjoy your day."
-  
-  utter_ask_pizza_type:
-    - text: "What type of pizza would you like to order?"
-  
-  utter_ask_pizza_size:
-    - text: "What size pizza do you want? Small, Medium, or Large?"
-  
-  utter_ask_pizza_crust:
-    - text: "What type of crust would you like? Thin, Thick, or Stuffed?"
+    - text: "Goodbye! Enjoy your day and come back for more pizza! 🍕"
+    - text: "Thanks for chatting. Hope to see you again soon!"
   
   utter_order_confirmed:
-    - text: "Great! Your pizza order has been confirmed."
+    - text: "🎉 Great! Your pizza order is confirmed and being prepared!"
   
   utter_order_cancelled:
-    - text: "No problem. Your order has been cancelled."
+    - text: "No worries. Your order has been cancelled. Maybe next time! 🍕"
   
-  utter_out_of_scope:
-    - text: "I'm sorry, I didn't understand that. Can you please rephrase?"
+  utter_help:
+    - text: "I can help you order a pizza! Just say 'I want to order a pizza' and I'll guide you step by step."
 
 slots:
   pizza_type:
     type: text
     influence_conversation: true
+    mappings:
+      - type: from_text
+      - type: from_intent
+        intent: pizza_type
+        value: "{0}"
+
   pizza_size:
     type: text
     influence_conversation: true
+    mappings:
+      - type: from_text
+      - type: from_intent
+        intent: pizza_size
+        value: "{0}"
+
   pizza_crust:
     type: text
     influence_conversation: true
+    mappings:
+      - type: from_text
+      - type: from_intent
+        intent: pizza_crust
+        value: "{0}"
+
+forms:
+  pizza_order_form:
+    required_slots:
+      - pizza_type
+      - pizza_size
+      - pizza_crust

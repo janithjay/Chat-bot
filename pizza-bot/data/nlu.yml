@@ -3,12 +3,11 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
     - hi
+    - hello
+    - hey
     - good morning
     - good evening
-    - hey there
 
 - intent: goodbye
   examples: |
@@ -21,43 +20,41 @@ nlu:
   examples: |
     - I want to order a pizza
     - Can I get a pizza
-    - I'd like to order
-    - Pizza delivery
-    - I want a pizza
+    - I'd like to order a pizza
 
 - intent: pizza_type
   examples: |
-    - I want a pepperoni pizza
-    - Margherita pizza
-    - Vegetarian pizza
-    - Cheese pizza
-    - Hawaiian pizza
+    - I want a [pepperoni](pizza_type) pizza
+    - Make it a [margherita](pizza_type)
+    - I'll have a [vegetarian](pizza_type) pizza
 
 - intent: pizza_size
   examples: |
-    - Large size
-    - Medium pizza
-    - Small pizza
-    - Extra large
-    - I want a big pizza
+    - [small](pizza_size) size
+    - [medium](pizza_size) pizza
+    - [large](pizza_size) pizza
 
 - intent: pizza_crust
   examples: |
-    - Thin crust
-    - Thick crust
-    - Stuffed crust
-    - Regular crust
+    - [thin](pizza_crust) crust
+    - [thick](pizza_crust) crust
+    - [regular](pizza_crust) crust
 
 - intent: confirm_order
   examples: |
-    - Yes, confirm my order
-    - Looks good
-    - Confirm
-    - That's correct
+    - yes
+    - confirm
+    - looks good
 
 - intent: cancel_order
   examples: |
-    - No, cancel the order
-    - I want to start over
-    - Cancel
-    - That's not what I want
+    - no
+    - cancel
+    - stop
+    - start over
+
+- intent: ask_question
+  examples: |
+    - What can you tell me about AI?
+    - Explain machine learning.
+    - Give me a summary of quantum computing.
