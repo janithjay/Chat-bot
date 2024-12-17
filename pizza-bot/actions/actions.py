@@ -100,8 +100,8 @@ class AskQuestionAction(Action):
     
     def __init__(self):
         # Load pre-trained model and tokenizer
-        self.tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-        self.model = GPT2LMHeadModel.from_pretrained("gpt2")
+        self.tokenizer = GPT2Tokenizer.from_pretrained('./fine_tuned_gpt2')
+        self.model = GPT2LMHeadModel.from_pretrained('./fine_tuned_gpt2')
         self.model.eval()  # Set the model to evaluation mode
 
     def run(self, 

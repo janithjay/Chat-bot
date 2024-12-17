@@ -1,0 +1,68 @@
+User: How can I order a pizza?
+Bot: You can order a pizza by phone, online, or through our mobile app. What would you like to order today?
+
+User: What types of pizzas do you have?
+Bot: We offer a variety of pizzas including Pepperoni, Margherita, Vegetarian, Hawaiian, Meat Lovers, Supreme, and Cheese pizzas.
+
+User: What sizes are available?
+Bot: Our pizzas come in four sizes: Small (10"), Medium (12"), Large (14"), and Extra Large (16").
+
+User: Can I customize my pizza?
+Bot: Absolutely! You can choose your crust type, add or remove toppings, and even create a half-and-half pizza.
+
+User: I want to order a large pepperoni pizza.
+Bot: Great choice! Would you like that with our traditional, thin, or deep-dish crust?
+
+User: What crust options do you have?
+Bot: We offer five crust types: Traditional, Thin Crust, Deep Dish, Stuffed Crust, and Gluten-Free Crust.
+
+User: I'll take a large pepperoni with thin crust.
+Bot: Excellent. Any additional toppings you'd like to add?
+
+User: Can I add extra cheese?
+Bot: Certainly! Extra cheese is available for a small additional charge. Would you like to add that?
+
+User: Do you have vegetarian pizza options?
+Bot: Yes! We have a Vegetarian Supreme with bell peppers, onions, mushrooms, olives, and tomatoes. We can also create a custom vegetarian pizza with your preferred toppings.
+
+User: Are there any vegan options?
+Bot: We offer a Vegan Vegetable pizza with dairy-free cheese alternative. We can also make any pizza vegan by using our plant-based cheese.
+
+User: I'm allergic to nuts. How can I ensure my pizza is safe?
+Bot: We take allergies seriously. We'll prepare your pizza in a separate area to avoid cross-contamination. What would you like to order?
+
+User: What are your current pizza deals?
+Bot: Today we have a special: Buy one large pizza, get a medium pizza half off. We also offer a 3-topping large pizza deal for $12.99.
+
+User: How much is a large pepperoni pizza?
+Bot: A large pepperoni pizza is $14.99. Extra toppings are $1.50 each.
+
+User: Do you deliver?
+Bot: Yes, we deliver within a 5-mile radius. Delivery fee is $3.99, and we offer free delivery for orders over $25.
+
+User: What are your pickup hours?
+Bot: We're open for pickup from 11 AM to 10 PM daily. Would you like to place a pickup order?
+
+User: Can I create a half-and-half pizza?
+Bot: Absolutely! You can choose two different pizza styles on the same pizza. What combinations would you like?
+
+User: I want half pepperoni and half vegetarian.
+Bot: Great choice! That'll be a large pizza with pepperoni on one half and vegetarian toppings on the other.
+
+User: My last order was cold when it arrived.
+Bot: I apologize for the inconvenience. Could you provide me with your order details? We'll make it right with a replacement or refund.
+
+User: The pizza was different from what I ordered.
+Bot: I'm sorry for the mix-up. Please describe the issue, and we'll correct the order immediately or provide a full refund.
+
+User: I want to order pizza for a large group.
+Bot: Great! We offer party platters and group discounts. How many people are you feeding?
+
+User: It's for a birthday party with 20 people.
+Bot: Wonderful! I recommend our Party Pack: 4 large pizzas with various toppings, serves 20 people. Would you like to hear more?
+
+User: I'm having trouble with the online ordering system.
+Bot: I apologize for the inconvenience. Can you describe the specific issue you're experiencing?
+
+User: The website won't let me complete my order.
+Bot: Let me help you. What browser are you using? We can troubleshoot the issue or take your order over the phone.

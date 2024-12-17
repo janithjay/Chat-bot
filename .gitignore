@@ -2,3 +2,5 @@
 /venv
 /pizza-bot/models
 /pizza-bot/.rasa
+/pizza-bot/fine_tuned_gpt2
+/pizza-bot/results
