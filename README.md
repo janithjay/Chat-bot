@@ -49,8 +49,8 @@ Follow these steps to set up and run the PizzaBot chat-bot on your local machine
    rasa shell
    ```
 
-8. **Finetune the model**
-   To fine-tune the model, use the following command:
+8. **Finetune the model**  
+   To fine-tune the model, use the following command:  
    ```bash
    python finetune.py
    ```
