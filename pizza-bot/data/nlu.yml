@@ -55,6 +55,7 @@ nlu:
 
 - intent: ask_question
   examples: |
-    - What can you tell me about AI?
-    - Explain machine learning.
-    - Give me a summary of quantum computing.
+    - What can you tell me about pizza?
+    - How do I order a pizza?
+    - Tell me about the different types of pizza.
+    - What toppings do you have?

@@ -3,6 +3,8 @@ from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, ActiveLoop
 from rasa_sdk.types import DomainDict
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+import torch
 
 class PizzaOrderAction(Action):
     def name(self) -> Text:
@@ -96,6 +98,12 @@ class AskQuestionAction(Action):
     def name(self) -> Text:
         return "action_gpt2_response"
     
+    def __init__(self):
+        # Load pre-trained model and tokenizer
+        self.tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+        self.model = GPT2LMHeadModel.from_pretrained("gpt2")
+        self.model.eval()  # Set the model to evaluation mode
+
     def run(self, 
             dispatcher: CollectingDispatcher, 
             tracker: Tracker, 
@@ -103,18 +111,18 @@ class AskQuestionAction(Action):
         
         user_query = tracker.latest_message.get('text', '')
         
-        # Simple predefined responses for different types of questions
-        responses = {
-            "ai": "AI is a technology that enables machines to learn and perform tasks that typically require human intelligence.",
-            "machine learning": "Machine learning is a subset of AI where systems learn and improve from experience without being explicitly programmed.",
-            "pizza": "We specialize in delicious pizzas with various types, sizes, and crusts. Would you like to order one?",
-            "order": "To order a pizza, just say 'I want to order a pizza' and I'll guide you through the process.",
-            "help": "I can help you order a pizza or answer questions about our service. Just ask!"
-        }
+        # Generate a response using GPT-2
+        input_ids = self.tokenizer.encode(user_query, return_tensors='pt')
+        with torch.no_grad():
+            output = self.model.generate(input_ids, max_length=50, num_return_sequences=1)
         
-        # Find the most relevant response
-        response = next((resp for key, resp in responses.items() if key in user_query.lower()), 
-                        "I'm not sure about that. Could you ask something related to pizza ordering?")
+        # Decode the generated response
+        response = self.tokenizer.decode(output[0], skip_special_tokens=True)
         
-        dispatcher.utter_message(text=response)
+        # Filter the response to ensure it's relevant to pizza ordering
+        if "pizza" in response.lower() or "order" in response.lower():
+            dispatcher.utter_message(text=response)
+        else:
+            dispatcher.utter_message(text="I'm not sure about that. Could you ask something related to pizza ordering?")
+        
         return []

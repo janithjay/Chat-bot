@@ -22,7 +22,9 @@ stories:
   - action: action_deactivate_form
   - action: utter_order_cancelled
 
-- story: use_gpt2
+- story: ask a question
   steps:
-  - intent: ask_question
+  - user: |
+      What can you tell me about pizza?
+    intent: ask_question
   - action: action_gpt2_response
