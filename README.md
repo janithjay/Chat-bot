@@ -1,5 +1,5 @@
 1. Create Virtual Environment
-# In project root directory
+In project root directory
 python -m venv venv
 
 2. Activate Virtual Environment
