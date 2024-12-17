@@ -49,4 +49,4 @@ Follow these steps to set up and run the PizzaBot chat-bot on your local machine
    rasa shell
    ```
 
-You can now interact with the FlavorBuddy chatbot and test its functionalities!
+You can now interact with the PizzaBot chat-bot and test its functionalities!
