@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Order Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #chat-container {
+            border: 1px solid #ccc;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        #input-container {
+            display: flex;
+            padding: 10px;
+        }
+        #user-message {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <div id="input-container">
+            <input type="text" id="user-message" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+            <button onclick="startVoiceInput()">🎤 Voice</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById('user-message');
+            var message = messageInput.value;
+            
+            // Display user message
+            appendMessage('You: ' + message, 'user');
+            
+            fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({message: message})
+            })
+            .then(response => response.json())
+            .then(data => {
+                data.responses.forEach(botMessage => {
+                    appendMessage('Bot: ' + botMessage, 'bot');
+                });
+            });
+            
+            // Clear input
+            messageInput.value = '';
+        }
+
+        function startVoiceInput() {
+            fetch('/voice_input', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                appendMessage('You (Voice): ' + data.voice_input, 'user');
+                data.responses.forEach(botMessage => {
+                    appendMessage('Bot: ' + botMessage, 'bot');
+                });
+            });
+        }
+
+        function appendMessage(message, sender) {
+            var chatMessages = document.getElementById('chat-messages');
+            var messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.className = sender;
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

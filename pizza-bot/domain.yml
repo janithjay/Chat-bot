@@ -1,0 +1,50 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - order_pizza
+  - pizza_type
+  - pizza_size
+  - pizza_crust
+  - confirm_order
+  - cancel_order
+
+actions:
+  - action_order_pizza
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to our Pizza Order Bot. How can I help you today?"
+  
+  utter_goodbye:
+    - text: "Goodbye! Enjoy your day."
+  
+  utter_ask_pizza_type:
+    - text: "What type of pizza would you like to order?"
+  
+  utter_ask_pizza_size:
+    - text: "What size pizza do you want? Small, Medium, or Large?"
+  
+  utter_ask_pizza_crust:
+    - text: "What type of crust would you like? Thin, Thick, or Stuffed?"
+  
+  utter_order_confirmed:
+    - text: "Great! Your pizza order has been confirmed."
+  
+  utter_order_cancelled:
+    - text: "No problem. Your order has been cancelled."
+  
+  utter_out_of_scope:
+    - text: "I'm sorry, I didn't understand that. Can you please rephrase?"
+
+slots:
+  pizza_type:
+    type: text
+    influence_conversation: true
+  pizza_size:
+    type: text
+    influence_conversation: true
+  pizza_crust:
+    type: text
+    influence_conversation: true

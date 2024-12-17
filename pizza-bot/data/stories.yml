@@ -1,0 +1,24 @@
+version: "3.1"
+
+stories:
+- story: pizza order happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_pizza
+  - action: utter_ask_pizza_type
+  - intent: pizza_type
+  - action: utter_ask_pizza_size
+  - intent: pizza_size
+  - action: utter_ask_pizza_crust
+  - intent: pizza_crust
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+
+- story: pizza order cancellation
+  steps:
+  - intent: order_pizza
+  - action: utter_ask_pizza_type
+  - intent: cancel_order
+  - action: utter_order_cancelled
