@@ -24,8 +24,14 @@ Follow these steps to set up and run the PizzaBot chat-bot on your local machine
    ```bash
    pip install -r requirements.txt
    ```
+   
+4. **Move to the pizza-bot dirrectory**   
+   Afterwards next commands run in new terminal and inside pizza-bot dirrectory:  
+   ```bash
+   cd pizza-bot
+   ```
 
-4. **Train the Model**  
+5. **Train the Model**  
    Train the Rasa model by executing:  
    ```bash
    rasa train
@@ -37,16 +43,16 @@ Follow these steps to set up and run the PizzaBot chat-bot on your local machine
    rasa run --enable-api
    ```
 
-6. **Start the Actions Server**  
+7. **Start the Actions Server**  
    Open another terminal and activate the virtual environment, then run the actions server:  
    ```bash
    rasa run actions
    ```
 
-7. **Test the Chatbot Interactively**  
+8. **Test the Chatbot Interactively**  
    Use the Rasa shell to test the chatbot:  
    ```bash
-   rasa shell
+   rasa shell --port 5006
    ```
 
 8. **Finetune the model**  
