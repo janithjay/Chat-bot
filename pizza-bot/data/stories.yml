@@ -1,19 +1,78 @@
 version: "3.1"
 
 stories:
-- story: pizza order happy path
+- story: complete pizza order happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: order_pizza
   - action: pizza_order_form
   - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
+  - active_loop: null
+  - action: action_order_pizza
+  - intent: add_toppings
+  - action: action_add_toppings
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+
+- story: pizza order with optional toppings
+  steps:
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
   - active_loop: null
   - action: action_order_pizza
   - intent: confirm_order
   - action: utter_order_confirmed
 
-- story: pizza order cancellation
+- story: pizza order with menu inquiry
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_menu
+  - action: action_show_menu
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
+  - active_loop: null
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+
+- story: price and hours inquiry before order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_price
+  - action: action_ask_price
+  - intent: ask_hours
+  - action: action_ask_hours
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
+  - active_loop: null
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+
+- story: order cancellation
   steps:
   - intent: order_pizza
   - action: pizza_order_form
@@ -22,9 +81,75 @@ stories:
   - action: action_deactivate_form
   - action: utter_order_cancelled
 
-- story: ask a question
+- story: location and contact inquiry
   steps:
-  - user: |
-      What can you tell me about pizza?
-    intent: ask_question
-  - action: action_gpt2_response
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_location
+  - action: action_ask_location
+  - intent: ask_hours
+  - action: action_ask_hours
+
+- story: detailed pizza customization
+  steps:
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
+  - active_loop: null
+  - intent: request_toppings
+  - action: action_show_menu
+  - intent: add_toppings
+  - action: action_add_toppings
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+
+- story: multiple inquiries before order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_menu
+  - action: action_show_menu
+  - intent: ask_price
+  - action: action_ask_price
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
+  - active_loop: null
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+
+- story: goodbye after order
+  steps:
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form
+  - slot_was_set:
+    - pizza_type
+    - pizza_size
+    - pizza_crust
+  - active_loop: null
+  - action: action_order_pizza
+  - intent: confirm_order
+  - action: utter_order_confirmed
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: help and guidance
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_help
+  - action: utter_help
+  - intent: order_pizza
+  - action: pizza_order_form
+  - active_loop: pizza_order_form

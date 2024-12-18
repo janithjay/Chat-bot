@@ -8,6 +8,7 @@ nlu:
     - hey
     - good morning
     - good evening
+    - howdy
 
 - intent: goodbye
   examples: |
@@ -15,36 +16,47 @@ nlu:
     - goodbye
     - see you later
     - take care
+    - have a good day
 
 - intent: order_pizza
   examples: |
     - I want to order a pizza
     - Can I get a pizza
     - I'd like to order a pizza
+    - Help me place a pizza order
+    - I'm hungry for pizza
 
 - intent: pizza_type
   examples: |
     - I want a [pepperoni](pizza_type) pizza
     - Make it a [margherita](pizza_type)
     - I'll have a [vegetarian](pizza_type) pizza
+    - [hawaiian](pizza_type) pizza please
+    - Can I get a [supreme](pizza_type) pizza
 
 - intent: pizza_size
   examples: |
     - [small](pizza_size) size
     - [medium](pizza_size) pizza
     - [large](pizza_size) pizza
+    - I want a large
+    - Give me a medium
 
 - intent: pizza_crust
   examples: |
     - [thin](pizza_crust) crust
     - [thick](pizza_crust) crust
     - [regular](pizza_crust) crust
+    - I want a stuffed crust
+    - Give me a hand-tossed crust
 
 - intent: confirm_order
   examples: |
     - yes
     - confirm
     - looks good
+    - that's correct
+    - sounds great
 
 - intent: cancel_order
   examples: |
@@ -52,10 +64,47 @@ nlu:
     - cancel
     - stop
     - start over
+    - I changed my mind
 
-- intent: ask_question
+- intent: ask_price
   examples: |
-    - What can you tell me about pizza?
-    - How do I order a pizza?
-    - Tell me about the different types of pizza.
-    - What toppings do you have?
+    - How much do pizzas cost?
+    - What are your prices?
+    - How expensive are your pizzas?
+    - Can you tell me the price?
+
+- intent: ask_hours
+  examples: |
+    - What are your business hours?
+    - When are you open?
+    - What time do you close?
+    - What's your schedule?
+
+- intent: ask_location
+  examples: |
+    - Where are you located?
+    - What's your address?
+    - How can I find your store?
+    - Where is your pizza shop?
+
+- intent: ask_menu
+  examples: |
+    - What pizzas do you have?
+    - Can I see the menu?
+    - What are my options?
+    - What types of pizza do you offer?
+
+- intent: request_toppings
+  examples: |
+    - What toppings can I add?
+    - Tell me about toppings
+    - Can I customize my pizza?
+    - What extra toppings do you have?
+
+- intent: add_toppings
+  examples: |
+    - I want to add [mushrooms](extra_toppings)
+    - Add [extra cheese](extra_toppings)
+    - Put some [olives](extra_toppings) on it
+    - Can I have [peppers](extra_toppings)?
+    - Add [ham](extra_toppings)

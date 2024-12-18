@@ -23,6 +23,37 @@ rules:
   - action: action_deactivate_form
   - action: utter_order_cancelled
 
+- rule: Handle price inquiry
+  steps:
+  - intent: ask_price
+  - action: action_ask_price
+
+- rule: Handle hours inquiry
+  steps:
+  - intent: ask_hours
+  - action: action_ask_hours
+
+- rule: Handle location inquiry
+  steps:
+  - intent: ask_location
+  - action: action_ask_location
+
+- rule: Handle menu inquiry
+  steps:
+  - intent: ask_menu
+  - action: action_show_menu
+
+- rule: Handle toppings request
+  steps:
+  - intent: request_toppings
+  - action: action_show_menu
+
+- rule: Add toppings
+  steps:
+  - intent: add_toppings
+  - action: action_add_toppings
+  - action: action_order_pizza
+
 - rule: Say goodbye
   steps:
   - intent: goodbye

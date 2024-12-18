@@ -11,12 +11,23 @@ intents:
   - pizza_size
   - pizza_crust
   - request_help
+  - ask_price
+  - ask_hours
+  - ask_location
+  - ask_menu
+  - request_toppings
+  - add_toppings
 
 actions:
   - action_order_pizza
   - action_deactivate_form
   - validate_pizza_order_form
   - action_gpt2_response
+  - action_ask_price
+  - action_ask_hours
+  - action_ask_location
+  - action_show_menu
+  - action_add_toppings
 
 responses:
   utter_greet:
@@ -35,10 +46,25 @@ responses:
   
   utter_help:
     - text: "I can help you order a pizza! Just say 'I want to order a pizza' and I'll guide you step by step."
+  
+  utter_unknown:
+    - text: "I'm sorry, I didn't quite understand that. Could you please rephrase?"
+
+entities:
+  - pizza_type
+  - pizza_size
+  - pizza_crust
+  - topping
 
 slots:
   pizza_type:
-    type: text
+    type: categorical
+    values:
+      - pepperoni
+      - margherita
+      - vegetarian
+      - supreme
+      - hawaiian
     influence_conversation: true
     mappings:
       - type: from_text
@@ -47,7 +73,11 @@ slots:
         value: "{0}"
 
   pizza_size:
-    type: text
+    type: categorical
+    values:
+      - small
+      - medium
+      - large
     influence_conversation: true
     mappings:
       - type: from_text
@@ -56,7 +86,13 @@ slots:
         value: "{0}"
 
   pizza_crust:
-    type: text
+    type: categorical
+    values:
+      - thin
+      - thick
+      - regular
+      - stuffed
+      - hand-tossed
     influence_conversation: true
     mappings:
       - type: from_text
@@ -64,9 +100,21 @@ slots:
         intent: pizza_crust
         value: "{0}"
 
+  extra_toppings:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: topping
+
 forms:
   pizza_order_form:
     required_slots:
       - pizza_type
       - pizza_size
       - pizza_crust
+
+
+session_config:
+  session_expiration_time: 30  # 30 minutes of inactivity
+  carry_over_slots_to_new_session: true
