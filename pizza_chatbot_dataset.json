@@ -1,0 +1,2002 @@
+[
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Any deals today?",
+        "bot": "Yes! We have a Buy 1 Get 1 Free offer on all medium pizzas. It\u2019s valid until 8 PM today."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "Do you have student discounts?",
+        "bot": "Yes, we offer a 10% discount for students with a valid ID."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    },
+    {
+        "user": "Where's my order?",
+        "bot": "Can I have your order ID, please? I'll check the status for you."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Hello, is this Pizza Palace?",
+        "bot": "Yes, it is! How can I assist you?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "Hi, are you open?",
+        "bot": "Hello! Yes, we're open from 10 AM to 10 PM. How can I help you today?"
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "I need to cancel my order.",
+        "bot": "I can help with that! Can you provide your order ID?"
+    },
+    {
+        "user": "I was charged twice for my order.",
+        "bot": "That doesn\u2019t sound right! Let me look into this for you. Can you provide your order details?"
+    },
+    {
+        "user": "Where are you located?",
+        "bot": "We're located at 123 Pizza Lane, Downtown. You can also find us on Google Maps as Pizza Palace."
+    },
+    {
+        "user": "Hey there!",
+        "bot": "Hi! Welcome to Pizza Palace. What would you like to order?"
+    },
+    {
+        "user": "My pizza arrived cold.",
+        "bot": "I\u2019m sorry to hear that! Could you share your order ID so we can resolve this quickly?"
+    },
+    {
+        "user": "What's on your menu?",
+        "bot": "We have Margherita, Pepperoni, BBQ Chicken, Veggie Deluxe, and many more. Would you like to hear about our combos?"
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "Do you have vegan options?",
+        "bot": "Yes! We have Vegan Margherita and Veggie Supreme pizzas."
+    },
+    {
+        "user": "Can I get a thin crust?",
+        "bot": "Absolutely! I'll note that down. Anything else you'd like to add?"
+    },
+    {
+        "user": "I'd like to order a medium BBQ Chicken pizza.",
+        "bot": "Sure! A medium BBQ Chicken pizza is $9.99. Would you like any extra toppings or sides?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "What time do you close today?",
+        "bot": "We close at 10 PM. Would you like to place an order before then?"
+    },
+    {
+        "user": "How much is a large Pepperoni pizza?",
+        "bot": "A large Pepperoni pizza costs $12.99."
+    },
+    {
+        "user": "I need two large Veggie Deluxe pizzas.",
+        "bot": "Got it! That will be $25.98. Would you like drinks or desserts with that?"
+    }
+]

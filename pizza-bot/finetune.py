@@ -3,7 +3,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer, Trainer, TrainingArgume
 from datasets import load_dataset
 
 # Load the dataset and split it into train and validation sets
-dataset = load_dataset('text', data_files={'train': 'D:\Github\Chat-bot\pizzadata.txt'})
+dataset = load_dataset('text', data_files={'train': '../pizza_chatbot_dataset.json'})
 train_test = dataset['train'].train_test_split(test_size=0.2)  # 80% train, 20% validation
 
 # Load the pre-trained GPT-2 model and tokenizer
@@ -32,7 +32,7 @@ tokenized_datasets = tokenized_datasets.map(set_labels)
 # Set training arguments
 training_args = TrainingArguments(
     output_dir='./results',
-    evaluation_strategy='epoch',  # Set to 'epoch' for evaluation
+    eval_strategy='epoch',  # Set to 'epoch' for evaluation
     learning_rate=2e-5,
     per_device_train_batch_size=2,
     num_train_epochs=3,
