@@ -6,7 +6,6 @@ intents:
   - affirm
   - deny
   - mood_great
-  - mood_unhappy
   - thanks
   - neutral-response
   - asking_capabilities
@@ -37,11 +36,7 @@ entities:
 
 responses:
   utter_greet:
-  - text: "👋 Welcome to PizzaBot! Ready to satisfy your pizza craving?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Hello! 👋, Welcome to PizzaBot! Ready to satisfy your pizza craving?"
 
   utter_available_pizza:
   - text: "Our Pizza Menu:\n
@@ -131,7 +126,7 @@ responses:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Great, is there anything else I can help you with?"
 
   utter_deny_help:
   - text: "I'm sorry to hear that. I'm here for you. Talking about it might help. So, tell me why do you think you're feeling this way?"
