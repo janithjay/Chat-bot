@@ -122,12 +122,48 @@ nlu:
     - I'd like to order online.
     - I'm looking to order online.
     - I want to order online.
+    - online order
+    - order online
+    - online ordering
+    - online pizza order
+    - order pizza online
+
+- intent: ordering_by_phone
+  examples: |
+    - Can I order by phone?
+    - I want to order by phone.
+    - I'd like to order by phone.
+    - I'm looking to order by phone.
+    - I want to order by phone.
+    - phone order
+    - order by phone
+    - phone ordering
+    - phone pizza order
+    - order pizza by phone
+
+- intent: ordering_by_app
+  examples: |
+    - Can I order by app?
+    - I want to order by app.
+    - I'd like to order by app.
+    - I'm looking to order by app.
+    - I want to order by app.
+    - app order
+    - order by app
+    - app ordering
+    - app pizza order
+    - order pizza by app
 
 - intent: asking_pizza_size
   examples: |
     - What is the size of the pizza?
     - How big is the pizza?
     - What's the size of the pizza?
+    - What size pizza can I get?
+    - What size pizza do you offer?
+    - What are the pizza sizes?
+    - What size pizzas are available?
+    - What size pizza can I order?
 
 - intent: asking_contact_details
   examples: |

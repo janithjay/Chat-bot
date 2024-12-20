@@ -47,6 +47,20 @@ stories:
   - intent: order_online
   - action: utter_order_online
 
+- story: ordering pizza by phone
+  steps:
+  - intent: ordering_pizza
+  - action: utter_ordering_pizza
+  - intent: ordering_by_phone
+  - action: utter_ordering_by_phone
+
+- story: ordering pizza by app
+  steps:
+  - intent: ordering_pizza
+  - action: utter_ordering_pizza
+  - intent: ordering_by_app
+  - action: utter_ordering_by_app
+
 - story: asking pizza size
   steps:
   - intent: asking_pizza_size
