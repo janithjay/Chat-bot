@@ -30,6 +30,11 @@ stories:
   - intent: thanks
   - action: utter_thank
 
+- story: ask pizza
+  steps:
+  - intent: asking_available_pizza
+  - action: utter_available_pizza
+
 - story: neutral-response
   steps:
   - intent: neutral-response
