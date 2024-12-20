@@ -80,6 +80,16 @@ nlu:
     - What pizzas can I get?
     - What pizzas are available for order?
     - What pizzas are on offer?
+    - pizza menu
+    - pizza options
+    - pizza choices
+    - pizza types
+    - pizza list
+    - pizza selection
+    - pizza varieties
+    - pizza range
+    - pizza flavors
+    - pizza kinds
 
 - intent: asking_available_drinks
   examples: |
@@ -95,6 +105,16 @@ nlu:
     - What drinks can I get?
     - What drinks are available for order?
     - What drinks are on offer?
+    - drink menu
+    - drink options
+    - drink choices
+    - drink types
+    - drink list
+    - drink selection
+    - drink varieties
+    - drink range
+    - drink flavors
+    - drink kinds
 
 - intent: ordering_pizza
   examples: |
@@ -177,6 +197,19 @@ nlu:
     - Where can I contact you?
     - What's your phone number?
 
+- intent: asking_about_brances
+  examples: |
+    - Where are you located?
+    - What are your branches?
+    - Where can I find you?
+    - What's your address?
+    - How can I find you?
+    - What are your locations?
+    - Where can I visit you?
+    - What's your location?
+    - How can I reach you?
+    - Where are you situated?
+
 - intent: recommend_professional_help
   examples: |
     - Can you recommend a [therapist](professional_type)?
@@ -223,6 +256,20 @@ nlu:
     - What can I ask you about?
     - How can you support me?
     - What tasks are you equipped for?
+
+- intent: asking_vegetarian_pizza
+  examples: |
+    - Can you make a vegetarian pizza?
+    - I want a vegetarian pizza.
+    - I want to order a vegetarian pizza.
+    - I'd like to order a vegetarian pizza.
+    - I'm looking for a vegetarian pizza.
+    - I want to get a vegetarian pizza.
+    - vegetarian pizza
+    - veg pizza
+    - veggie pizza
+    - vegan
+    - vegetarian
 
 - intent: asking_help
   examples: |

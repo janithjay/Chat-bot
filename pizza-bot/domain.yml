@@ -30,6 +30,8 @@ intents:
   - asking_contact_details
   - ordering_by_phone
   - ordering_by_app
+  - asking_about_brances
+  - asking_vegetarian_pizza
 
 entities:
     - professional_type
@@ -69,10 +71,34 @@ responses:
                 • Double Chicken & Cheese Fiesta: A combination of kotchchi chicken sausage meat and spicy chicken with crunchy onions and jalapenos placed on a layer of cream cheese and a layer of mozzarella.\n
                 • Prawn with Chicken Bacon & Jalapeno: Succulent prawns with pieces of chicken bacon, accompanied by spring onions, green chillies and jalapenos, layered with mozzarella cheese.\n\n
 
-              Toppings:\n
-                • Meats: Pepperoni, Sausage, Bacon, Ham\n
-                • Veggies: Mushrooms, Olives, Onions, Peppers\n
-                • Cheese: Extra Cheese, Feta, Parmesan"
+              Favorite Pizzas:\n
+                • Seafood_Treat: A succulent fusion of Creamy Cuttlefish & Prawns combined with Devilled Prawns, green chillies & onion, topped with delicious mozzarella.\n
+                • Sri_Lankan_Spicy_Chicken_Pizza: A combination of black chicken, devilled chicken & chicken sausages, accompanied by nai miris, garlic & onion with a double layer of mozzarella cheese.\n
+                • Veggie_Supreme: Mushrooms, tomatoes, onions, black olives and bell peppers with a double layer of mozzarella cheese.\n
+                • Beef_Pepperoni: Delicious beef pepperoni in pizza sauce, topped with jalapenos and a double layer of mozzarella cheese.\n
+                • Meat_Lovers_Chicken: Topped with a combination of chicken bacon, chicken sausage, BBQ chicken and spicy chicken with a double layer of mozzarella cheese.\n\n
+  
+              Supreme Pizzas:\n
+                • Ultimate_Chicken_Treat: A combination of BBQ chicken, chicken bacon, chicken sausage & an all new roast chicken, accompanied with the freshest green pepper, mushroom, onion and green chilli, blanketed with delicious mozzarella cheese.\n
+                • Super_Supreme: Roast chicken, beef pepperoni, chicken bacon, chicken sausages, bell peppers, mushrooms, onions, olives and cheese (pineapple on request).\n
+                • Hot_Garlic_Prawns: Spicy prawns, hot garlic sauce, onions, peppers and tomatoes with a double layer of mozzarella cheese.\n\n
+              
+              Available Crusts:\n
+                • Pan Crust\n
+                • Sausage Crust\n\n
+              
+              **Above pizzas are available only in pan crust & sausage crust.**\n\n
+
+              Thin Crust Pizzas:\n
+                • Margherita: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with sun-ripened tomatoes infused with exotic herbs, complemented by fresh basil leaves and blanketed by mozzarella cheese.\n
+                • Tropical_Hawaiian: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection with a blissful combination of chicken bacon, pineapple and mozzarella cheese.\n
+                • Fiery_Chicken: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection with flavoursome pieces of spicy chicken, complemented by fried garlic, jalapenos and mozzarella cheese.\n
+                • Chicken_BBQ: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with tender BBQ chicken accompanied by spicy jalapenos, crunchy onions and mozzarella cheese.\n
+                • Tandoori_Chicken: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with scrumptious pieces of tandoori chicken combined with crunchy onions, blanketed by mozzarella cheese.\n
+                • Mighty_Meat_Beef: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with a combination of beef pepperoni, chicken bacon & BBQ chicken topped with mozzarella cheese.\n
+                • Mighty_Meat_Chicken: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with a combination of chicken bacon, chicken sausage, BBQ chicken and spicy chicken, topped with mozzarella cheese.\n
+                • Pepperoni_Paradiso: Succulent pieces of beef pepperoni accompanied by black olives and spicy jalapenos topped with mozzarella cheese.\n
+                • Prawn_Supremo: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection, topped with a blend of perfectly marinated prawns, green pepper and mozzarella cheese.\n"
 
   utter_available_drinks:
   - text: "Our Drinks Menu:\n
@@ -92,6 +118,9 @@ responses:
                 • Vanilla Milk Shake (300ml)          - Rs.900.00\n
                 • Double Chocolate Milk Shake (300ml) - Rs.900.00\n
                 • Strawberry Milk Shake (300ml)       - Rs.900.00\n"
+
+  utter_available_vegetarian_pizza:
+  - text: "We also offer vegetarian pizzas! Check our menu for more details."
 
   utter_ordering_pizza:
   - text: "You can order a pizza by phone, online, or through our mobile app. What would you like to order today?"
@@ -119,8 +148,11 @@ responses:
                  +94 114 729729\n
                  +94 117 729729\n\n
 
-            or visit our website at https://www.pizzahut.lk. \n
+            or visit our website at https://www.pizzahut.lk.\n
             We look forward to serving you!"
+
+  utter_about_brances:
+  - text: "We have multiple branches across the country. You can find your nearest branch by visiting our website at https://www.pizzahut.lk/outlet-map."
 
   utter_did_that_help:
   - text: "Did that help you?"
