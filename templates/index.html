@@ -1,93 +1,48 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Pizza Order Chatbot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        #chat-container {
-            border: 1px solid #ccc;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-        }
-        #chat-messages {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 10px;
-        }
-        #input-container {
-            display: flex;
-            padding: 10px;
-        }
-        #user-message {
-            flex-grow: 1;
-            margin-right: 10px;
-        }
-    </style>
+  <title>Chat Bot</title>
 </head>
+
 <body>
-    <div id="chat-container">
-        <div id="chat-messages"></div>
-        <div id="input-container">
-            <input type="text" id="user-message" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-            <button onclick="startVoiceInput()">🎤 Voice</button>
-        </div>
-    </div>
-
-    <script>
-        function sendMessage() {
-            var messageInput = document.getElementById('user-message');
-            var message = messageInput.value;
-            
-            // Display user message
-            appendMessage('You: ' + message, 'user');
-            
-            fetch('/send_message', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
+  <div class="chat">
+    <script>!(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src =
+          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+          // Replace 1.x.x with the version that you want
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default(
+              {
+                initPayload: '/greet',
+                customData: { language: "en" },
+                socketUrl: "http://localhost:5005",
+                title: "Pizza Shop Assistant Bot",
+                subtitle: " Ask me anything.....",
+                fullScreenMode: "true",
+                onSocketEvent: onSocketEvent = {
+                  'bot_uttered': () => console.log("hh"),
+                  'user_uttered': () => console.log("tt"),
+                  'connect': () => console.log('connection established'),
+                  'disconnect': () => doSomeCleanup(),
                 },
-                body: JSON.stringify({message: message})
-            })
-            .then(response => response.json())
-            .then(data => {
-                data.responses.forEach(botMessage => {
-                    appendMessage('Bot: ' + botMessage, 'bot');
-                });
-            });
-            
-            // Clear input
-            messageInput.value = '';
-        }
-
-        function startVoiceInput() {
-            fetch('/voice_input', {
-                method: 'POST'
-            })
-            .then(response => response.json())
-            .then(data => {
-                appendMessage('You (Voice): ' + data.voice_input, 'user');
-                data.responses.forEach(botMessage => {
-                    appendMessage('Bot: ' + botMessage, 'bot');
-                });
-            });
-        }
-
-        function appendMessage(message, sender) {
-            var chatMessages = document.getElementById('chat-messages');
-            var messageElement = document.createElement('div');
-            messageElement.textContent = message;
-            messageElement.className = sender;
-            chatMessages.appendChild(messageElement);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+                embedded: "true",
+                // add other props here
+              },
+              null
+            );
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+      localStorage.clear();
     </script>
+    <script>
+
+
+    </script>
+  </div>
 </body>
+
 </html>
