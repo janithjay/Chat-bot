@@ -1,155 +1,101 @@
 version: "3.1"
 
 stories:
-- story: complete pizza order happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - action: action_order_pizza
-  - intent: add_toppings
-  - action: action_add_toppings
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
 
-- story: pizza order with optional toppings
+- story: happy path
   steps:
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
+  - intent: mood_great
+  - action: utter_happy
 
-- story: pizza order with menu inquiry
+- story: sad path 1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_menu
-  - action: action_show_menu
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
 
-- story: price and hours inquiry before order
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_price
-  - action: action_ask_price
-  - intent: ask_hours
-  - action: action_ask_hours
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
 
-- story: order cancellation
+- story: sad path 2
   steps:
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - intent: cancel_order
-  - action: action_deactivate_form
-  - action: utter_order_cancelled
 
-- story: location and contact inquiry
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_location
-  - action: action_ask_location
-  - intent: ask_hours
-  - action: action_ask_hours
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_deny_help
 
-- story: detailed pizza customization
+- story: thanks
   steps:
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - intent: request_toppings
-  - action: action_show_menu
-  - intent: add_toppings
-  - action: action_add_toppings
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
+  - intent: thanks
+  - action: utter_thank
 
-- story: multiple inquiries before order
+- story: neutral-response
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_menu
-  - action: action_show_menu
-  - intent: ask_price
-  - action: action_ask_price
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
+  - intent: neutral-response
+  - action: utter_neutral_response
 
-- story: goodbye after order
+- story: capabilities
   steps:
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
-  - slot_was_set:
-    - pizza_type
-    - pizza_size
-    - pizza_crust
-  - active_loop: null
-  - action: action_order_pizza
-  - intent: confirm_order
-  - action: utter_order_confirmed
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: asking_capabilities
+  - action: utter_capabilities_response
 
-- story: help and guidance
+- story: help
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: request_help
+  - intent: asking_help
   - action: utter_help
-  - intent: order_pizza
-  - action: pizza_order_form
-  - active_loop: pizza_order_form
+
+- story: not talking
+  steps:
+  - intent: not-talking
+  - action: utter_not_talking
+
+- story: death
+  steps:
+  - intent: death
+  - action: utter_death
+
+- story: not understand
+  steps:
+  - intent: not_understand
+  - action: utter_not_understand
+
+- story: done
+  steps:
+  - intent: done
+  - action: utter_done
+
+- story: repeat
+  steps:
+  - intent: repeat
+  - action: utter_repeat
+
+- story: wrong
+  steps:
+  - intent: wrong
+  - action: utter_wrong
+
+- story: hate
+  steps:
+  - intent: hate
+  - action: utter_hate
+
+- story: something-else
+  steps:
+  - intent: something-else
+  - action: utter_something-else
+
+- story: friends
+  steps:
+  - intent: friends
+  - action: utter_friends
+
+- story: mental-health-fact
+  steps:
+  - intent: mental-health-fact
+  - action: utter_mental-health-fact
+
+- story: recommend professional help
+  steps:
+    - intent: recommend_professional_help
+    - action: action_recommend_professional_help
