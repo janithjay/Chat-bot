@@ -96,7 +96,7 @@ nlu:
     - What drinks are available for order?
     - What drinks are on offer?
 
-  - intent: ordering_pizza
+- intent: ordering_pizza
   examples: |
     - I would like to order a [pizza](food_type).
     - Can I get a [pizza](food_type)?
@@ -115,6 +115,31 @@ nlu:
     - I'm looking for a [pizza](food_type).
     - I want to get a [pizza](food_type).
 
+- intent: order_online
+  examples: |
+    - Can I order online?
+    - I want to order online.
+    - I'd like to order online.
+    - I'm looking to order online.
+    - I want to order online.
+
+- intent: asking_pizza_size
+  examples: |
+    - What is the size of the pizza?
+    - How big is the pizza?
+    - What's the size of the pizza?
+
+- intent: asking_contact_details
+  examples: |
+    - How can I contact you?
+    - Where can I find you?
+    - What's your contact information?
+    - How can I reach you?
+    - Where are you located?
+    - What's your address?
+    - How can I get in touch with you?
+    - Where can I contact you?
+    - What's your phone number?
 
 - intent: recommend_professional_help
   examples: |
@@ -139,23 +164,6 @@ nlu:
     - That's helpful
     - Thanks for the help
     - Than you very much
-
-- intent: neutral-response
-  examples: |
-    - nothing much
-    - not much
-    - just the usual
-    - everything's fine
-    - nothing new
-    - all good
-    - just relaxing
-    - same as always
-    - not really doing anything
-    - just taking it easy
-    - not much to say
-    - everything is okay
-    - I'm good
-    - just chilling
 
 - intent: asking_capabilities
   examples: |

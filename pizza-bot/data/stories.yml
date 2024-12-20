@@ -40,15 +40,22 @@ stories:
   - intent: asking_available_drinks
   - action: utter_available_drinks
 
-- story: ordering_pizza
+- story: ordering pizza online
   steps:
   - intent: ordering_pizza
   - action: utter_ordering_pizza
+  - intent: order_online
+  - action: utter_order_online
 
-- story: neutral-response
+- story: asking pizza size
   steps:
-  - intent: neutral-response
-  - action: utter_neutral_response
+  - intent: asking_pizza_size
+  - action: utter_pizza_size
+
+- story: ask contact details
+  steps:
+  - intent: asking_contact_details
+  - action: utter_contact_details
 
 - story: capabilities
   steps:

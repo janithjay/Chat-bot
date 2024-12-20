@@ -25,6 +25,11 @@ intents:
   - bot_challenge
   - asking_available_pizza
   - asking_available_drinks
+  - asking_pizza_size
+  - ordering_pizza
+  - order_online
+  - asking_contact_details
+
 
 entities:
     - professional_type
@@ -95,6 +100,21 @@ responses:
   utter_ordering_pizza:
   - text: "You can order a pizza by phone, online, or through our mobile app. What would you like to order today?"
 
+  utter_order_online:
+  - text: "You can order a pizza online at https://www.pizzahut.lk. "
+
+  utter_pizza_size:
+  - text: "We offer pizzas in 3 sizes: Large, Medium, and Personal. What size would you like to order?"
+
+  utter_contact_details:
+  - text: "You can reach us at our hotline\n 
+                 +94 112 729729\n 
+                 +94 114 729729\n
+                 +94 117 729729\n\n
+
+            or visit our website at https://www.pizzahut.lk. \n
+            We look forward to serving you!"
+
   utter_did_that_help:
   - text: "Did that help you?"
 
@@ -110,14 +130,8 @@ responses:
   utter_thank:
   - text: "Welcome! Enjoy your day and come back for more pizza! 🍕"
 
-  utter_neutral_response:
-  - text: "Oh I see. Do you want to talk about something?"
-
   utter_capabilities_response:
-  - text: "I can provide general advice regarding anxiety and depression, answer questions related to mental health and make daily conversations. Do not consider me as a subsitute for an actual mental healthcare worker. Please seek help if you don't feel satisfied with me."
-
-  utter_not_talking:
-  - text: "Talking about something really helps. If you're not ready to open up then that's ok. Just know that i'm here for you, whenever you need me."
+  - text: "I can provide you with information about our pizza menu, drinks menu, and help you place an order. I can also provide you with our contact details. How can I assist you today?"
 
   utter_done:
     - text: "Oh okay we're done for today then. See you later"
