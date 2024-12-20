@@ -15,24 +15,16 @@ intents:
   - worthless
   - depressed
   - casual
-  - anxious
-  - not-talking
-  - sleep
-  - scared
-  - death
-  - not_understand
   - done
-  - suicide
-  - jokes
   - repeat
   - wrong
-  - hate
   - something-else
   - friends
   - mental-health-fact
   - recommend_professional_help
   - bot_challenge
   - asking_available_pizza
+  - asking_available_drinks
 
 entities:
     - professional_type
@@ -46,17 +38,62 @@ responses:
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_available_pizza:
-  - text: "🍽️ Our Pizza Menu:\n
-            Classic Pizzas:\n
-              • Pepperoni: Loaded with pepperoni slices\n
-              • Margherita: Fresh mozzarella, basil, tomato sauce\n
-              • Vegetarian: Bell peppers, mushrooms, olives\n
-              • Supreme: Pepperoni, sausage, peppers, onions\n
-              • Hawaiian: Ham and pineapple\n\n
-            Toppings:\n
-              • Meats: Pepperoni, Sausage, Bacon, Ham\n
-              • Veggies: Mushrooms, Olives, Onions, Peppers\n
-              • Cheese: Extra Cheese, Feta, Parmesan"
+  - text: "Our Pizza Menu:\n
+              Classic Pizzas:\n
+                • Chicken Triple Treat Pizza: Made with Chicken Salami, Roast Chicken, Chicken Bacon, Onions & Cheese.\n
+                • Chicken Salami Pizza: Made with Chicken Salami, Jalapenos & cheese.\n
+                • Double Chicken Surprise: A combination of spicy chicken and succulent chicken sausages accompanied with crunchy onions and capsicum, topped with a layer of mozzarella cheese.\n
+                • Cheese Lovers: Rich tomato sauce with a triple layer of mozzarella cheese.\n
+                • Tandoori Chicken: Tandoori chicken & onions with a double layer of cheese.\n
+                • Black Chicken: Flavoursome pieces of black chicken and crunchy onion with a double layer of cheese.\n
+                • Hot & Spicy Chicken: Spicy chunks of chicken, capsicums & onions with a double layer of cheese.\n\n
+
+              Delight Pizzaz:\n
+                • Spicy Fish Pizza: Made with Spicy Fish & 2 layers of cheese.\n
+                • Veggie Masala Pizza: Made with spicy veggie masala, onions, tomato & cheese.\n
+                • Chilli Chicken Pizza: A pizza topped with Spicy Chicken, Green Chillies, Onions & Mozzarella.\n
+                • Cheesy Onion with Green Chillies: Rich tomato sauce base topped with cream cheese, onions, green chillies & Mozzarella.\n
+                • Cheesy Tomato with Green Chillies: Rich tomato sauce base topped with cream cheese, onions, tomato, green chillies & Mozzarella.\n
+                • Sausage Delight: Chicken sausages & onions with a double layer of cheese.\n
+                • Chicken Bacon & Potato with Nai Miris: A flavoursome duo of chicken bacon and spicy potatoes on a fiery base of Nai Miris sauce complemented with crunchy onions and green chillies, topped with a layer of mozzarella cheese.\n\n
+
+              Signature Pizzas:\n
+                • Festive Chicken Magic: A fusion of BBQ Chicken, Kotchchi Meat, Chicken Salami, Bolognaise Sauce, Bell Peppers and Tomatoes layered with Mozzarella.\n
+                • Minced Mutton Treat: Flavourful Minced Mutton complemented with Crunchy Onions and Green Chillies, layered with Mozzarella.\n
+                • BBQ Chicken: BBQ chicken accompanied by spicy jalapenos, onions and a double layer of cheese.\n
+                • Spicy Veggie with Paneer:Spicy veggie masala & paneer accompanied with pineapple, topped with a double layer of mozzarella cheese.\n
+                • Devilled Chicken: Devilled chicken in spicy sauce with a double layer of cheese.\n
+                • Butter Chicken Masala: The ever famous Butter Masala Chicken together with a layer of cream cheese, fresh onions, coriander, ginger and garlic, blanketed with a layer of mozzarella cheese.\n
+                • Chicken Hawaiian: Chicken ham & pineapple with a double layer of cheese.\n
+                • Double Chicken & Cheese Fiesta: A combination of kotchchi chicken sausage meat and spicy chicken with crunchy onions and jalapenos placed on a layer of cream cheese and a layer of mozzarella.\n
+                • Prawn with Chicken Bacon & Jalapeno: Succulent prawns with pieces of chicken bacon, accompanied by spring onions, green chillies and jalapenos, layered with mozzarella cheese.\n\n
+
+              Toppings:\n
+                • Meats: Pepperoni, Sausage, Bacon, Ham\n
+                • Veggies: Mushrooms, Olives, Onions, Peppers\n
+                • Cheese: Extra Cheese, Feta, Parmesan"
+
+  utter_available_drinks:
+  - text: "Our Drinks Menu:\n
+              Carbonated Drinks:\n
+                • Coca Cola Can    - Rs.300.00\n
+                • Pet Coca-Cola    - Rs.200.00\n
+                • Pet Sprite       - Rs.200.00\n
+                • Pet Fanta Orange - Rs.200.00\n
+                • Coke Zero 400ml  - Rs.170.00\n
+                • 1.5l Coca-Cola   - Rs.450.00\n
+                • 1.5l Sprite      - Rs.450.00\n
+                • Mineral Water    - Rs.80.00\n\n
+
+              Juices:\n
+                • Iced Chocolate Malt                 - Rs.550.00\n
+                • Thick Mango Magic (300ml)           - Rs.620.00\n
+                • Vanilla Milk Shake (300ml)          - Rs.900.00\n
+                • Double Chocolate Milk Shake (300ml) - Rs.900.00\n
+                • Strawberry Milk Shake (300ml)       - Rs.900.00\n"
+
+  utter_ordering_pizza:
+  - text: "You can order a pizza by phone, online, or through our mobile app. What would you like to order today?"
 
   utter_did_that_help:
   - text: "Did that help you?"
@@ -82,12 +119,6 @@ responses:
   utter_not_talking:
   - text: "Talking about something really helps. If you're not ready to open up then that's ok. Just know that i'm here for you, whenever you need me."
 
-  utter_death:
-  - text: "I'm sorry to hear that. If you want to talk about it. I'm here."
-
-  utter_not_understand:
-  - text: "I'm sorry, I didn't quite understand that. Could you please rephrase?"
-
   utter_done:
     - text: "Oh okay we're done for today then. See you later"
 
@@ -100,24 +131,12 @@ responses:
   utter_wrong:
     - text: "I'm very sorry. Let's try that again"
 
-  utter_hate:
-    - text: "Forgive me if i did anything to offend you. I only want to help"
-
-  utter_something-else:
-    - text: "Okay sure. What do you want to talk about?"
-
-  utter_friends:
-    - text: "I'm sorry to hear that. Just know that I'm here for you. Talking about it might help."
-
-  utter_mental-health-fact:
-    - text: "Depression is the leading cause of disability worldwide."
-
   utter_please_try_again:
     - text: "I'm sorry, It seems like you're asking a question that is outside the scope of my capabilities.\n
        Please rephrase your question or try another one."
 
   utter_iamabot:
-  - text: "I'm pizzaBot, I can help you with your pizza order."
+    - text: "I am Pizza Bot. I am here to help you with your pizza cravings."
 
 actions:
   - action_recommend_professional_help

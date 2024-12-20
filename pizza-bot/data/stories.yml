@@ -30,10 +30,20 @@ stories:
   - intent: thanks
   - action: utter_thank
 
-- story: ask pizza
+- story: ask available pizza
   steps:
   - intent: asking_available_pizza
   - action: utter_available_pizza
+
+- story: ask available drinks
+  steps:
+  - intent: asking_available_drinks
+  - action: utter_available_drinks
+
+- story: ordering_pizza
+  steps:
+  - intent: ordering_pizza
+  - action: utter_ordering_pizza
 
 - story: neutral-response
   steps:
@@ -50,21 +60,6 @@ stories:
   - intent: asking_help
   - action: utter_help
 
-- story: not talking
-  steps:
-  - intent: not-talking
-  - action: utter_not_talking
-
-- story: death
-  steps:
-  - intent: death
-  - action: utter_death
-
-- story: not understand
-  steps:
-  - intent: not_understand
-  - action: utter_not_understand
-
 - story: done
   steps:
   - intent: done
@@ -79,26 +74,6 @@ stories:
   steps:
   - intent: wrong
   - action: utter_wrong
-
-- story: hate
-  steps:
-  - intent: hate
-  - action: utter_hate
-
-- story: something-else
-  steps:
-  - intent: something-else
-  - action: utter_something-else
-
-- story: friends
-  steps:
-  - intent: friends
-  - action: utter_friends
-
-- story: mental-health-fact
-  steps:
-  - intent: mental-health-fact
-  - action: utter_mental-health-fact
 
 - story: recommend professional help
   steps:
