@@ -17,10 +17,15 @@ stories:
   - intent: thanks
   - action: utter_thank
 
-- story: ask available pizza
+- story: Provide pizza menu
   steps:
-  - intent: asking_available_pizza
-  - action: utter_available_pizza
+  - intent: ask_menu
+  - action: action_provide_menu
+
+- story: Provide pizza details
+  steps:
+  - intent: ask_pizza_details
+  - action: action_provide_pizza_details
 
 - story: ask available drinks
   steps:
@@ -64,7 +69,7 @@ stories:
 - story: ask about outlet
   steps:
   - intent: asking_outlet
-  - action: action_location-details
+  - action: action_location_details
 
 - story: capabilities
   steps:

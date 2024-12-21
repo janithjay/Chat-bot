@@ -66,7 +66,7 @@ nlu:
     - so good
     - so perfect
 
-- intent: asking_available_pizza
+- intent: ask_menu
   examples: |
     - What pizzas are available?
     - What kind of pizzas do you have?
@@ -90,6 +90,58 @@ nlu:
     - pizza range
     - pizza flavors
     - pizza kinds
+
+- intent: ask_pizza_details
+  examples: |
+      - Tell me about the [Spicy Fish Pizza](pizza)
+      - What is the description of [BBQ Chicken Pizza](pizza)?
+      - Can you describe [Veggie Lover Pizza](pizza)?
+      - Details about [Chicken Supreme Pizza](pizza), please.
+      - I want to know about [Margherita](pizza).
+      - Describe [Tandoori Chicken](pizza).
+
+- lookup: pizza
+  examples: |
+    - Spicy Fish Pizza
+    - Veggie Masala Pizza
+    - Chilli Chicken Pizza
+    - Cheesy Onion with Green Chillies
+    - Cheesy Tomato with Green Chillies
+    - Sausage Delight
+    - Chicken Bacon & Potato with Nai Miris
+    - Chicken Triple Treat Pizza
+    - Chicken Salami Pizza
+    - Double Chicken Surprise
+    - Cheese Lovers
+    - Tandoori Chicken
+    - Black Chicken
+    - Hot & Spicy Chicken
+    - Festive Chicken Magic
+    - Minced Mutton Treat
+    - BBQ Chicken
+    - Spicy Veggie with Paneer
+    - Devilled Chicken
+    - Butter Chicken Masala
+    - Chicken Hawaiian
+    - Double Chicken & Cheese Fiesta
+    - Prawn with Chicken Bacon & Jalapeno
+    - Seafood Treat
+    - Sri Lankan Spicy Chicken Pizza
+    - Veggie Supreme
+    - Beef Pepperoni
+    - Meat Lovers Chicken
+    - Ultimate Chicken Treat
+    - Super Supreme
+    - Hot Garlic Prawns
+    - Margherita
+    - Tropical Hawaiian
+    - Fiery Chicken
+    - hicken BBQ
+    - Tandoori Chicken
+    - Mighty Meat Beef
+    - Mighty Meat Chicken
+    - Pepperoni Paradiso
+    - Prawn Supremo
 
 - intent: asking_available_drinks
   examples: |
@@ -380,6 +432,7 @@ nlu:
     - I’d like to make a dinner reservation.
     - Can I book a table for this evening?
     - Is it possible to book a table for the weekend?
+    - Can i book a place to dine in?
 
 - intent: ask_pizza_preparation_time
   examples: |
@@ -432,6 +485,8 @@ nlu:
     - What are the benifits of being regular customer?
     - i want loyalty
     - loyalty
+    - do you have loyalty plans?
+    - do you have memberships?
 
 - intent: ask_kids_options
   examples: |
@@ -474,6 +529,8 @@ nlu:
     - Delivery guy took so long.
     - I want to oven the pizza.
     - What tempertaure should be there to heat again?
+    - i need a warm pizza
+    - i need to reheat my pizza
 
 - intent: support_first_time_users
   examples: |
@@ -505,6 +562,7 @@ nlu:
     - i love spicy flavour can you recommend something to buy?
     - spicy collection
     - give me your spiciest pizza
+    - i like spicy pizza. what are the available options?
 
 - intent: ask_less_spicy_pizza
   examples: |
@@ -523,6 +581,10 @@ nlu:
     - what are the pizza without spicy
     - Hate spicy pizza
     - Don't like chillies 
+    - I don't like spicy pizza
+    - I need a pizza without chilli
+    - I need a pizza without spice
+    - i want not spicy pizza
 
 - intent: ask_party_venues
   examples: |
