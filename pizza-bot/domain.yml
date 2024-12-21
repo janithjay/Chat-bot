@@ -43,7 +43,12 @@ intents:
   - ask_less_spicy_pizza
   - ask_party_venues
   - ask_refund_details
-
+  - ask_extra_toppings
+  - ask_about_delivery
+  - ask_to_customize
+  - ask_available_offers
+  - ask_opening_hours
+  
 entities:
     - professional_type
     - location
@@ -200,7 +205,7 @@ responses:
 
   utter_busy_timeslots:
   - text: "Here are the peak times for our dine-in service:\n
-           Lunch: 12:00 PM - 2:00 PM\n
+           Lunch : 12:00 PM - 2:00 PM\n
            Dinner: 7:00 PM - 9:00 PM\n
            Would you like to make a reservation outside these hours for a quieter experience?"
   - text: "We’re usually busy during weekends (especially Saturdays). On weekdays, lunch and dinner times can be a bit crowded.\n
@@ -242,17 +247,17 @@ responses:
   utter_spicy_pizza:
   - text: "For spice lovers, we’ve got some fiery options at Pizza Hut!\n
            Our spiciest pizzas include:\n
-           - Spicy Fish Pizza: Made with Spicy Fish & 2 layers of cheese.\n
-           - Chilli Chicken Pizza: Topped with Spicy Chicken, Green Chillies, Onions & Mozzarella.\n
-           - Hot & Spicy Chicken: Spicy chunks of chicken, capsicums & onions with a double layer of cheese.\n
+           - Spicy Fish Pizza              : Made with Spicy Fish & 2 layers of cheese.\n
+           - Chilli Chicken Pizza          : Topped with Spicy Chicken, Green Chillies, Onions & Mozzarella.\n
+           - Hot & Spicy Chicken           : Spicy chunks of chicken, capsicums & onions with a double layer of cheese.\n
            - Sri Lankan Spicy Chicken Pizza: A combination of black chicken, devilled chicken & chicken sausages.\n
            Each of these pizzas delivers a bold and spicy flavor guaranteed to satisfy those with a taste for heat!"
   
   utter_less_spicy_pizza_details:
     - text: " For those who prefer less spice, we offer a variety of milder options:\n
-              - Cheese Lovers: A triple layer of mozzarella cheese on a rich tomato base.\n
-              - Veggie Supreme: Topped with mushrooms, tomatoes, onions, and bell peppers.\n
-              - Margherita: Classic tomato and cheese pizza with minimal spice.\n
+              - Cheese Lovers     : A triple layer of mozzarella cheese on a rich tomato base.\n
+              - Veggie Supreme    : Topped with mushrooms, tomatoes, onions, and bell peppers.\n
+              - Margherita        : Classic tomato and cheese pizza with minimal spice.\n
               - Garlic Bread Pizza: Light flavors with garlic, herbs, and a cheese blend.\n
               These options provide delicious, non-spicy choices while still delivering great flavor."
   
@@ -265,6 +270,61 @@ responses:
 
   utter_refund_details:
   - text: "If you need a refund after cancellation, please contact our support team at +94 112 729729, +94 114 729729 ,+94 117 729729. Refunds are processed based on our cancellation policy, and the amount refunded will depend on the stage of the order. For more details, feel free to reach out to us."
+
+  utter_extra_toppings:
+  - text: "We offer a variety of extra toppings to make your pizza even more delicious! Here are some popular options: \n
+          - Extra Cheese  \n
+          - Extra Sauce  \n
+          - Jalapeños  \n
+          - Olives  \n
+          - Mushrooms \n 
+          - Bell Peppers\n  
+          - Chicken or Beef Strips \n 
+          - Spicy Sausage  \n
+          Let us know which topping you'd like to add when ordering the pizza !"
+
+  utter_delivery_details:
+  - text: "We offer a fast and reliable delivery service to ensure you enjoy our food at the comfort of your home! Here are some details about our delivery service:\n
+          - Delivery times: Typically 30-45 minutes, depending on your location. \n 
+          - Charges       : Varies based on your area, with options for free delivery on select orders. \n
+          - Minimum order : Please check our website for area-specific minimum order amounts. \n\n
+
+          You can visit our website to place an order or learn more: https://www.pizzahut.lk"
+
+  utter_customize_instructions:
+  - text: "Sure! Please let us know how you'd like to customize your order. Popular customizations include: \n  
+          - Adding or removing toppings.  \n
+          - Adjusting spice levels.  \n
+          - Choosing a different crust type (e.g., thin, stuffed, gluten-free). \n 
+          - Splitting toppings for a half-and-half pizza.\n
+          - Opting for extra cheese or a special sauce.  \n
+          Let us know your preference, and we’ll confirm if it’s possible!  "
+
+  - text: "We’d love to customize your pizza to your liking! Just tell us: \n 
+          - What you’d like to add or remove.  \n
+          - Any specific requests, such as crust type or spice level.  \n
+          Some requests may depend on availability. Feel free to ask!"
+
+  utter_offers:
+  - text: "Here are the current offers we have:\n\n
+        - Buy 1 Get 1 Free on all medium pizzas.\n
+        - 10% off on orders above Rs.10000.00.\n
+        - Free garlic bread with any large pizza.\n
+        - 2 large pizzas + 1 lava cake.\n
+        - Check daily Combos as well."
+
+  utter_veg_options:
+  - text: "Here are some of our delicious vegetarian options: \n\n
+          - Veggie Masala Pizza             : Made with spicy veggie masala, onions, tomato, and cheese. \n
+          - Cheesy Tomato with Green Chillie: A rich tomato base topped with cream cheese, tomatoes, and green chillies.\n
+          - Cheesy Onion with Green Chillies: Cream cheese, onions, and green chillies on a tomato base.  \n
+          - Spicy Veggie with Paneer        : Spicy veggie masala with paneer and pineapple.  \n
+          - Veggie Supreme                  : Mushrooms, tomatoes, onions, black olives, and bell peppers with double cheese.  \n\n
+          We also offer vegetarian appetizers, rice, and pasta dishes. Let us know if you'd like more details! " 
+
+  utter_opening_hours:
+  - text: "Our operating hours are from 10:00 AM to 10:00 PM. We are open Monday to Sunday."
+  - text: "We’re closed only on Mercantile Holidys, but we’re happy to serve you from 10:00 AM to 10:00 PM on other days."
 
   utter_done:
   - text: "Oh okay we're done for today then. See you later"

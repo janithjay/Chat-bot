@@ -133,6 +133,36 @@ stories:
   - intent: ask_refund_details
   - action: utter_refund_details
 
+- story: ask for extra topping
+  steps:
+  - intent: ask_extra_toppings
+  - action: utter_extra_toppings
+
+- story: ask about delivery
+  steps:
+  - intent: ask_about_delivery
+  - action: utter_delivery_details
+
+- story: ask to cuztomize
+  steps: 
+  - intent: ask_to_customize
+  - action: utter_customize_instructions
+
+- story: ask about offers
+  steps:
+  - intent: ask_available_offers
+  - action: utter_offers
+
+- story: ask about veg pizza
+  steps:
+  - intent: asking_vegetarian_pizza
+  - action: utter_veg_options
+
+- story: ask opening hours
+  steps: 
+  - intent: ask_opening_hours
+  - action: utter_opening_hours
+
 - story: help
   steps:
   - intent: asking_help

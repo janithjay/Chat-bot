@@ -326,6 +326,17 @@ nlu:
     - veggie pizza
     - vegan
     - vegetarian
+    - What vegetarian options do you have?
+    - Do you offer veggie pizzas?
+    - Are there any meat-free items on the menu?
+    - Can you list the vegetarian dishes available?
+    - What are your vegan or vegetarian choices?
+    - Do you have a veggie combo?
+    - Are there vegetarian appetizers on the menu?
+    - Any vegetarian pasta or rice dishes?
+    - Is there a menu for vegetarians?
+    - Do you have plant-based options?
+    - Can I get a veggie-only pizza?
 
 - intent: asking_about_combo_meals
   examples: |
@@ -573,6 +584,118 @@ nlu:
     - I need some help.
     - Could you assist?
     - I need your help.
+
+- intent: ask_extra_toppings
+  examples: |
+    - Can I add extra toppings to my pizza?
+    - Do you offer extra cheese or sauce?
+    - I want more toppings on my pizza.
+    - Can I get additional olives or jalapeños?
+    - Is it possible to add more sauce or cheese?
+    - What are the available extra toppings?
+    - Can I customize my pizza with extra toppings?
+    - Do you have an option for extra meat toppings?
+    - Can I add mushrooms or extra vegetables to my pizza?
+    - What extra toppings do you offer for pizzas?
+    - Can I get extra cheese on my pizza?
+    - I want double the amount of sauce. Is that possible?
+    - Do you have an option to add more mushrooms?
+    - Can I customize my pizza with spicy toppings?
+    - What are the premium toppings I can add?
+    - Is there an option for extra meat on my pizza?
+    - Can I add pineapple as an extra topping?
+    - I’d like to add some jalapeños. Is that available?
+    - Do you offer extra toppings for pasta as well?
+    - I want more cheese and chicken on my pizza.
+    - Can I have extra toppings on a half-and-half pizza?
+    - Is it possible to add extra onions or tomatoes?
+    - What’s the cost for additional toppings?
+    - Can I mix and match extra toppings?
+    - Are there vegan toppings available to add?
+    - Can I get double mozzarella as a topping?
+    - Do you offer extra pepperoni slices?
+    - Can I add garlic or herbs as toppings?
+    - Are there any spicy topping options available?
+    - Can I order just extra toppings without a pizza?
+    - I need more sauce. Is it possible?
+    - I want more chicken as a extra topping. can i do that?
+
+- intent: ask_about_delivery
+  examples: |
+    - How does your delivery service work?
+    - Do you offer home delivery?
+    - What are the delivery charges?
+    - How long does it take to deliver a pizza?
+    - Can you deliver to my location?
+    - What is your delivery radius?
+    - Do you have free delivery options?
+    - Can I schedule a delivery for later?
+    - What’s the minimum order amount for delivery?
+    - How can I track my delivery?
+    - Is there an option for express delivery?
+    - Where can I find your delivery details?
+    - Does your website provide delivery updates?
+    - Can I change my delivery address after placing the order?
+    - Is delivery available 24/7?
+   
+- intent: ask_to_customize
+  examples: |
+    - Can I customize my pizza?
+    - I want to make some changes to my pizza.
+    - Is it possible to customize my order?
+    - Can I add my own toppings to the pizza?
+    - I’d like to remove mushrooms from the pizza. Is that okay?
+    - Can I request extra cheese and no onions?
+    - Can you make my pizza half and half?
+    - I want a gluten-free crust. Is that an option?
+    - Can I substitute one topping for another?
+    - Is it possible to have a lighter sauce on the pizza?
+    - Can I have less spicy sauce and extra veggies?
+    - Do you offer a build-your-own pizza option?
+    - I’d like to make a special request for my order.
+    - Is it possible to add garlic butter to the crust?
+    - Can I customize my pasta or other dishes too?
+
+- intent: ask_available_offers
+  examples: |
+    - What are the current offers?
+    - Can you tell me about the discounts today?
+    - Are there any deals on pizzas?
+    - Do you have any offers right now?
+    - Tell me about today's discounts.
+    - What promotions are running currently?
+    - Are there any special deals available?
+    - What pizza deals are available?
+    - Do you have any discounts for today?
+    - Show me the offers on large pizzas.
+    - Are there any weekend deals?
+    - Any special discounts for combo orders?
+    - What are the deals for family meals?
+    - Is there a discount for first-time customers?
+    - Do you have any festival offers?
+    - What's the deal for two medium pizzas?
+    - Any offers on extra toppings?
+    - Can you tell me about any current promotions?
+    - What are the best deals today?
+    - Is there a discount if I order a lot?
+    - I want to know if you have any offers?
+    - Want to know about available offers.
+    - What about seasonal offers?
+
+- intent: ask_opening_hours
+  examples: |
+    - What are your opening hours?
+    - When do you open?
+    - What time do you close?
+    - Do you operate on weekends?
+    - Are you open on holidays?
+    - Are you closed during holidays?
+    - Do you work on Poya days?
+    - Are you closed on weekends?
+    - Until what time do you open?
+    - Are you open on weekends?
+    - At what time do you open the restaurant?
+    - At what time do you close ?
 
 - intent: casual
   examples: |
