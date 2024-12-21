@@ -1,48 +1,476 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Pizza Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hut | Order Pizza & More Online</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --ph-red: #ee3124;
+            --ph-dark: #1a1a1a;
+        }
+
+        /* Landing Page Styles */
+        .bg-pizza-hut {
+            background-color: var(--ph-red);
+        }
+
+        .text-pizza-hut {
+            color: var(--ph-red);
+        }
+
+        .btn-pizza-hut {
+            background-color: var(--ph-red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-pizza-hut:hover {
+            background-color: #d62b1f;
+            transform: translateY(-1px);
+        }
+
+        .menu-card {
+            transition: all 0.2s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Chatbot Styles */
+        .chat-widget-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: var(--ph-red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .chat-widget-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-window {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 380px;
+            height: 600px;
+            max-height: 80vh;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .chat-window.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: var(--ph-red);
+            background: linear-gradient(90deg, #ee3124 0%, #c41810 100%);
+            padding: 1rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .chat-area {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            background-image: 
+                radial-gradient(circle at 100% 100%, rgba(238, 49, 36, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 0% 0%, rgba(238, 49, 36, 0.03) 0%, transparent 50%);
+        }
+
+        /* Rasa Widget Overrides */
+        .rw-conversation-container {
+            box-shadow: none !important;
+            border: none !important;
+            height: 100% !important;
+            max-height: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .rw-messages-container {
+            padding: 20px !important;
+            flex: 1 !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        .rw-sender {
+            flex-shrink: 0 !important;
+            padding: 16px !important;
+            background: white !important;
+            border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .rw-message {
+            padding: 12px 16px !important;
+            border-radius: 12px !important;
+            max-width: 80% !important;
+            margin: 8px 0 !important;
+            word-wrap: break-word !important;
+        }
+
+        .rw-client {
+            background-color: #f5f5f5 !important;
+            color: #1a1a1a !important;
+        }
+
+        .rw-response {
+            background-color: var(--ph-red) !important;
+            color: white !important;
+        }
+
+        .rw-input {
+            border-radius: 24px !important;
+            padding: 12px 20px !important;
+            border: 2px solid #e5e5e5 !important;
+            transition: border-color 0.2s ease !important;
+            max-height: 100px !important;
+            overflow-y: auto !important;
+        }
+
+        .rw-input:focus {
+            border-color: var(--ph-red) !important;
+            outline: none !important;
+        }
+
+        .rw-send {
+            background-color: var(--ph-red) !important;
+            border-radius: 50% !important;
+            width: 40px !important;
+            height: 40px !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 2px 8px rgba(238, 49, 36, 0.3) !important;
+            flex-shrink: 0 !important;
+        }
+    </style>
 </head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="/api/placeholder/40/40" alt="Pizza Hut Logo" class="h-10">
+                    <div class="hidden md:flex space-x-8 ml-10">
+                        <a href="#menu" class="text-gray-700 hover:text-pizza-hut font-medium">Menu</a>
+                        <a href="#deals" class="text-gray-700 hover:text-pizza-hut font-medium">Deals</a>
+                        <a href="#locations" class="text-gray-700 hover:text-pizza-hut font-medium">Locations</a>
+                        <a href="#rewards" class="text-gray-700 hover:text-pizza-hut font-medium">Rewards</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="btn-pizza-hut">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<body>
-  <div class="chat">
-    <script>!(function () {
-        let e = document.createElement("script"),
-          t = document.head || document.getElementsByTagName("head")[0];
-        (e.src =
-          "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
-          // Replace 1.x.x with the version that you want
-          (e.async = !0),
-          (e.onload = () => {
-            window.WebChat.default(
-              {
-                initPayload: '/greet',
-                customData: { language: "en" },
-                socketUrl: "http://localhost:5005",
-                title: "Pizza Shop Assistant Bot",
-                subtitle: " Ask me anything.....",
-                fullScreenMode: "true",
-                onSocketEvent: onSocketEvent = {
-                  'bot_uttered': () => console.log("hh"),
-                  'user_uttered': () => console.log("tt"),
-                  'connect': () => console.log('connection established'),
-                  'disconnect': () => doSomeCleanup(),
-                },
-                embedded: "true",
-                // add other props here
-              },
-              null
-            );
-          }),
-          t.insertBefore(e, t.firstChild);
-      })();
-      localStorage.clear();
-    </script>
+    <!-- Hero Section -->
+    <section class="hero-section h-[500px] flex items-center justify-center text-center text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-6">Nobody OutPizzas the Hut</h1>
+            <p class="text-xl mb-8">Order your favorite pizzas, wings, and more for delivery or carryout</p>
+            <div class="flex justify-center space-x-4">
+                <button class="btn-pizza-hut">Start Your Order</button>
+                <button class="bg-white text-pizza-hut px-6 py-3 rounded-md font-semibold hover:bg-gray-100">View Deals</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Menu Items -->
+    <section class="py-16 px-4" id="menu">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Fan Favorites</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/300" alt="Pepperoni Pizza" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pepperoni Lover's®</h3>
+                        <p class="text-gray-600 mb-4">Double the pepperoni, double the flavor</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">From $11.99</span>
+                            <button class="btn-pizza-hut text-sm">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/300" alt="Supreme Pizza" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Supreme Pizza</h3>
+                        <p class="text-gray-600 mb-4">Loaded with premium toppings</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">From $13.99</span>
+                            <button class="btn-pizza-hut text-sm">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="menu-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="/api/placeholder/400/300" alt="Buffalo Wings" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Buffalo Wings</h3>
+                        <p class="text-gray-600 mb-4">Classic wings with signature sauce</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold">From $9.99</span>
+                            <button class="btn-pizza-hut text-sm">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="bg-gray-100 py-16 px-4" id="deals">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Hot Deals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Deal 1 -->
+                <div class="bg-white rounded-lg p-6 shadow-md flex items-center">
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">$5.99 Deal</h3>
+                        <p class="text-gray-600 mb-4">Medium 1-Topping Pizza when you order 2 or more</p>
+                        <button class="btn-pizza-hut">Order Now</button>
+                    </div>
+                    <img src="/api/placeholder/200/200" alt="Deal" class="w-32 h-32 rounded-lg ml-4">
+                </div>
+
+                <!-- Deal 2 -->
+                <div class="bg-white rounded-lg p-6 shadow-md flex items-center">
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold mb-2">Family Meal Deal</h3>
+                        <p class="text-gray-600 mb-4">2 Large Pizzas + Wings + Breadsticks</p>
+                        <button class="btn-pizza-hut">Order Now</button>
+                    </div>
+                    <img src="/api/placeholder/200/200" alt="Family Deal" class="w-32 h-32 rounded-lg ml-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section class="py-16 px-4 bg-pizza-hut text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left mb-8 md:mb-0">
+                <h2 class="text-3xl font-bold mb-4">Get the Pizza Hut App</h2>
+                <p class="text-lg mb-6">Order faster, earn rewards, and track your delivery in real-time</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <button class="bg-black text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-900">
+                        App Store
+                    </button>
+                    <button class="bg-black text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-900">
+                        Google Play
+                    </button>
+                </div>
+            </div>
+            <img src="/api/placeholder/300/600" alt="Pizza Hut App" class="w-64">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold mb-4">Menu</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pizza-hut">Pizza</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Wings</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Sides</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Desserts</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">About</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pizza-hut">About Us</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Careers</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Franchising</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pizza-hut">Help</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Track Order</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Store Finder</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Connect With Us</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-pizza-hut">Facebook</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Twitter</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">Instagram</a></li>
+                        <li><a href="#" class="hover:text-pizza-hut">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2024 Pizza Hut, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget Button -->
+    <div class="chat-widget-button" id="chatButton">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-4l-4 4z" />
+        </svg>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white p-2 rounded-lg">
+                    <img src="/api/placeholder/32/32" alt="Pizza Hut Logo" class="w-8 h-8">
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg">Pizza Hut</h1>
+                    <p class="text-sm opacity-90">Virtual Assistant</p>
+                </div>
+            </div>
+            <button id="closeChatButton" class="text-white opacity-75 hover:opacity-100 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="chat-area" id="chatArea">
+            <!-- Chat will be initialized here -->
+        </div>
+    </div>
+
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chatButton');
+            const chatWindow = document.getElementById('chatWindow');
+            const closeChatButton = document.getElementById('closeChatButton');
+            const chatArea = document.getElementById('chatArea');
+            let chatInitialized = false;
 
+            function initializeChat() {
+                if (!chatInitialized) {
+                    window.WebChat.default({
+                        initPayload: '/greet',
+                        customData: { language: "en" },
+                        socketUrl: "http://localhost:5006",
+                        profileAvatar: "/api/placeholder/32/32",
+                        params: {
+                            images: {
+                                dims: {
+                                    width: 320,
+                                    height: 240
+                                }
+                            },
+                            storage: "session"
+                        },
+                        customMessageDelay: (message) => {
+                            let delay = message.length * 30;
+                            return Math.min(Math.max(delay, 500), 3000);
+                        },
+                        embedded: true,
+                        showCloseButton: false,
+                        showFullScreenButton: false,
+                        displayUnreadCount: true,
+                        onSocketEvent: {
+                            'bot_uttered': () => {
+                                console.log("Bot responded");
+                                scrollToBottom();
+                            },
+                            'user_uttered': () => {
+                                console.log("User sent message");
+                                scrollToBottom();
+                            },
+                            'connect': () => console.log('Connected to bot'),
+                            'disconnect': () => console.log('Disconnected from bot')
+                        }
+                    }, null);
+                    chatInitialized = true;
+                }
+            }
 
+            // Load Rasa Web Chat script
+            const script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js";
+            script.async = true;
+            script.onload = () => {
+                console.log('Rasa Web Chat script loaded');
+            };
+            document.head.appendChild(script);
+
+            // Open chat window
+            chatButton.addEventListener('click', function() {
+                chatWindow.classList.add('active');
+                chatButton.style.display = 'none';
+                initializeChat();
+            });
+
+            // Close chat window
+            closeChatButton.addEventListener('click', function() {
+                chatWindow.classList.remove('active');
+                chatButton.style.display = 'flex';
+            });
+
+            // Scroll chat to bottom
+            window.scrollToBottom = function() {
+                const messagesContainer = document.querySelector('.rw-messages-container');
+                if (messagesContainer) {
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }
+            }
+
+            // Clear localStorage on page load
+            localStorage.clear();
+        });
     </script>
-  </div>
 </body>
-
 </html>
+

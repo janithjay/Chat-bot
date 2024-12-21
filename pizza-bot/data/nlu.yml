@@ -210,6 +210,62 @@ nlu:
     - How can I reach you?
     - Where are you situated?
 
+- intent: asking_about_outlets
+  examples: |
+    - Where is [Ampara](location) branch located?
+    - What are the [Anuradhapura](location) outlets?
+    - Where is [Badulla](location) branch located?
+    - What are the [Batticaloa](location) outlets?
+    - Where is [Colombo](location) branch located?
+    - What are the [Gampaha](location) outlets?
+    - Where is [Galle](location) branch located?
+    - What are the [Hambantota](location) outlets?
+    - Where is [Jaffna](location) branch located?
+    - What are the [Kalutara](location) outlets?
+    - Where is [Kandy](location) branch located?
+    - What are the [Kegalle](location) outlets?
+    - Where is [Kilinochchi](location) branch located?
+    - What are the [Kurunegala](location) outlets?
+    - Where is [Mannar](location) branch located?
+    - What are the [Matale](location) outlets?
+    - Where is [Matara](location) branch located?
+    - What are the [Monaragala](location) outlets?
+    - Where is [Mullaitivu](location) branch located?
+    - What are the [Nuwara Eliya](location) outlets?
+    - Where is [Polonnaruwa](location) branch located?
+    - What are the [Puttalam](location) outlets?
+    - Where is [Ratnapura](location) branch located?
+    - Where is [Trincomalee](location) branch located?
+    - What are the [Vavuniya](location) outlets?
+
+- lookup: location
+  examples: |
+    - Ampara
+    - Anuradhapura
+    - Badulla
+    - Batticaloa
+    - Colombo
+    - Gampaha
+    - Galle
+    - Hambantota
+    - Jaffna
+    - Kalutara
+    - Kandy
+    - Kegalle
+    - Kilinochchi
+    - Kurunegala
+    - Mannar
+    - Matale
+    - Matara
+    - Monaragala
+    - Mullaitivu
+    - Nuwara Eliya
+    - Polonnaruwa
+    - Puttalam
+    - Ratnapura
+    - Trincomalee
+    - Vavuniya
+
 - intent: recommend_professional_help
   examples: |
     - Can you recommend a [therapist](professional_type)?

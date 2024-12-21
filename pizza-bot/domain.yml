@@ -32,9 +32,11 @@ intents:
   - ordering_by_app
   - asking_about_brances
   - asking_vegetarian_pizza
+  - asking_about_outlets
 
 entities:
     - professional_type
+    - location
 
 responses:
   utter_greet:
@@ -193,6 +195,7 @@ responses:
 
 actions:
   - action_recommend_professional_help
+  - action_location-details
 
 session_config:
   session_expiration_time: 60

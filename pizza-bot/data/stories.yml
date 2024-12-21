@@ -61,6 +61,11 @@ stories:
   - intent: asking_contact_details
   - action: utter_contact_details
 
+- story: ask about outlet
+  steps:
+  - intent: asking_outlet
+  - action: action_location-details
+
 - story: capabilities
   steps:
   - intent: asking_capabilities
