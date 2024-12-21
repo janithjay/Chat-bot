@@ -32,7 +32,17 @@ intents:
   - ordering_by_app
   - asking_about_brances
   - asking_vegetarian_pizza
-  - asking_about_outlets
+  - asking_about_combo_meals
+  - ask_busy_timeslots
+  - asking_about_reservation
+  - ask_pizza_preparation_time
+  - ask_kids_options
+  - ask_reheat_instructions
+  - support_first_time_users
+  - ask_spiciest_pizza
+  - ask_less_spicy_pizza
+  - ask_party_venues
+  - ask_refund_details
 
 entities:
     - professional_type
@@ -153,7 +163,7 @@ responses:
             or visit our website at https://www.pizzahut.lk.\n
             We look forward to serving you!"
 
-  utter_about_brances:
+  utter_about_branches:
   - text: "We have multiple branches across the country. You can find your nearest branch by visiting our website at https://www.pizzahut.lk/outlet-map."
 
   utter_did_that_help:
@@ -174,8 +184,90 @@ responses:
   utter_capabilities_response:
   - text: "I can provide you with information about our pizza menu, drinks menu, and help you place an order. I can also provide you with our contact details. How can I assist you today?"
 
+  utter_combo_packages:
+  - text: "Sure! Here are our combo deals:\n
+              1. My Box Lite - Rs.1400.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/5365a5fe-6bfa-4763-8a2f-ac33b30e2c46.jpg\n\n
+
+              2. My Box Pro - Rs.1800.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/402f1a4f-a061-44c9-8f86-d551a7ab483b.jpg\n\n
+
+              3. Double Deal - Rs.2500.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/43498627-6edd-4d47-9460-b9d825cc45b6.jpg\n\n
+
+              4. Family Fun - Rs.4200.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/20fd7444-aab0-4d65-9739-5e4647a750ee.jpg"
+
+  utter_busy_timeslots:
+  - text: "Here are the peak times for our dine-in service:\n
+           Lunch: 12:00 PM - 2:00 PM\n
+           Dinner: 7:00 PM - 9:00 PM\n
+           Would you like to make a reservation outside these hours for a quieter experience?"
+  - text: "We’re usually busy during weekends (especially Saturdays). On weekdays, lunch and dinner times can be a bit crowded.\n
+           Let me know your preferred time, so we can check availability for you! Would you like to make a reservation ? "
+
+  utter_hotline_number:
+  - text: "You can call us to make a reservation at this numbers:\n
+          +94 112 729729\n
+          +94 114 729729\n
+          +94 117 729729 "
+
+  utter_preparation_time:
+  - text: "It typically takes around 15-20 minutes to prepare a pizza. However, on heavily crowded days, it can take up to 30-40 minutes. We're always doing our best to serve you as quickly as possible."
+  
+  utter_loyalty_details:
+  - text: " We value our loyal customers! Here's how our loyalty program works:\n
+          - Earn 1 point for every Rs.1000 spent.\n
+          - Redeem points for discounts on future orders.\n
+          - Exclusive offers and free items for members.\n
+          Hurry up and become a loyal customer today! Don't wait—visit the Pizza Hut website or your nearest Pizza Hut location to get registered. "
+
+  utter_kids_menu:
+  - text: "We have a special menu just for kids! Here are some of the popular options only for Rs.1300.00\n
+           Check this out to see what's for them!\n
+           https://adminsc.pizzahut.lk//images/mainmenu/005d3569-23f1-4ea4-ad08-4a7e71e1f7cd.jpg"
+
+  utter_reheat_instructions:
+  - text: "Here are some quick tips to reheat your pizza and enjoy it fresh:\n
+            - Oven: Preheat the oven to 375°F (190°C). Place the pizza on a baking sheet or directly on the rack. Heat for 8-10 minutes.\n
+            - Stovetop: Heat a non-stick pan on medium heat. Place the pizza slice in the pan, cover with a lid, and heat for 2-3 minutes.\n
+            - Microwave: Place the slice on a microwave-safe plate with a cup of water beside it. Heat for 30-45 seconds. \n
+            Let us know if you'd like more help! "
+  
+  utter_intro:
+  - text: "Welcome to Pizza Hut Sri Lanka! Since 1993, we’ve been bringing delicious pizzas, pastas, wings, and more to your table. 
+           With our first restaurant at Union Place, Colombo 2, we’ve become a household name, offering island-wide delivery and a family-friendly dining experience. \n
+           I'm here to support you with more details. Let’s get started!"
+  
+  utter_spicy_pizza:
+  - text: "For spice lovers, we’ve got some fiery options at Pizza Hut!\n
+           Our spiciest pizzas include:\n
+           - Spicy Fish Pizza: Made with Spicy Fish & 2 layers of cheese.\n
+           - Chilli Chicken Pizza: Topped with Spicy Chicken, Green Chillies, Onions & Mozzarella.\n
+           - Hot & Spicy Chicken: Spicy chunks of chicken, capsicums & onions with a double layer of cheese.\n
+           - Sri Lankan Spicy Chicken Pizza: A combination of black chicken, devilled chicken & chicken sausages.\n
+           Each of these pizzas delivers a bold and spicy flavor guaranteed to satisfy those with a taste for heat!"
+  
+  utter_less_spicy_pizza_details:
+    - text: " For those who prefer less spice, we offer a variety of milder options:\n
+              - Cheese Lovers: A triple layer of mozzarella cheese on a rich tomato base.\n
+              - Veggie Supreme: Topped with mushrooms, tomatoes, onions, and bell peppers.\n
+              - Margherita: Classic tomato and cheese pizza with minimal spice.\n
+              - Garlic Bread Pizza: Light flavors with garlic, herbs, and a cheese blend.\n
+              These options provide delicious, non-spicy choices while still delivering great flavor."
+  
+  utter_party_details:
+    - text: "Yes, we offer a variety of party venues for different occasions, including:\n
+            - Private dining rooms\n
+            - Exclusive event spaces\n
+            - Customized setups for birthdays, weddings, corporate events, and small group gatherings.\n
+            - Entertainment options like music, games, and decorations for any event."
+
+  utter_refund_details:
+  - text: "If you need a refund after cancellation, please contact our support team at +94 112 729729, +94 114 729729 ,+94 117 729729. Refunds are processed based on our cancellation policy, and the amount refunded will depend on the stage of the order. For more details, feel free to reach out to us."
+
   utter_done:
-    - text: "Oh okay we're done for today then. See you later"
+  - text: "Oh okay we're done for today then. See you later"
 
   utter_help:
   - text: "Sure. Tell me how can i assist you"

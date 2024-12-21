@@ -197,7 +197,7 @@ nlu:
     - Where can I contact you?
     - What's your phone number?
 
-- intent: asking_about_brances
+- intent: asking_about_branches
   examples: |
     - Where are you located?
     - What are your branches?
@@ -327,6 +327,235 @@ nlu:
     - vegan
     - vegetarian
 
+- intent: asking_about_combo_meals
+  examples: |
+    - Do you have Combo meals
+    - What combos are available?
+    - Show me your pizza combos.
+    - Can I get a combo deal?
+    - Any combo offers today?
+    - Tell me about the meal deals.
+    - What’s included in your combos?
+    - Are there family combos?
+    - Do you offer pizza and beverage combos?
+    - combo
+    - combo meals
+
+- intent: ask_busy_timeslots
+  examples: |
+    - When is it usually crowded?
+    - What are your peak times?
+    - Is it busy during lunch hours?
+    - When is the best time to dine in?
+    - Tell me the busy times for your restaurant.
+    - What time is it quieter?
+    - Are there busy slots for dine-in?
+    - When is it least crowded?
+    - I hate when the place is full
+    - what time should i not come
+    - At what time seats are full
+    - I need to dine in when there is no rush
+    - Less crowded times?
+    - No rush times?
+
+- intent: asking_about_reservation
+  examples: |
+    - Can I make a reservation?
+    - I want to reserve a table.
+    - Do you take reservations?
+    - How can I book a table?
+    - Can I book a spot for dinner?
+    - I’d like to reserve a table for two.
+    - Is it possible to reserve a table in advance?
+    - Can I pre-book a table?
+    - I want to make a booking.
+    - How do I reserve a table at your restaurant?
+    - Is table booking available?
+    - I need a reservation for tonight.
+    - Can I reserve a table for tomorrow?
+    - Do you accept reservations?
+    - I need a reservation for 4 people.
+    - How can I book a table for a specific time?
+    - Can I reserve a table for a party of six?
+    - I’d like to make a dinner reservation.
+    - Can I book a table for this evening?
+    - Is it possible to book a table for the weekend?
+
+- intent: ask_pizza_preparation_time
+  examples: |
+    - How long does it take to prepare a pizza?
+    - What is the average preparation time for a pizza?
+    - How much time will it take to make a pizza?
+    - How long will my pizza order take?
+    - How fast can you prepare a pizza?
+    - What's the preparation time for a pizza?
+    - How quickly can you make a pizza?
+    - Tell me the time it takes to prepare pizza.
+    - How long does your pizza preparation usually take?
+    - How long do I have to wait for my pizza?
+    - Is there a long wait to prepare the pizza?
+    - How much time is needed to cook a pizza?
+    - What's the usual time to make a pizza?
+    - Can you tell me the cooking time for a pizza?
+    - How long does it take to get my pizza ready?
+    - What's the waiting time for pizza preparation?
+    - Does it take a lot of time to make a pizza?
+    - How soon can my pizza be ready?
+    - What's the pizza preparation duration?
+    - Will the pizza be ready quickly?
+    - How much time do you take for a pizza order?
+    - How long will it take if I order pizza now?
+    - Do I have to wait long for the pizza to be prepared?
+    - On busy days, how long does it take to prepare a pizza?
+    - Is there a delay in pizza preparation when crowded?
+
+- intent: ask_loyalty
+  examples: |
+    - Do you have a loyalty program?
+    - Tell me about your loyalty program.
+    - How does your rewards program work?
+    - What is your loyalty program?
+    - Are there rewards for regular customers?
+    - Do I get points for my purchases?
+    - Can I earn loyalty points?
+    - What are the benefits of your loyalty program?
+    - How can I join your loyalty program?
+    - Are there any perks for loyal customers?
+    - Do you offer any rewards for repeat orders?
+    - What kind of discounts do loyal customers get?
+    - How do I sign up for your loyalty program?
+    - Can I earn discounts for frequent orders?
+    - Is there a rewards program for pizza lovers?
+    - I need to know about loyalty program?
+    - I need to be a Loyalty Customer
+    - How to be a loyalty customer?
+    - What are the benifits of being regular customer?
+    - i want loyalty
+    - loyalty
+
+- intent: ask_kids_options
+  examples: |
+    - What options do you have for kids?
+    - Do you have a kids menu?
+    - What food can I order for kids?
+    - Tell me about your kids options.
+    - Do you offer meals for children?
+    - Are there any child-friendly options?
+    - Can I see the kids menu?
+    - What are the kid-specific meals?
+    - Do you have any small portions for kids?
+    - What's available for children on the menu?
+    - Do you have a menu for kids?
+    - What are your options for kids?
+    - Are there meals for kids at your restaurant?
+    - kid's menu ? 
+    - What do you have for kids?
+    - Is there anything special for kids?
+    - What about kids?
+
+- intent: ask_reheat_instructions
+  examples: |
+    - How do I reheat my pizza?
+    - Can you tell me how to reheat pizza after delivery?
+    - What’s the best way to reheat a pizza?
+    - How should I heat my leftover pizza?
+    - What’s the proper way to reheat a pizza slice?
+    - How do I warm up my pizza without making it soggy?
+    - Any tips for reheating my pizza?
+    - How can I reheat a pizza in the oven?
+    - What’s the best way to reheat pizza in a microwave?
+    - Can I reheat pizza on the stove?
+    - Tell me how to warm up my pizza.
+    - How do I reheat the pizza you delivered?
+    - Do you have reheating instructions for pizza?
+    - What's the ideal way to reheat pizza?
+    - Delivery is late what can i do now?
+    - The pizza is almost cold.
+    - Delivery guy took so long.
+    - I want to oven the pizza.
+    - What tempertaure should be there to heat again?
+
+- intent: support_first_time_users
+  examples: |
+    - This is my first time here, can you guide me?
+    - I’m new to Pizza Hut, please help me out!
+    - What can I order on my first visit?
+    - I’ve never used Pizza Hut before, show me the menu.
+    - Can you tell me about your restaurant?
+    - How do I get started with my first order?
+    - I’m a first-time customer, what options do I have?
+    - Help me with your first-time user guide.
+    - what is pizza hut?
+    - what do you sell?
+    - I don't know anything about pizza hut.
+    - This is my first time.
+    - I'm new to this.
+    - I know nothing about this restaurant.
+
+- intent: ask_spiciest_pizza
+  examples: |
+    - What is the spiciest pizza?
+    - Tell me about the spiciest pizza
+    - Spicy pizza details
+    - I love spicy pizza
+    - What are the spiciest pizzas?
+    - Do you have Chilli pizza?
+    - Do you have Spicy Pizza?
+    - i'm a chilli lover what should i buy?
+    - i love spicy flavour can you recommend something to buy?
+    - spicy collection
+    - give me your spiciest pizza
+
+- intent: ask_less_spicy_pizza
+  examples: |
+    - What are the less spicy pizza options?
+    - Do you have mild or non-spicy pizzas?
+    - Can I get a pizza without too much spice?
+    - Do you have vegetarian pizzas?
+    - Can I get a non-spicy veggie pizza?
+    - Can I get a pizza with lots of cheese and no spice?
+    - Do you have kid-friendly pizzas that aren’t too spicy?
+    - Can I get a pizza with garlic and herbs but no spice?
+    - Is the Margherita pizza less spicy?
+    - Can I get a plain cheese pizza without added spice?
+    - Can I get a pizza with just basic toppings without too much spice?
+    - i hate chilli pizza
+    - what are the pizza without spicy
+    - Hate spicy pizza
+    - Don't like chillies 
+
+- intent: ask_party_venues
+  examples: |
+    - Are there party venues available?
+    - Do you offer birthday party venues?
+    - Do you have corporate event spaces?
+    - Can I book a venue for a family gathering?
+    - Can I get catering along with a venue?
+    - I want to celebrate a birthday party.
+    - Can i have a dinner party there?
+    - Do you have venues for small group gatherings?
+    - Can I book a venue for a family get-together?
+    -i want to celebrate a brithday. Is it possible?
+
+- intent: ask_refund_details
+  examples: |
+    - How do I get a refund after cancellation?
+    - Can I get a refund if I cancel my order?
+    - What is your refund policy for cancellations?
+    - Can I get a partial refund if I cancel part of my order?
+    - What happens if only some items are cancelled?
+    - Can I get a refund for a prepaid order?
+    - How do I request a refund for a late delivery?
+    - Can I get a refund for a voucher after cancelling the order?
+    - What is your policy on refunds for gift card purchases?
+    - How can I get a refund for missing items in my order?
+    - i need refund 
+    - i cancelled the order
+    - i canceled my order
+    - i need my money back
+    - cancellation of order 
+    - how to get refund
+
 - intent: asking_help
   examples: |
     - Could you help me?
@@ -348,6 +577,8 @@ nlu:
 - intent: casual
   examples: |
     - Oh I see.
+    - Yes
+    - I like
     - ok
     - okay
     - nice
