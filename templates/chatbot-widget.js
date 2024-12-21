@@ -129,7 +129,7 @@
         #pizza-hut-chatbot .rw-message {
             padding: 12px 16px !important;
             border-radius: 12px !important;
-            max-width: 80% !important;
+            max-width: 100% !important;
             margin: 8px 0 !important;
         }
 
