@@ -66,6 +66,68 @@ stories:
   - intent: asking_capabilities
   - action: utter_capabilities_response
 
+- story: combo meals
+  steps: 
+  - intent: asking_about_combo_meals
+  - action: utter_combo_packages
+
+- story: ask for reservation 1
+  steps:
+  - intent: asking_about_reservation
+  - action: utter_hotline_number
+
+- story: ask for reservation 2
+  steps:
+  - intent: ask_busy_timeslots
+  - action: utter_busy_timeslots
+  - intent: casual
+  - action: utter_hotline_number
+
+- story: ask for preparation time
+  steps: 
+  - intent: ask_pizza_preparation_time
+  - action: utter_preparation_time
+
+- story: ask loyalty
+  steps:
+  - intent: ask_loyalty
+  - action: utter_loyalty_details
+
+- story: ask kids menu
+  steps:
+  - intent: ask_kids_options
+  - action: utter_kids_menu
+
+- story: ask reheat instructions
+  steps:
+  - intent: ask_reheat_instructions
+  - action: utter_reheat_instructions
+
+- story: guide first time users
+  steps:
+  - intent: support_first_time_users
+  - action: utter_intro
+
+- story: ask for spicy pizza
+  steps:
+  - intent: ask_spiciest_pizza
+  - action: utter_spicy_pizza
+
+- story: ask for less spicy pizza
+  steps:
+  - intent: ask_less_spicy_pizza
+  - action: utter_less_spicy_pizza_details
+
+- story: ask party details
+  steps:
+  - intent: ask_party_venues
+  - action: utter_party_details
+
+- story: ask for refund
+  steps: 
+  - intent: ask_refund_details
+  - action: utter_refund_details
+
 - story: help
   steps:
   - intent: asking_help
