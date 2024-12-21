@@ -45,7 +45,10 @@
             right: 24px;
             width: 380px;
             height: 600px;
-            max-height: 80vh;
+            min-width: 300px;
+            min-height: 400px;
+            max-width: 90vw;
+            max-height: 90vh;
             background: white;
             border-radius: 16px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
@@ -59,6 +62,27 @@
             display: flex;
         }
 
+        #pizza-hut-chatbot .resize-handle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            left: 0;
+            cursor: nw-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #ffffff;
+            z-index: 1000000;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        #pizza-hut-chatbot .resize-handle:hover {
+            opacity: 1;
+        }
+
         #pizza-hut-chatbot .chat-header {
             background: #ee3124;
             background: linear-gradient(90deg, #ee3124 0%, #c41810 100%);
@@ -68,6 +92,8 @@
             align-items: center;
             justify-content: space-between;
             flex-shrink: 0;
+            cursor: move;
+            padding-left: 32px; /* Make room for resize handle */
         }
 
         #pizza-hut-chatbot .chat-area {
@@ -140,7 +166,8 @@
             </svg>
         </div>
         <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
+            <div class="resize-handle" id="resizeHandle">⇱</div>
+            <div class="chat-header" id="chatHeader">
                 <div style="display: flex; align-items: center; gap: 12px;">
                     <div style="background: white; padding: 8px; border-radius: 8px;">
                         <img src="https://i.postimg.cc/LXWcT9Dh/logo-pizzahut1.png" alt="Pizza Hut Logo" style="width: 32px; height: 32px;">
@@ -167,6 +194,109 @@
     const chatWindow = document.getElementById('chatWindow');
     const closeChatButton = document.getElementById('closeChatButton');
     const chatArea = document.getElementById('chatArea');
+    const chatHeader = document.getElementById('chatHeader');
+    const resizeHandle = document.getElementById('resizeHandle');
+
+    // Resize functionality
+    let isResizing = false;
+    let originalWidth;
+    let originalHeight;
+    let originalX;
+    let originalY;
+    let originalMouseX;
+    let originalMouseY;
+
+    resizeHandle.addEventListener('mousedown', initResize);
+    document.addEventListener('mousemove', resize);
+    document.addEventListener('mouseup', stopResize);
+
+    function initResize(e) {
+        isResizing = true;
+        originalWidth = chatWindow.offsetWidth;
+        originalHeight = chatWindow.offsetHeight;
+        originalX = chatWindow.offsetLeft;
+        originalY = chatWindow.offsetTop;
+        originalMouseX = e.pageX;
+        originalMouseY = e.pageY;
+    }
+
+    function resize(e) {
+        if (!isResizing) return;
+
+        const width = originalWidth + (originalMouseX - e.pageX);
+        const height = originalHeight + (originalMouseY - e.pageY);
+        const x = originalX - (originalMouseX - e.pageX);
+        const y = originalY - (originalMouseY - e.pageY);
+
+        if (width > 300 && width < window.innerWidth * 0.9) {
+            chatWindow.style.width = width + 'px';
+            chatWindow.style.left = x + 'px';
+        }
+
+        if (height > 400 && height < window.innerHeight * 0.9) {
+            chatWindow.style.height = height + 'px';
+            chatWindow.style.top = y + 'px';
+        }
+    }
+
+    function stopResize() {
+        isResizing = false;
+    }
+
+    // Dragging functionality
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+    let xOffset = 0;
+    let yOffset = 0;
+
+    chatHeader.addEventListener('mousedown', dragStart);
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', dragEnd);
+
+    function dragStart(e) {
+        if (isResizing) return;
+
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+
+        if (e.target === chatHeader || e.target.parentElement === chatHeader) {
+            isDragging = true;
+        }
+    }
+
+    function drag(e) {
+        if (isDragging) {
+            e.preventDefault();
+
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+
+            xOffset = currentX;
+            yOffset = currentY;
+
+            const windowRect = chatWindow.getBoundingClientRect();
+            const maxX = window.innerWidth - windowRect.width;
+            const maxY = window.innerHeight - windowRect.height;
+
+            currentX = Math.min(Math.max(currentX, 0), maxX);
+            currentY = Math.min(Math.max(currentY, 0), maxY);
+
+            setTranslate(currentX, currentY, chatWindow);
+        }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+        el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+    }
+
+    function dragEnd() {
+        initialX = currentX;
+        initialY = currentY;
+        isDragging = false;
+    }
 
     function initializeChat() {
         if (!chatInitialized && window.WebChat) {
@@ -174,7 +304,7 @@
                 {
                     initPayload: '/greet',
                     customData: { language: "en" },
-                    socketUrl: "http://localhost:5006",  // Replace with your actual Rasa server URL
+                    socketUrl: "http://localhost:5005", // Replace with your actual Rasa server URL
                     profileAvatar: "https://i.postimg.cc/LXWcT9Dh/logo-pizzahut1.png",
                     params: {
                         images: {
@@ -244,5 +374,3 @@
     // Clear localStorage on initialization
     localStorage.clear();
 })();
-
-
