@@ -97,7 +97,10 @@ nlu:
       - What things are in [Cheesy Tomato with Green Chillies](pizza)?
       - what is the price of [Sausage Delight](pizza)?
       - give me the price of [Chicken Triple Treat Pizza](pizza)?
-
+      - give me a description of [Chicken Salami Pizza](pizza)?
+      - how about [Double Chicken Surprise](pizza)?
+      - describe [Cheesy Onion with Green Chillies](pizza).
+      
 - lookup: pizza
   examples: |
     - Spicy Fish Pizza
