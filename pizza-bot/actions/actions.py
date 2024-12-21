@@ -39,7 +39,7 @@ class ActionRecommendProfessionalHelp(Action):
     
 class ActionGiveOutletDetails(Action):
     def name(self) -> Text:
-        return "action_location-details"
+        return "action_location_details"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -71,6 +71,85 @@ class ActionGiveOutletDetails(Action):
                 )
             else:
                 response = f"Sorry, I couldn't find any details for the location '{location}'."
+
+        except Exception as e:
+            response = "I'm having trouble connecting to the database. Please try again later."
+            print(f"Database connection error: {e}")
+
+        # Send the response
+        dispatcher.utter_message(text=response)
+        return []
+    
+class ActionProvideMenu(Action):
+    def name(self) -> Text:
+        return "action_provide_menu"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            # Connect to MongoDB
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["pizza_menu"]
+
+            # Fetch all pizzas
+            pizzas = collection.find()
+            
+            if pizzas:
+                response = "Here is our menu:\n"
+                for pizza in pizzas:
+                    response += f"- {pizza['Pizza']}:\n"
+                    for size in ["Large", "Medium", "Personal", "Regular"]:
+                        if pizza.get(size) != "Not Available":
+                            response += f"  * \t{size}: {pizza[size]}\n"
+            else:
+                response = "Sorry, the menu is currently unavailable."
+
+        except Exception as e:
+            response = "I'm having trouble connecting to the database. Please try again later."
+            print(f"Database connection error: {e}")
+
+        # Send the response
+        dispatcher.utter_message(text=response)
+        return []
+
+class ActionProvidePizzaDetails(Action):
+    def name(self) -> Text:
+        return "action_provide_pizza_details"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Extract the pizza entity from the user's message
+        pizza_name = next(tracker.get_latest_entity_values("pizza"), None)
+
+        if not pizza_name:
+            dispatcher.utter_message(text="I couldn't understand the pizza name. Could you specify it again?")
+            return []
+
+        try:
+            # Connect to MongoDB
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["pizza_menu"]
+
+            # Query the database for the pizza
+            pizza = collection.find_one({"Pizza": {"$regex": f"^{pizza_name}$", "$options": "i"}})
+
+            if pizza:
+                response = (
+                    f"Here are the details for {pizza['Pizza']}:\n"
+                    f"- {pizza.get('Description', 'Not available')}\n"
+                    f"- Prices:\n"
+                )
+                for size in ["Large", "Medium", "Personal", "Regular"]:
+                    if pizza.get(size) != "Not Available":
+                        response += f"  * \t{size}: {pizza[size]}\n"
+            else:
+                response = f"Sorry, I couldn't find any details for the pizza '{pizza_name}'."
 
         except Exception as e:
             response = "I'm having trouble connecting to the database. Please try again later."

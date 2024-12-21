@@ -22,7 +22,8 @@ intents:
   - mental-health-fact
   - recommend_professional_help
   - bot_challenge
-  - asking_available_pizza
+  - ask_menu
+  - ask_pizza_details
   - asking_available_drinks
   - asking_pizza_size
   - ordering_pizza
@@ -48,93 +49,37 @@ intents:
   - ask_to_customize
   - ask_available_offers
   - ask_opening_hours
-  
+  - ask_loyalty
+  - asking_outlet
+
+
 entities:
     - professional_type
     - location
+    - pizza
 
 responses:
   utter_greet:
   - text: "Hello! 👋, Welcome to PizzaBot! Ready to satisfy your pizza craving?"
 
-  utter_available_pizza:
-  - text: "Our Pizza Menu:\n
-              Classic Pizzas:\n
-                • Chicken Triple Treat Pizza: Made with Chicken Salami, Roast Chicken, Chicken Bacon, Onions & Cheese.\n
-                • Chicken Salami Pizza: Made with Chicken Salami, Jalapenos & cheese.\n
-                • Double Chicken Surprise: A combination of spicy chicken and succulent chicken sausages accompanied with crunchy onions and capsicum, topped with a layer of mozzarella cheese.\n
-                • Cheese Lovers: Rich tomato sauce with a triple layer of mozzarella cheese.\n
-                • Tandoori Chicken: Tandoori chicken & onions with a double layer of cheese.\n
-                • Black Chicken: Flavoursome pieces of black chicken and crunchy onion with a double layer of cheese.\n
-                • Hot & Spicy Chicken: Spicy chunks of chicken, capsicums & onions with a double layer of cheese.\n\n
-
-              Delight Pizzaz:\n
-                • Spicy Fish Pizza: Made with Spicy Fish & 2 layers of cheese.\n
-                • Veggie Masala Pizza: Made with spicy veggie masala, onions, tomato & cheese.\n
-                • Chilli Chicken Pizza: A pizza topped with Spicy Chicken, Green Chillies, Onions & Mozzarella.\n
-                • Cheesy Onion with Green Chillies: Rich tomato sauce base topped with cream cheese, onions, green chillies & Mozzarella.\n
-                • Cheesy Tomato with Green Chillies: Rich tomato sauce base topped with cream cheese, onions, tomato, green chillies & Mozzarella.\n
-                • Sausage Delight: Chicken sausages & onions with a double layer of cheese.\n
-                • Chicken Bacon & Potato with Nai Miris: A flavoursome duo of chicken bacon and spicy potatoes on a fiery base of Nai Miris sauce complemented with crunchy onions and green chillies, topped with a layer of mozzarella cheese.\n\n
-
-              Signature Pizzas:\n
-                • Festive Chicken Magic: A fusion of BBQ Chicken, Kotchchi Meat, Chicken Salami, Bolognaise Sauce, Bell Peppers and Tomatoes layered with Mozzarella.\n
-                • Minced Mutton Treat: Flavourful Minced Mutton complemented with Crunchy Onions and Green Chillies, layered with Mozzarella.\n
-                • BBQ Chicken: BBQ chicken accompanied by spicy jalapenos, onions and a double layer of cheese.\n
-                • Spicy Veggie with Paneer:Spicy veggie masala & paneer accompanied with pineapple, topped with a double layer of mozzarella cheese.\n
-                • Devilled Chicken: Devilled chicken in spicy sauce with a double layer of cheese.\n
-                • Butter Chicken Masala: The ever famous Butter Masala Chicken together with a layer of cream cheese, fresh onions, coriander, ginger and garlic, blanketed with a layer of mozzarella cheese.\n
-                • Chicken Hawaiian: Chicken ham & pineapple with a double layer of cheese.\n
-                • Double Chicken & Cheese Fiesta: A combination of kotchchi chicken sausage meat and spicy chicken with crunchy onions and jalapenos placed on a layer of cream cheese and a layer of mozzarella.\n
-                • Prawn with Chicken Bacon & Jalapeno: Succulent prawns with pieces of chicken bacon, accompanied by spring onions, green chillies and jalapenos, layered with mozzarella cheese.\n\n
-
-              Favorite Pizzas:\n
-                • Seafood_Treat: A succulent fusion of Creamy Cuttlefish & Prawns combined with Devilled Prawns, green chillies & onion, topped with delicious mozzarella.\n
-                • Sri_Lankan_Spicy_Chicken_Pizza: A combination of black chicken, devilled chicken & chicken sausages, accompanied by nai miris, garlic & onion with a double layer of mozzarella cheese.\n
-                • Veggie_Supreme: Mushrooms, tomatoes, onions, black olives and bell peppers with a double layer of mozzarella cheese.\n
-                • Beef_Pepperoni: Delicious beef pepperoni in pizza sauce, topped with jalapenos and a double layer of mozzarella cheese.\n
-                • Meat_Lovers_Chicken: Topped with a combination of chicken bacon, chicken sausage, BBQ chicken and spicy chicken with a double layer of mozzarella cheese.\n\n
-  
-              Supreme Pizzas:\n
-                • Ultimate_Chicken_Treat: A combination of BBQ chicken, chicken bacon, chicken sausage & an all new roast chicken, accompanied with the freshest green pepper, mushroom, onion and green chilli, blanketed with delicious mozzarella cheese.\n
-                • Super_Supreme: Roast chicken, beef pepperoni, chicken bacon, chicken sausages, bell peppers, mushrooms, onions, olives and cheese (pineapple on request).\n
-                • Hot_Garlic_Prawns: Spicy prawns, hot garlic sauce, onions, peppers and tomatoes with a double layer of mozzarella cheese.\n\n
-              
-              Available Crusts:\n
-                • Pan Crust\n
-                • Sausage Crust\n\n
-              
-              **Above pizzas are available only in pan crust & sausage crust.**\n\n
-
-              Thin Crust Pizzas:\n
-                • Margherita: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with sun-ripened tomatoes infused with exotic herbs, complemented by fresh basil leaves and blanketed by mozzarella cheese.\n
-                • Tropical_Hawaiian: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection with a blissful combination of chicken bacon, pineapple and mozzarella cheese.\n
-                • Fiery_Chicken: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection with flavoursome pieces of spicy chicken, complemented by fried garlic, jalapenos and mozzarella cheese.\n
-                • Chicken_BBQ: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with tender BBQ chicken accompanied by spicy jalapenos, crunchy onions and mozzarella cheese.\n
-                • Tandoori_Chicken: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with scrumptious pieces of tandoori chicken combined with crunchy onions, blanketed by mozzarella cheese.\n
-                • Mighty_Meat_Beef: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with a combination of beef pepperoni, chicken bacon & BBQ chicken topped with mozzarella cheese.\n
-                • Mighty_Meat_Chicken: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection! Topped with a combination of chicken bacon, chicken sausage, BBQ chicken and spicy chicken, topped with mozzarella cheese.\n
-                • Pepperoni_Paradiso: Succulent pieces of beef pepperoni accompanied by black olives and spicy jalapenos topped with mozzarella cheese.\n
-                • Prawn_Supremo: A delightfully light thin crust pizza, expertly hand-stretched and oven-baked to golden perfection, topped with a blend of perfectly marinated prawns, green pepper and mozzarella cheese.\n"
-
   utter_available_drinks:
   - text: "Our Drinks Menu:\n
               Carbonated Drinks:\n
-                • Coca Cola Can    - Rs.300.00\n
-                • Pet Coca-Cola    - Rs.200.00\n
-                • Pet Sprite       - Rs.200.00\n
-                • Pet Fanta Orange - Rs.200.00\n
-                • Coke Zero 400ml  - Rs.170.00\n
-                • 1.5l Coca-Cola   - Rs.450.00\n
-                • 1.5l Sprite      - Rs.450.00\n
-                • Mineral Water    - Rs.80.00\n\n
+                - Coca Cola Can    - Rs.300.00\n
+                - Pet Coca-Cola    - Rs.200.00\n
+                - Pet Sprite       - Rs.200.00\n
+                - Pet Fanta Orange - Rs.200.00\n
+                - Coke Zero 400ml  - Rs.170.00\n
+                - 1.5l Coca-Cola   - Rs.450.00\n
+                - 1.5l Sprite      - Rs.450.00\n
+                - Mineral Water    - Rs.80.00\n\n
 
               Juices:\n
-                • Iced Chocolate Malt                 - Rs.550.00\n
-                • Thick Mango Magic (300ml)           - Rs.620.00\n
-                • Vanilla Milk Shake (300ml)          - Rs.900.00\n
-                • Double Chocolate Milk Shake (300ml) - Rs.900.00\n
-                • Strawberry Milk Shake (300ml)       - Rs.900.00\n"
+                - Iced Chocolate Malt                 - Rs.550.00\n
+                - Thick Mango Magic (300ml)           - Rs.620.00\n
+                - Vanilla Milk Shake (300ml)          - Rs.900.00\n
+                - Double Chocolate Milk Shake (300ml) - Rs.900.00\n
+                - Strawberry Milk Shake (300ml)       - Rs.900.00\n"
 
   utter_available_vegetarian_pizza:
   - text: "We also offer vegetarian pizzas! Check our menu for more details."
@@ -150,20 +95,20 @@ responses:
 
   utter_ordering_by_app:
   - text: "You can order a pizza through our mobile app by following these steps:\n
-              1. Download the Pizza Hut app from the App Store or Google Play Store.\n
-              2. Create an account or log in if you already have one.\n
-              3. Select your location and choose your pizza.\n
-              4. Add your pizza to the cart and proceed to checkout.\n
-              5. Enter your payment details and place your order."
+            - 1. Download the Pizza Hut app from the App Store or Google Play Store.\n
+            - 2. Create an account or log in if you already have one.\n
+            - 3. Select your location and choose your pizza.\n
+            - 4. Add your pizza to the cart and proceed to checkout.\n
+            - 5. Enter your payment details and place your order."
 
   utter_pizza_size:
   - text: "We offer pizzas in 3 sizes: Large, Medium, and Personal. What size would you like to order?"
 
   utter_contact_details:
   - text: "You can reach us at our hotline\n 
-                 +94 112 729729\n 
-                 +94 114 729729\n
-                 +94 117 729729\n\n
+              - +94 112 729729\n 
+              - +94 114 729729\n
+              - +94 117 729729\n
 
             or visit our website at https://www.pizzahut.lk.\n
             We look forward to serving you!"
@@ -347,7 +292,9 @@ responses:
 
 actions:
   - action_recommend_professional_help
-  - action_location-details
+  - action_location_details
+  - action_provide_menu
+  - action_provide_pizza_details
 
 session_config:
   session_expiration_time: 60
