@@ -30,7 +30,7 @@ intents:
   - asking_contact_details
   - ordering_by_phone
   - ordering_by_app
-  - asking_about_brances
+  - asking_about_branches
   - asking_vegetarian_pizza
   - asking_about_combo_meals
   - ask_busy_timeslots
