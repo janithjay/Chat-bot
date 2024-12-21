@@ -68,28 +68,21 @@ nlu:
 
 - intent: ask_menu
   examples: |
-    - What pizzas are available?
-    - What kind of pizzas do you have?
-    - Are there any pizzas available?
-    - What are the pizza options?
-    - Can you tell me about the pizzas?
-    - What types of pizzas do you offer?
-    - What pizzas can I order?
-    - What pizzas are on the menu?
-    - What are the pizza choices?
-    - What pizzas can I get?
-    - What pizzas are available for order?
-    - What pizzas are on offer?
-    - pizza menu
-    - pizza options
-    - pizza choices
-    - pizza types
-    - pizza list
-    - pizza selection
-    - pizza varieties
-    - pizza range
-    - pizza flavors
-    - pizza kinds
+      - Show me the menu
+      - Give me the menu
+      - What is the menu
+      - What are the pizzas available
+      - What are the food options
+      - Can you show me the menu
+      - I want to see the menu
+      - Can you show me the food options
+      - What are the food choices
+      - What are the food items
+      - What are the food varieties
+      - what are the available pizzas
+      - show me available pizzas
+      - give me pizza menu
+
 
 - intent: ask_pizza_details
   examples: |
@@ -99,6 +92,11 @@ nlu:
       - Details about [Chicken Supreme Pizza](pizza), please.
       - I want to know about [Margherita](pizza).
       - Describe [Tandoori Chicken](pizza).
+      - What is [Cheese Lovers](pizza)?
+      - What is in [Chicken Bacon & Potato with Nai Miris](pizza).
+      - What things are in [Cheesy Tomato with Green Chillies](pizza)?
+      - what is the price of [Sausage Delight](pizza)?
+      - give me the price of [Chicken Triple Treat Pizza](pizza)?
 
 - lookup: pizza
   examples: |
