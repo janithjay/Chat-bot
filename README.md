@@ -1,59 +1,68 @@
-## Setting Up and Running PizzaBot Chat-bot
+# PizzaBot Chat-bot Setup Guide
 
-Follow these steps to set up and run the PizzaBot chat-bot on your local machine:
+This guide will help you set up and run the PizzaBot chat-bot on your local machine. The bot integrates with the PizzaHut.lk website to provide interactive virtual assistance.
 
-1. **Train the model**  
-   In the pizza-bot directory, run the following command to train a model:  
+## Prerequisites
+
+- Python 3.7 or higher
+- Rasa framework installed (`pip install rasa`)
+- Chrome browser
+- Git (for cloning the repository)
+
+## Installation Steps
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/janithjay/Chat-bot
+   cd pizza-bot
+   ```
+
+2. **Train the Model**
+   In the pizza-bot directory, run:
    ```bash
    rasa train
    ```
 
-2. **Start the Rasa Core server**  
-   In the pizza-bot directory, run the following command:   
+3. **Start the Rasa Core Server**
+   In the pizza-bot directory, run:
    ```bash
-   rasa run -m models --enable-api --cors "*"
+   rasa run -m models --enable-api --cors "*" --port 5005
    ```
 
-3. **Start the Rasa Action server**  
-   In new terminal, in the pizza-bot directory, run the folling command:  
-   ```bash
-   rasa run actions
-   ```
-   
-4. **Install Tampermonkey chrome extension**   
-   Afterwards next commands run in new terminal and inside pizza-bot dirrectory:  
-   ```bash
-   https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
-   ```
-
-5. **Add new script**  
-   After installation click on the extension and follow below steps:  
-   ```bash
-   rasa train
-   ```
-
-6. **Turn on developer mode on browser**  
-   Start the Rasa server with API capabilities enabled:  
-   ```bash
-   rasa run --enable-api
-   ```
-
-7. **Start the Actions Server**  
-   Open another terminal and activate the virtual environment, then run the actions server:  
+4. **Start the Rasa Action Server**
+   Open a new terminal, navigate to the pizza-bot directory, and run:
    ```bash
    rasa run actions
    ```
 
-8. **Test the Chatbot Interactively**  
-   Use the Rasa shell to test the chatbot:  
-   ```bash
-   rasa shell --port 5006
-   ```
+5. **Install Tampermonkey Chrome Extension**
+   - Visit [Tampermonkey in Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+   - Click "Add to Chrome" and follow the installation prompts
 
-8. **Finetune the model**  
-   To fine-tune the model, use the following command:  
-   ```bash
-   python finetune.py
-   ```
+6. **Enable Chrome Developer Mode**
+   - Open Chrome settings (⋮)
+   - Go to Extensions > Manage extensions
+   - Toggle on "Developer mode" in the top right corner
 
-You can now interact with the PizzaBot chat-bot and test its functionalities!
+8. **Configure the Chatbot Widget**
+   1. Click on the Tampermonkey extension icon
+   2. Select "Create a new script"
+   3. Copy the content from [`templates/chatbot-widget.js`](https://github.com/janithjay/Chat-bot/blob/bc3dbef39e68cbf705673c05b0bd19f7bf917022/templates/chatbot-widget.js) in your project
+   4. Delete the default script content in Tampermonkey
+   5. Paste the copied script
+   6. Save the script using Ctrl+S or Files > Save
+   7. Go to the "Installed Userscripts" tab
+   8. Enable the script using the toggle switch
+
+9. **Test the Chatbot**
+   - Visit [PizzaHut Sri Lanka](https://www.pizzahut.lk/)
+   - The chatbot widget should appear on the page
+   - Start interacting with the bot to test its functionality
+
+## Troubleshooting
+
+If you encounter issues:
+- Ensure all servers are running (Rasa Core and Action servers)
+- Check the browser console for any JavaScript errors
+- Verify that the Tampermonkey script is enabled
+- Confirm that the CORS settings are correct in the Rasa server
