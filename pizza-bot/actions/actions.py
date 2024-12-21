@@ -142,7 +142,7 @@ class ActionProvidePizzaDetails(Action):
             if pizza:
                 response = (
                     f"Here are the details for {pizza['Pizza']}:\n"
-                    f"- Description: {pizza.get('Description', 'Not available')}\n"
+                    f"- {pizza.get('Description', 'Not available')}\n"
                     f"- Prices:\n"
                 )
                 for size in ["Large", "Medium", "Personal", "Regular"]:

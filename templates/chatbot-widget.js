@@ -170,11 +170,11 @@
             <div class="chat-header" id="chatHeader">
                 <div style="display: flex; align-items: center; gap: 12px;">
                     <div style="background: white; padding: 8px; border-radius: 8px;">
-                        <img src="https://i.postimg.cc/LXWcT9Dh/logo-pizzahut1.png" alt="Pizza Hut Logo" style="width: 32px; height: 32px;">
+                        <img src="https://i.ibb.co/6P0jH28/logo-pizzahut.png" alt="Pizza Hut Logo" style="width: 205px; height: 32px;">
                     </div>
                     <div>
-                        <h1 style="font-weight: bold; font-size: 18px;">Pizza Hut</h1>
-                        <p style="font-size: 14px; opacity: 0.9;">Virtual Assistant</p>
+                        <p></p>
+                        <h1 style="font-weight: bold; font-size: 18px;">Virtual Assistant</h1>
                     </div>
                 </div>
                 <button id="closeChatButton" style="background: none; border: none; color: white; cursor: pointer;">
