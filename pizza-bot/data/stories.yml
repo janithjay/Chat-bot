@@ -187,8 +187,3 @@ stories:
   steps:
   - intent: wrong
   - action: utter_wrong
-
-- story: recommend professional help
-  steps:
-    - intent: recommend_professional_help
-    - action: action_recommend_professional_help

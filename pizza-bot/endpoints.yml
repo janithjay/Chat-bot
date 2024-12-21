@@ -25,12 +25,12 @@ action_endpoint:
 #    password: <password used for authentication>
 #    use_ssl: <whether or not the communication is encrypted, default false>
 
-tracker_store:
-    type: mongod
-    url: mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/
-    db: pizza-bot
-    username: janithjayashan018
-    password: janithjayashan018
+#tracker_store:
+#    type: mongod
+#    url: mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/
+#    db: pizza-bot
+#    username: janithjayashan018
+#    password: janithjayashan018
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/event-brokers
