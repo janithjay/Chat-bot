@@ -187,3 +187,11 @@ stories:
   - active_loop: reservation_form
   - active_loop: null
   - action: action_save_reservation
+
+- story: view reservation with form
+  steps:
+  - intent: view_reservation
+  - action: reservation_view_form
+  - active_loop: reservation_view_form
+  - active_loop: null
+  - action: action_reservation_view_form

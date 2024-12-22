@@ -853,3 +853,24 @@ nlu:
     - [Colombo](city)
     - [Kandy](city)
     - [Galle](city)
+
+- intent: view_reservation
+  examples: |
+    - I want to view my reservation
+    - Can I check my reservation details
+    - Show me my reservation
+    - View my booking
+    - Check reservation details
+    - What are my reservation details
+    - I want to see my booking details
+    - Show booking information
+    - Find my reservation
+
+- intent: provide_reservation_id
+  examples: |
+    - [1234](reservation_id)
+    - [7890](reservation_id)
+    - [3456](reservation_id)
+    - [6789](reservation_id)
+    - [1456](reservation_id)
+

@@ -252,3 +252,53 @@ class SaveReservation(Action):
         except Exception as e:
             dispatcher.utter_message(text="Error saving reservation.")
             return []
+        
+class ReservationViewForm(FormValidationAction):
+    def name(self) -> Text:
+        return "action_reservation_view_form"
+
+    def reservation_id(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        if slot_value.isdigit() and len(slot_value) == 4:
+            dispatcher.utter_message(text="Finding reservations for")
+            return {"reservation_id": slot_value}
+        dispatcher.utter_message(text="Please provide a valid reservation id")
+        return {"reservation_id": None}
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        try:
+            reservation_id = tracker.get_slot("reservation_id")
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
+            
+            reservation = collection.find_one({"reservation_id": reservation_id})
+            
+            if reservation:
+                response = (
+                    f"📋 Reservation Details:\n"
+                    f"Reservation ID: {reservation['reservation_id']}\n"
+                    f"Name: {reservation['name']}\n"
+                    f"Contact: {reservation['contact']}\n"
+                    f"Date: {reservation['date']}\n"
+                    f"City: {reservation['city']}\n"
+                    f"Created at: {reservation['created_at']}"
+                )
+                dispatcher.utter_message(text=response)
+            else:
+                dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
+                
+        except Exception as e:
+            dispatcher.utter_message(text="Error retrieving reservation details.")
+            
+        return []

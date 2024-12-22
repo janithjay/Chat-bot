@@ -55,6 +55,8 @@ intents:
   - provide_contact
   - provide_date
   - provide_city
+  - view_reservation
+  - provide_reservation_id
 
 
 entities:
@@ -67,6 +69,7 @@ entities:
     - date
     - city
     - contact
+    - reservation_id
 
 slots:
   name:
@@ -101,6 +104,9 @@ slots:
     type: text
     mappings:
     - type: from_text
+      conditions:
+      - active_loop: reservation_view_form
+        requested_slot: reservation_id
 
 forms:
   reservation_form:
@@ -109,6 +115,9 @@ forms:
       - contact
       - date
       - city
+  reservation_view_form:
+    required_slots:
+      - reservation_id
       
 responses:
   utter_greet:
@@ -360,12 +369,16 @@ responses:
   utter_ask_date:
     - text: "For which date would you like to make the reservation? (YYYY-MM-DD)"
 
+  utter_ask_reservation_id:
+    - text: "Please provide your reservation ID"
+
 actions:
   - action_location_details
   - action_provide_menu
   - action_provide_pizza_details
   - action_provide_drinks_menu
   - action_save_reservation
+  - action_reservation_view_form
 
 session_config:
   session_expiration_time: 60
