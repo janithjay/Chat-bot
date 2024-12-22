@@ -30,7 +30,7 @@ stories:
 - story: ask available drinks
   steps:
   - intent: asking_available_drinks
-  - action: utter_available_drinks
+  - action: action_provide_drinks_menu
 
 - story: ordering pizza online
   steps:
@@ -68,7 +68,7 @@ stories:
 
 - story: ask about outlet
   steps:
-  - intent: asking_outlet
+  - intent: asking_about_outlets
   - action: action_location_details
 
 - story: capabilities
