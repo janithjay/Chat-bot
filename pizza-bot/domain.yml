@@ -6,7 +6,6 @@ intents:
   - affirm
   - deny
   - mood_great
-  - mood_unhappy
   - thanks
   - neutral-response
   - asking_capabilities
@@ -15,54 +14,113 @@ intents:
   - worthless
   - depressed
   - casual
-  - anxious
-  - not-talking
-  - sleep
-  - scared
-  - death
-  - not_understand
   - done
-  - suicide
-  - jokes
   - repeat
   - wrong
-  - hate
   - something-else
   - friends
   - mental-health-fact
   - recommend_professional_help
   - bot_challenge
-  - asking_available_pizza
+  - ask_menu
+  - ask_pizza_details
+  - asking_available_drinks
+  - asking_pizza_size
+  - ordering_pizza
+  - order_online
+  - asking_contact_details
+  - ordering_by_phone
+  - ordering_by_app
+  - asking_about_branches
+  - asking_vegetarian_pizza
+  - asking_about_combo_meals
+  - ask_busy_timeslots
+  - asking_about_reservation
+  - ask_pizza_preparation_time
+  - ask_kids_options
+  - ask_reheat_instructions
+  - support_first_time_users
+  - ask_spiciest_pizza
+  - ask_less_spicy_pizza
+  - ask_party_venues
+  - ask_refund_details
+  - ask_extra_toppings
+  - ask_about_delivery
+  - ask_to_customize
+  - ask_available_offers
+  - ask_opening_hours
+  - ask_loyalty
+  - asking_outlet
+
 
 entities:
     - professional_type
+    - location
+    - pizza
 
 responses:
   utter_greet:
-  - text: "👋 Welcome to PizzaBot! Ready to satisfy your pizza craving?"
+  - text: "Hello! 👋, Welcome to PizzaBot! Ready to satisfy your pizza craving?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_available_drinks:
+  - text: "Our Drinks Menu:\n
+              Carbonated Drinks:\n
+                - Coca Cola Can    - Rs.300.00\n
+                - Pet Coca-Cola    - Rs.200.00\n
+                - Pet Sprite       - Rs.200.00\n
+                - Pet Fanta Orange - Rs.200.00\n
+                - Coke Zero 400ml  - Rs.170.00\n
+                - 1.5l Coca-Cola   - Rs.450.00\n
+                - 1.5l Sprite      - Rs.450.00\n
+                - Mineral Water    - Rs.80.00\n\n
 
-  utter_available_pizza:
-  - text: "🍽️ Our Pizza Menu:\n
-            Classic Pizzas:\n
-              • Pepperoni: Loaded with pepperoni slices\n
-              • Margherita: Fresh mozzarella, basil, tomato sauce\n
-              • Vegetarian: Bell peppers, mushrooms, olives\n
-              • Supreme: Pepperoni, sausage, peppers, onions\n
-              • Hawaiian: Ham and pineapple\n\n
-            Toppings:\n
-              • Meats: Pepperoni, Sausage, Bacon, Ham\n
-              • Veggies: Mushrooms, Olives, Onions, Peppers\n
-              • Cheese: Extra Cheese, Feta, Parmesan"
+              Juices:\n
+                - Iced Chocolate Malt                 - Rs.550.00\n
+                - Thick Mango Magic (300ml)           - Rs.620.00\n
+                - Vanilla Milk Shake (300ml)          - Rs.900.00\n
+                - Double Chocolate Milk Shake (300ml) - Rs.900.00\n
+                - Strawberry Milk Shake (300ml)       - Rs.900.00\n"
+
+  utter_available_vegetarian_pizza:
+  - text: "We also offer vegetarian pizzas! Check our menu for more details."
+
+  utter_ordering_pizza:
+  - text: "You can order a pizza by phone, online, or through our mobile app. What would you like to order today?"
+
+  utter_order_online:
+  - text: "You can order a pizza online at https://www.pizzahut.lk. "
+
+  utter_ordering_by_phone:
+  - text: "You can order a pizza by phone at +94 112 729729"
+
+  utter_ordering_by_app:
+  - text: "You can order a pizza through our mobile app by following these steps:\n
+            - 1. Download the Pizza Hut app from the App Store or Google Play Store.\n
+            - 2. Create an account or log in if you already have one.\n
+            - 3. Select your location and choose your pizza.\n
+            - 4. Add your pizza to the cart and proceed to checkout.\n
+            - 5. Enter your payment details and place your order."
+
+  utter_pizza_size:
+  - text: "We offer pizzas in 3 sizes: Large, Medium, and Personal. What size would you like to order?"
+
+  utter_contact_details:
+  - text: "You can reach us at our hotline\n 
+              - +94 112 729729\n 
+              - +94 114 729729\n
+              - +94 117 729729\n
+
+            or visit our website at https://www.pizzahut.lk.\n
+            We look forward to serving you!"
+
+  utter_about_branches:
+  - text: "We have multiple branches across the country. You can find your nearest branch by visiting our website at https://www.pizzahut.lk/outlet-map."
 
   utter_did_that_help:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Great, is there anything else I can help you with?"
 
   utter_deny_help:
   - text: "I'm sorry to hear that. I'm here for you. Talking about it might help. So, tell me why do you think you're feeling this way?"
@@ -73,23 +131,148 @@ responses:
   utter_thank:
   - text: "Welcome! Enjoy your day and come back for more pizza! 🍕"
 
-  utter_neutral_response:
-  - text: "Oh I see. Do you want to talk about something?"
-
   utter_capabilities_response:
-  - text: "I can provide general advice regarding anxiety and depression, answer questions related to mental health and make daily conversations. Do not consider me as a subsitute for an actual mental healthcare worker. Please seek help if you don't feel satisfied with me."
+  - text: "I can provide you with information about our pizza menu, drinks menu, and help you place an order. I can also provide you with our contact details. How can I assist you today?"
 
-  utter_not_talking:
-  - text: "Talking about something really helps. If you're not ready to open up then that's ok. Just know that i'm here for you, whenever you need me."
+  utter_combo_packages:
+  - text: "Sure! Here are our combo deals:\n
+              1. My Box Lite - Rs.1400.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/5365a5fe-6bfa-4763-8a2f-ac33b30e2c46.jpg\n\n
 
-  utter_death:
-  - text: "I'm sorry to hear that. If you want to talk about it. I'm here."
+              2. My Box Pro - Rs.1800.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/402f1a4f-a061-44c9-8f86-d551a7ab483b.jpg\n\n
 
-  utter_not_understand:
-  - text: "I'm sorry, I didn't quite understand that. Could you please rephrase?"
+              3. Double Deal - Rs.2500.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/43498627-6edd-4d47-9460-b9d825cc45b6.jpg\n\n
+
+              4. Family Fun - Rs.4200.00\n
+                https://adminsc.pizzahut.lk//images/mainmenu/20fd7444-aab0-4d65-9739-5e4647a750ee.jpg"
+
+  utter_busy_timeslots:
+  - text: "Here are the peak times for our dine-in service:\n
+           Lunch : 12:00 PM - 2:00 PM\n
+           Dinner: 7:00 PM - 9:00 PM\n
+           Would you like to make a reservation outside these hours for a quieter experience?"
+  - text: "We’re usually busy during weekends (especially Saturdays). On weekdays, lunch and dinner times can be a bit crowded.\n
+           Let me know your preferred time, so we can check availability for you! Would you like to make a reservation ? "
+
+  utter_hotline_number:
+  - text: "You can call us to make a reservation at this numbers:\n
+          +94 112 729729\n
+          +94 114 729729\n
+          +94 117 729729 "
+
+  utter_preparation_time:
+  - text: "It typically takes around 15-20 minutes to prepare a pizza. However, on heavily crowded days, it can take up to 30-40 minutes. We're always doing our best to serve you as quickly as possible."
+  
+  utter_loyalty_details:
+  - text: " We value our loyal customers! Here's how our loyalty program works:\n
+          - Earn 1 point for every Rs.1000 spent.\n
+          - Redeem points for discounts on future orders.\n
+          - Exclusive offers and free items for members.\n
+          Hurry up and become a loyal customer today! Don't wait—visit the Pizza Hut website or your nearest Pizza Hut location to get registered. "
+
+  utter_kids_menu:
+  - text: "We have a special menu just for kids! Here are some of the popular options only for Rs.1300.00\n
+           Check this out to see what's for them!\n
+           https://adminsc.pizzahut.lk//images/mainmenu/005d3569-23f1-4ea4-ad08-4a7e71e1f7cd.jpg"
+
+  utter_reheat_instructions:
+  - text: "Here are some quick tips to reheat your pizza and enjoy it fresh:\n
+            - Oven: Preheat the oven to 375°F (190°C). Place the pizza on a baking sheet or directly on the rack. Heat for 8-10 minutes.\n
+            - Stovetop: Heat a non-stick pan on medium heat. Place the pizza slice in the pan, cover with a lid, and heat for 2-3 minutes.\n
+            - Microwave: Place the slice on a microwave-safe plate with a cup of water beside it. Heat for 30-45 seconds. \n
+            Let us know if you'd like more help! "
+  
+  utter_intro:
+  - text: "Welcome to Pizza Hut Sri Lanka! Since 1993, we’ve been bringing delicious pizzas, pastas, wings, and more to your table. 
+           With our first restaurant at Union Place, Colombo 2, we’ve become a household name, offering island-wide delivery and a family-friendly dining experience. \n
+           I'm here to support you with more details. Let’s get started!"
+  
+  utter_spicy_pizza:
+  - text: "For spice lovers, we’ve got some fiery options at Pizza Hut!\n
+           Our spiciest pizzas include:\n
+           - Spicy Fish Pizza              : Made with Spicy Fish & 2 layers of cheese.\n
+           - Chilli Chicken Pizza          : Topped with Spicy Chicken, Green Chillies, Onions & Mozzarella.\n
+           - Hot & Spicy Chicken           : Spicy chunks of chicken, capsicums & onions with a double layer of cheese.\n
+           - Sri Lankan Spicy Chicken Pizza: A combination of black chicken, devilled chicken & chicken sausages.\n
+           Each of these pizzas delivers a bold and spicy flavor guaranteed to satisfy those with a taste for heat!"
+  
+  utter_less_spicy_pizza_details:
+    - text: " For those who prefer less spice, we offer a variety of milder options:\n
+              - Cheese Lovers     : A triple layer of mozzarella cheese on a rich tomato base.\n
+              - Veggie Supreme    : Topped with mushrooms, tomatoes, onions, and bell peppers.\n
+              - Margherita        : Classic tomato and cheese pizza with minimal spice.\n
+              - Garlic Bread Pizza: Light flavors with garlic, herbs, and a cheese blend.\n
+              These options provide delicious, non-spicy choices while still delivering great flavor."
+  
+  utter_party_details:
+    - text: "Yes, we offer a variety of party venues for different occasions, including:\n
+            - Private dining rooms\n
+            - Exclusive event spaces\n
+            - Customized setups for birthdays, weddings, corporate events, and small group gatherings.\n
+            - Entertainment options like music, games, and decorations for any event."
+
+  utter_refund_details:
+  - text: "If you need a refund after cancellation, please contact our support team at +94 112 729729, +94 114 729729 ,+94 117 729729. Refunds are processed based on our cancellation policy, and the amount refunded will depend on the stage of the order. For more details, feel free to reach out to us."
+
+  utter_extra_toppings:
+  - text: "We offer a variety of extra toppings to make your pizza even more delicious! Here are some popular options: \n
+          - Extra Cheese  \n
+          - Extra Sauce  \n
+          - Jalapeños  \n
+          - Olives  \n
+          - Mushrooms \n 
+          - Bell Peppers\n  
+          - Chicken or Beef Strips \n 
+          - Spicy Sausage  \n
+          Let us know which topping you'd like to add when ordering the pizza !"
+
+  utter_delivery_details:
+  - text: "We offer a fast and reliable delivery service to ensure you enjoy our food at the comfort of your home! Here are some details about our delivery service:\n
+          - Delivery times: Typically 30-45 minutes, depending on your location. \n 
+          - Charges       : Varies based on your area, with options for free delivery on select orders. \n
+          - Minimum order : Please check our website for area-specific minimum order amounts. \n\n
+
+          You can visit our website to place an order or learn more: https://www.pizzahut.lk"
+
+  utter_customize_instructions:
+  - text: "Sure! Please let us know how you'd like to customize your order. Popular customizations include: \n  
+          - Adding or removing toppings.  \n
+          - Adjusting spice levels.  \n
+          - Choosing a different crust type (e.g., thin, stuffed, gluten-free). \n 
+          - Splitting toppings for a half-and-half pizza.\n
+          - Opting for extra cheese or a special sauce.  \n
+          Let us know your preference, and we’ll confirm if it’s possible!  "
+
+  - text: "We’d love to customize your pizza to your liking! Just tell us: \n 
+          - What you’d like to add or remove.  \n
+          - Any specific requests, such as crust type or spice level.  \n
+          Some requests may depend on availability. Feel free to ask!"
+
+  utter_offers:
+  - text: "Here are the current offers we have:\n\n
+        - Buy 1 Get 1 Free on all medium pizzas.\n
+        - 10% off on orders above Rs.10000.00.\n
+        - Free garlic bread with any large pizza.\n
+        - 2 large pizzas + 1 lava cake.\n
+        - Check daily Combos as well."
+
+  utter_veg_options:
+  - text: "Here are some of our delicious vegetarian options: \n\n
+          - Veggie Masala Pizza             : Made with spicy veggie masala, onions, tomato, and cheese. \n
+          - Cheesy Tomato with Green Chillie: A rich tomato base topped with cream cheese, tomatoes, and green chillies.\n
+          - Cheesy Onion with Green Chillies: Cream cheese, onions, and green chillies on a tomato base.  \n
+          - Spicy Veggie with Paneer        : Spicy veggie masala with paneer and pineapple.  \n
+          - Veggie Supreme                  : Mushrooms, tomatoes, onions, black olives, and bell peppers with double cheese.  \n\n
+          We also offer vegetarian appetizers, rice, and pasta dishes. Let us know if you'd like more details! " 
+
+  utter_opening_hours:
+  - text: "Our operating hours are from 10:00 AM to 10:00 PM. We are open Monday to Sunday."
+  - text: "We’re closed only on Mercantile Holidys, but we’re happy to serve you from 10:00 AM to 10:00 PM on other days."
 
   utter_done:
-    - text: "Oh okay we're done for today then. See you later"
+  - text: "Oh okay we're done for today then. See you later"
 
   utter_help:
   - text: "Sure. Tell me how can i assist you"
@@ -100,27 +283,18 @@ responses:
   utter_wrong:
     - text: "I'm very sorry. Let's try that again"
 
-  utter_hate:
-    - text: "Forgive me if i did anything to offend you. I only want to help"
-
-  utter_something-else:
-    - text: "Okay sure. What do you want to talk about?"
-
-  utter_friends:
-    - text: "I'm sorry to hear that. Just know that I'm here for you. Talking about it might help."
-
-  utter_mental-health-fact:
-    - text: "Depression is the leading cause of disability worldwide."
-
   utter_please_try_again:
     - text: "I'm sorry, It seems like you're asking a question that is outside the scope of my capabilities.\n
        Please rephrase your question or try another one."
 
   utter_iamabot:
-  - text: "I'm pizzaBot, I can help you with your pizza order."
+    - text: "I am Pizza Bot. I am here to help you with your pizza cravings."
 
 actions:
   - action_recommend_professional_help
+  - action_location_details
+  - action_provide_menu
+  - action_provide_pizza_details
 
 session_config:
   session_expiration_time: 60

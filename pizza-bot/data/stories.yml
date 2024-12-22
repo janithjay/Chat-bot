@@ -2,63 +2,176 @@ version: "3.1"
 
 stories:
 
+- story: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
 - story: happy path
   steps:
   - intent: mood_great
   - action: utter_happy
-
-- story: sad path 1
-  steps:
-
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_deny_help
 
 - story: thanks
   steps:
   - intent: thanks
   - action: utter_thank
 
-- story: neutral-response
+- story: Provide pizza menu
   steps:
-  - intent: neutral-response
-  - action: utter_neutral_response
+  - intent: ask_menu
+  - action: action_provide_menu
+
+- story: Provide pizza details
+  steps:
+  - intent: ask_pizza_details
+  - action: action_provide_pizza_details
+
+- story: ask available drinks
+  steps:
+  - intent: asking_available_drinks
+  - action: utter_available_drinks
+
+- story: ordering pizza online
+  steps:
+  - intent: ordering_pizza
+  - action: utter_ordering_pizza
+  - intent: order_online
+  - action: utter_order_online
+  - action: utter_did_that_help
+
+- story: ordering pizza by phone
+  steps:
+  - intent: ordering_pizza
+  - action: utter_ordering_pizza
+  - intent: ordering_by_phone
+  - action: utter_ordering_by_phone
+  - action: utter_did_that_help
+
+- story: ordering pizza by app
+  steps:
+  - intent: ordering_pizza
+  - action: utter_ordering_pizza
+  - intent: ordering_by_app
+  - action: utter_ordering_by_app
+  - action: utter_did_that_help
+
+- story: asking pizza size
+  steps:
+  - intent: asking_pizza_size
+  - action: utter_pizza_size
+
+- story: ask contact details
+  steps:
+  - intent: asking_contact_details
+  - action: utter_contact_details
+
+- story: ask about outlet
+  steps:
+  - intent: asking_outlet
+  - action: action_location_details
 
 - story: capabilities
   steps:
   - intent: asking_capabilities
   - action: utter_capabilities_response
 
+- story: combo meals
+  steps: 
+  - intent: asking_about_combo_meals
+  - action: utter_combo_packages
+
+- story: ask for reservation 1
+  steps:
+  - intent: asking_about_reservation
+  - action: utter_hotline_number
+
+- story: ask for reservation 2
+  steps:
+  - intent: ask_busy_timeslots
+  - action: utter_busy_timeslots
+  - intent: casual
+  - action: utter_hotline_number
+
+- story: ask for preparation time
+  steps: 
+  - intent: ask_pizza_preparation_time
+  - action: utter_preparation_time
+
+- story: ask loyalty
+  steps:
+  - intent: ask_loyalty
+  - action: utter_loyalty_details
+
+- story: ask kids menu
+  steps:
+  - intent: ask_kids_options
+  - action: utter_kids_menu
+
+- story: ask reheat instructions
+  steps:
+  - intent: ask_reheat_instructions
+  - action: utter_reheat_instructions
+
+- story: guide first time users
+  steps:
+  - intent: support_first_time_users
+  - action: utter_intro
+
+- story: ask for spicy pizza
+  steps:
+  - intent: ask_spiciest_pizza
+  - action: utter_spicy_pizza
+
+- story: ask for less spicy pizza
+  steps:
+  - intent: ask_less_spicy_pizza
+  - action: utter_less_spicy_pizza_details
+
+- story: ask party details
+  steps:
+  - intent: ask_party_venues
+  - action: utter_party_details
+
+- story: ask for refund
+  steps: 
+  - intent: ask_refund_details
+  - action: utter_refund_details
+
+- story: ask for extra topping
+  steps:
+  - intent: ask_extra_toppings
+  - action: utter_extra_toppings
+
+- story: ask about delivery
+  steps:
+  - intent: ask_about_delivery
+  - action: utter_delivery_details
+
+- story: ask to cuztomize
+  steps: 
+  - intent: ask_to_customize
+  - action: utter_customize_instructions
+
+- story: ask about offers
+  steps:
+  - intent: ask_available_offers
+  - action: utter_offers
+
+- story: ask about veg pizza
+  steps:
+  - intent: asking_vegetarian_pizza
+  - action: utter_veg_options
+
+- story: ask opening hours
+  steps: 
+  - intent: ask_opening_hours
+  - action: utter_opening_hours
+
 - story: help
   steps:
   - intent: asking_help
   - action: utter_help
-
-- story: not talking
-  steps:
-  - intent: not-talking
-  - action: utter_not_talking
-
-- story: death
-  steps:
-  - intent: death
-  - action: utter_death
-
-- story: not understand
-  steps:
-  - intent: not_understand
-  - action: utter_not_understand
 
 - story: done
   steps:
@@ -74,28 +187,3 @@ stories:
   steps:
   - intent: wrong
   - action: utter_wrong
-
-- story: hate
-  steps:
-  - intent: hate
-  - action: utter_hate
-
-- story: something-else
-  steps:
-  - intent: something-else
-  - action: utter_something-else
-
-- story: friends
-  steps:
-  - intent: friends
-  - action: utter_friends
-
-- story: mental-health-fact
-  steps:
-  - intent: mental-health-fact
-  - action: utter_mental-health-fact
-
-- story: recommend professional help
-  steps:
-    - intent: recommend_professional_help
-    - action: action_recommend_professional_help

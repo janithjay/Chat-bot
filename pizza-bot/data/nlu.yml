@@ -66,53 +66,258 @@ nlu:
     - so good
     - so perfect
 
-- intent: mood_unhappy
+- intent: ask_menu
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+      - Show me the menu
+      - Give me the menu
+      - What is the menu
+      - What are the pizzas available
+      - What are the food options
+      - Can you show me the menu
+      - I want to see the menu
+      - Can you show me the food options
+      - What are the food choices
+      - What are the food items
+      - What are the food varieties
+      - what are the available pizzas
+      - show me available pizzas
+      - give me pizza menu
 
-- intent: asking_available_pizza
-  examples: |
-    - What pizzas are available?
-    - What kind of pizzas do you have?
-    - Are there any pizzas available?
-    - What are the pizza options?
-    - Can you tell me about the pizzas?
-    - What types of pizzas do you offer?
-    - What pizzas can I order?
-    - What pizzas are on the menu?
-    - What are the pizza choices?
-    - What pizzas can I get?
-    - What pizzas are available for order?
-    - What pizzas are on offer?
 
-- intent: recommend_professional_help
+- intent: ask_pizza_details
   examples: |
-    - Can you recommend a [therapist](professional_type)?
-    - I need to find a good [counselor](professional_type).
-    - Are there any [psychiatrists](professional_type) near me?
-    - Suggest a [counselor](professional_type) for mental health issues.
-    - Where can I find a [counselor](professional_type)?
+      - Tell me about the [Spicy Fish Pizza](pizza)
+      - What is the description of [BBQ Chicken Pizza](pizza)?
+      - Can you describe [Veggie Lover Pizza](pizza)?
+      - Details about [Chicken Supreme Pizza](pizza), please.
+      - I want to know about [Margherita](pizza).
+      - Describe [Tandoori Chicken](pizza).
+      - What is [Cheese Lovers](pizza)?
+      - What is in [Chicken Bacon & Potato with Nai Miris](pizza).
+      - What things are in [Cheesy Tomato with Green Chillies](pizza)?
+      - what is the price of [Sausage Delight](pizza)?
+      - give me the price of [Chicken Triple Treat Pizza](pizza)?
+      - give me a description of [Chicken Salami Pizza](pizza)?
+      - how about [Double Chicken Surprise](pizza)?
+      - describe [Cheesy Onion with Green Chillies](pizza).
+      
+- lookup: pizza
+  examples: |
+    - Spicy Fish Pizza
+    - Veggie Masala Pizza
+    - Chilli Chicken Pizza
+    - Cheesy Onion with Green Chillies
+    - Cheesy Tomato with Green Chillies
+    - Sausage Delight
+    - Chicken Bacon & Potato with Nai Miris
+    - Chicken Triple Treat Pizza
+    - Chicken Salami Pizza
+    - Double Chicken Surprise
+    - Cheese Lovers
+    - Tandoori Chicken
+    - Black Chicken
+    - Hot & Spicy Chicken
+    - Festive Chicken Magic
+    - Minced Mutton Treat
+    - BBQ Chicken
+    - Spicy Veggie with Paneer
+    - Devilled Chicken
+    - Butter Chicken Masala
+    - Chicken Hawaiian
+    - Double Chicken & Cheese Fiesta
+    - Prawn with Chicken Bacon & Jalapeno
+    - Seafood Treat
+    - Sri Lankan Spicy Chicken Pizza
+    - Veggie Supreme
+    - Beef Pepperoni
+    - Meat Lovers Chicken
+    - Ultimate Chicken Treat
+    - Super Supreme
+    - Hot Garlic Prawns
+    - Margherita
+    - Tropical Hawaiian
+    - Fiery Chicken
+    - hicken BBQ
+    - Tandoori Chicken
+    - Mighty Meat Beef
+    - Mighty Meat Chicken
+    - Pepperoni Paradiso
+    - Prawn Supremo
 
-- lookup: professional_type
+- intent: asking_available_drinks
   examples: |
-    - therapist
-    - counselor
-    - psychiatrist
-    - psychologist
-    - life coach
+    - What drinks are available?
+    - What kind of drinks do you have?
+    - Are there any drinks available?
+    - What are the drink options?
+    - Can you tell me about the drinks?
+    - What types of drinks do you offer?
+    - What drinks can I order?
+    - What drinks are on the menu?
+    - What are the drink choices?
+    - What drinks can I get?
+    - What drinks are available for order?
+    - What drinks are on offer?
+    - drink menu
+    - drink options
+    - drink choices
+    - drink types
+    - drink list
+    - drink selection
+    - drink varieties
+    - drink range
+    - drink flavors
+    - drink kinds
+
+- intent: ordering_pizza
+  examples: |
+    - I would like to order a [pizza](food_type).
+    - Can I get a [pizza](food_type)?
+    - I want to order a [pizza](food_type).
+    - I'd like to get a [pizza](food_type).
+    - I'm looking to order a [pizza](food_type).
+    - Can I order a [pizza](food_type)?
+    - I want a [pizza](food_type).
+    - I'd like a [pizza](food_type).
+    - I'm looking for a [pizza](food_type).
+    - I want to get a [pizza](food_type).
+    - I'd like to order a [pizza](food_type).
+    - I want to order a [pizza](food_type).
+    - I want a [pizza](food_type).
+    - I'd like a [pizza](food_type).
+    - I'm looking for a [pizza](food_type).
+    - I want to get a [pizza](food_type).
+
+- intent: order_online
+  examples: |
+    - Can I order online?
+    - I want to order online.
+    - I'd like to order online.
+    - I'm looking to order online.
+    - I want to order online.
+    - online order
+    - order online
+    - online ordering
+    - online pizza order
+    - order pizza online
+
+- intent: ordering_by_phone
+  examples: |
+    - Can I order by phone?
+    - I want to order by phone.
+    - I'd like to order by phone.
+    - I'm looking to order by phone.
+    - I want to order by phone.
+    - phone order
+    - order by phone
+    - phone ordering
+    - phone pizza order
+    - order pizza by phone
+
+- intent: ordering_by_app
+  examples: |
+    - Can I order by app?
+    - I want to order by app.
+    - I'd like to order by app.
+    - I'm looking to order by app.
+    - I want to order by app.
+    - app order
+    - order by app
+    - app ordering
+    - app pizza order
+    - order pizza by app
+
+- intent: asking_pizza_size
+  examples: |
+    - What is the size of the pizza?
+    - How big is the pizza?
+    - What's the size of the pizza?
+    - What size pizza can I get?
+    - What size pizza do you offer?
+    - What are the pizza sizes?
+    - What size pizzas are available?
+    - What size pizza can I order?
+
+- intent: asking_contact_details
+  examples: |
+    - How can I contact you?
+    - Where can I find you?
+    - What's your contact information?
+    - How can I reach you?
+    - Where are you located?
+    - What's your address?
+    - How can I get in touch with you?
+    - Where can I contact you?
+    - What's your phone number?
+
+- intent: asking_about_branches
+  examples: |
+    - Where are you located?
+    - What are your branches?
+    - Where can I find you?
+    - What's your address?
+    - How can I find you?
+    - What are your locations?
+    - Where can I visit you?
+    - What's your location?
+    - How can I reach you?
+    - Where are you situated?
+
+- intent: asking_about_outlets
+  examples: |
+    - Where is [Ampara](location) branch located?
+    - What are the [Anuradhapura](location) outlets?
+    - Where is [Badulla](location) branch located?
+    - What are the [Batticaloa](location) outlets?
+    - Where is [Colombo](location) branch located?
+    - What are the [Gampaha](location) outlets?
+    - Where is [Galle](location) branch located?
+    - What are the [Hambantota](location) outlets?
+    - Where is [Jaffna](location) branch located?
+    - What are the [Kalutara](location) outlets?
+    - Where is [Kandy](location) branch located?
+    - What are the [Kegalle](location) outlets?
+    - Where is [Kilinochchi](location) branch located?
+    - What are the [Kurunegala](location) outlets?
+    - Where is [Mannar](location) branch located?
+    - What are the [Matale](location) outlets?
+    - Where is [Matara](location) branch located?
+    - What are the [Monaragala](location) outlets?
+    - Where is [Mullaitivu](location) branch located?
+    - What are the [Nuwara Eliya](location) outlets?
+    - Where is [Polonnaruwa](location) branch located?
+    - What are the [Puttalam](location) outlets?
+    - Where is [Ratnapura](location) branch located?
+    - Where is [Trincomalee](location) branch located?
+    - What are the [Vavuniya](location) outlets?
+
+- lookup: location
+  examples: |
+    - Ampara
+    - Anuradhapura
+    - Badulla
+    - Batticaloa
+    - Colombo
+    - Gampaha
+    - Galle
+    - Hambantota
+    - Jaffna
+    - Kalutara
+    - Kandy
+    - Kegalle
+    - Kilinochchi
+    - Kurunegala
+    - Mannar
+    - Matale
+    - Matara
+    - Monaragala
+    - Mullaitivu
+    - Nuwara Eliya
+    - Polonnaruwa
+    - Puttalam
+    - Ratnapura
+    - Trincomalee
+    - Vavuniya
 
 - intent: thanks
   examples: |
@@ -121,23 +326,6 @@ nlu:
     - That's helpful
     - Thanks for the help
     - Than you very much
-
-- intent: neutral-response
-  examples: |
-    - nothing much
-    - not much
-    - just the usual
-    - everything's fine
-    - nothing new
-    - all good
-    - just relaxing
-    - same as always
-    - not really doing anything
-    - just taking it easy
-    - not much to say
-    - everything is okay
-    - I'm good
-    - just chilling
 
 - intent: asking_capabilities
   examples: |
@@ -162,6 +350,270 @@ nlu:
     - How can you support me?
     - What tasks are you equipped for?
 
+- intent: asking_vegetarian_pizza
+  examples: |
+    - Can you make a vegetarian pizza?
+    - I want a vegetarian pizza.
+    - I want to order a vegetarian pizza.
+    - I'd like to order a vegetarian pizza.
+    - I'm looking for a vegetarian pizza.
+    - I want to get a vegetarian pizza.
+    - vegetarian pizza
+    - veg pizza
+    - veggie pizza
+    - vegan
+    - vegetarian
+    - What vegetarian options do you have?
+    - Do you offer veggie pizzas?
+    - Are there any meat-free items on the menu?
+    - Can you list the vegetarian dishes available?
+    - What are your vegan or vegetarian choices?
+    - Do you have a veggie combo?
+    - Are there vegetarian appetizers on the menu?
+    - Any vegetarian pasta or rice dishes?
+    - Is there a menu for vegetarians?
+    - Do you have plant-based options?
+    - Can I get a veggie-only pizza?
+
+- intent: asking_about_combo_meals
+  examples: |
+    - Do you have Combo meals
+    - What combos are available?
+    - Show me your pizza combos.
+    - Can I get a combo deal?
+    - Any combo offers today?
+    - Tell me about the meal deals.
+    - What’s included in your combos?
+    - Are there family combos?
+    - Do you offer pizza and beverage combos?
+    - combo
+    - combo meals
+
+- intent: ask_busy_timeslots
+  examples: |
+    - When is it usually crowded?
+    - What are your peak times?
+    - Is it busy during lunch hours?
+    - When is the best time to dine in?
+    - Tell me the busy times for your restaurant.
+    - What time is it quieter?
+    - Are there busy slots for dine-in?
+    - When is it least crowded?
+    - I hate when the place is full
+    - what time should i not come
+    - At what time seats are full
+    - I need to dine in when there is no rush
+    - Less crowded times?
+    - No rush times?
+
+- intent: asking_about_reservation
+  examples: |
+    - Can I make a reservation?
+    - I want to reserve a table.
+    - Do you take reservations?
+    - How can I book a table?
+    - Can I book a spot for dinner?
+    - I’d like to reserve a table for two.
+    - Is it possible to reserve a table in advance?
+    - Can I pre-book a table?
+    - I want to make a booking.
+    - How do I reserve a table at your restaurant?
+    - Is table booking available?
+    - I need a reservation for tonight.
+    - Can I reserve a table for tomorrow?
+    - Do you accept reservations?
+    - I need a reservation for 4 people.
+    - How can I book a table for a specific time?
+    - Can I reserve a table for a party of six?
+    - I’d like to make a dinner reservation.
+    - Can I book a table for this evening?
+    - Is it possible to book a table for the weekend?
+    - Can i book a place to dine in?
+
+- intent: ask_pizza_preparation_time
+  examples: |
+    - How long does it take to prepare a pizza?
+    - What is the average preparation time for a pizza?
+    - How much time will it take to make a pizza?
+    - How long will my pizza order take?
+    - How fast can you prepare a pizza?
+    - What's the preparation time for a pizza?
+    - How quickly can you make a pizza?
+    - Tell me the time it takes to prepare pizza.
+    - How long does your pizza preparation usually take?
+    - How long do I have to wait for my pizza?
+    - Is there a long wait to prepare the pizza?
+    - How much time is needed to cook a pizza?
+    - What's the usual time to make a pizza?
+    - Can you tell me the cooking time for a pizza?
+    - How long does it take to get my pizza ready?
+    - What's the waiting time for pizza preparation?
+    - Does it take a lot of time to make a pizza?
+    - How soon can my pizza be ready?
+    - What's the pizza preparation duration?
+    - Will the pizza be ready quickly?
+    - How much time do you take for a pizza order?
+    - How long will it take if I order pizza now?
+    - Do I have to wait long for the pizza to be prepared?
+    - On busy days, how long does it take to prepare a pizza?
+    - Is there a delay in pizza preparation when crowded?
+
+- intent: ask_loyalty
+  examples: |
+    - Do you have a loyalty program?
+    - Tell me about your loyalty program.
+    - How does your rewards program work?
+    - What is your loyalty program?
+    - Are there rewards for regular customers?
+    - Do I get points for my purchases?
+    - Can I earn loyalty points?
+    - What are the benefits of your loyalty program?
+    - How can I join your loyalty program?
+    - Are there any perks for loyal customers?
+    - Do you offer any rewards for repeat orders?
+    - What kind of discounts do loyal customers get?
+    - How do I sign up for your loyalty program?
+    - Can I earn discounts for frequent orders?
+    - Is there a rewards program for pizza lovers?
+    - I need to know about loyalty program?
+    - I need to be a Loyalty Customer
+    - How to be a loyalty customer?
+    - What are the benifits of being regular customer?
+    - i want loyalty
+    - loyalty
+    - do you have loyalty plans?
+    - do you have memberships?
+
+- intent: ask_kids_options
+  examples: |
+    - What options do you have for kids?
+    - Do you have a kids menu?
+    - What food can I order for kids?
+    - Tell me about your kids options.
+    - Do you offer meals for children?
+    - Are there any child-friendly options?
+    - Can I see the kids menu?
+    - What are the kid-specific meals?
+    - Do you have any small portions for kids?
+    - What's available for children on the menu?
+    - Do you have a menu for kids?
+    - What are your options for kids?
+    - Are there meals for kids at your restaurant?
+    - kid's menu ? 
+    - What do you have for kids?
+    - Is there anything special for kids?
+    - What about kids?
+
+- intent: ask_reheat_instructions
+  examples: |
+    - How do I reheat my pizza?
+    - Can you tell me how to reheat pizza after delivery?
+    - What’s the best way to reheat a pizza?
+    - How should I heat my leftover pizza?
+    - What’s the proper way to reheat a pizza slice?
+    - How do I warm up my pizza without making it soggy?
+    - Any tips for reheating my pizza?
+    - How can I reheat a pizza in the oven?
+    - What’s the best way to reheat pizza in a microwave?
+    - Can I reheat pizza on the stove?
+    - Tell me how to warm up my pizza.
+    - How do I reheat the pizza you delivered?
+    - Do you have reheating instructions for pizza?
+    - What's the ideal way to reheat pizza?
+    - Delivery is late what can i do now?
+    - The pizza is almost cold.
+    - Delivery guy took so long.
+    - I want to oven the pizza.
+    - What tempertaure should be there to heat again?
+    - i need a warm pizza
+    - i need to reheat my pizza
+
+- intent: support_first_time_users
+  examples: |
+    - This is my first time here, can you guide me?
+    - I’m new to Pizza Hut, please help me out!
+    - What can I order on my first visit?
+    - I’ve never used Pizza Hut before, show me the menu.
+    - Can you tell me about your restaurant?
+    - How do I get started with my first order?
+    - I’m a first-time customer, what options do I have?
+    - Help me with your first-time user guide.
+    - what is pizza hut?
+    - what do you sell?
+    - I don't know anything about pizza hut.
+    - This is my first time.
+    - I'm new to this.
+    - I know nothing about this restaurant.
+
+- intent: ask_spiciest_pizza
+  examples: |
+    - What is the spiciest pizza?
+    - Tell me about the spiciest pizza
+    - Spicy pizza details
+    - I love spicy pizza
+    - What are the spiciest pizzas?
+    - Do you have Chilli pizza?
+    - Do you have Spicy Pizza?
+    - i'm a chilli lover what should i buy?
+    - i love spicy flavour can you recommend something to buy?
+    - spicy collection
+    - give me your spiciest pizza
+    - i like spicy pizza. what are the available options?
+
+- intent: ask_less_spicy_pizza
+  examples: |
+    - What are the less spicy pizza options?
+    - Do you have mild or non-spicy pizzas?
+    - Can I get a pizza without too much spice?
+    - Do you have vegetarian pizzas?
+    - Can I get a non-spicy veggie pizza?
+    - Can I get a pizza with lots of cheese and no spice?
+    - Do you have kid-friendly pizzas that aren’t too spicy?
+    - Can I get a pizza with garlic and herbs but no spice?
+    - Is the Margherita pizza less spicy?
+    - Can I get a plain cheese pizza without added spice?
+    - Can I get a pizza with just basic toppings without too much spice?
+    - i hate chilli pizza
+    - what are the pizza without spicy
+    - Hate spicy pizza
+    - Don't like chillies 
+    - I don't like spicy pizza
+    - I need a pizza without chilli
+    - I need a pizza without spice
+    - i want not spicy pizza
+
+- intent: ask_party_venues
+  examples: |
+    - Are there party venues available?
+    - Do you offer birthday party venues?
+    - Do you have corporate event spaces?
+    - Can I book a venue for a family gathering?
+    - Can I get catering along with a venue?
+    - I want to celebrate a birthday party.
+    - Can i have a dinner party there?
+    - Do you have venues for small group gatherings?
+    - Can I book a venue for a family get-together?
+    -i want to celebrate a brithday. Is it possible?
+
+- intent: ask_refund_details
+  examples: |
+    - How do I get a refund after cancellation?
+    - Can I get a refund if I cancel my order?
+    - What is your refund policy for cancellations?
+    - Can I get a partial refund if I cancel part of my order?
+    - What happens if only some items are cancelled?
+    - Can I get a refund for a prepaid order?
+    - How do I request a refund for a late delivery?
+    - Can I get a refund for a voucher after cancelling the order?
+    - What is your policy on refunds for gift card purchases?
+    - How can I get a refund for missing items in my order?
+    - i need refund 
+    - i cancelled the order
+    - i canceled my order
+    - i need my money back
+    - cancellation of order 
+    - how to get refund
+
 - intent: asking_help
   examples: |
     - Could you help me?
@@ -179,82 +631,124 @@ nlu:
     - I need some help.
     - Could you assist?
     - I need your help.
-    - I want some advice.
-    - I need some advice.
-    - I need advice on something
 
-- intent: stressed
+- intent: ask_extra_toppings
   examples: |
-    - I am so stressed out.
-    - I am so stressed.
-    - I feel stuck.
-    - I still feel stressed.
-    - I am so burned out.
-    - I can't handle this stress.
-    - I am overwhelmed.
-    - I'm feeling really anxious.
-    - I'm under a lot of pressure.
-    - I'm feeling drained.
-    - This is too much for me.
-    - I'm on edge.
-    - I can't seem to relax.
-    - I'm feeling really overwhelmed.
-    - I'm struggling to cope.
-    - I'm feeling burnt out.
-    - I'm at my breaking point.
-    - I feel exhausted.
-    - I'm stressed beyond belief.
-    - This stress is too much.
+    - Can I add extra toppings to my pizza?
+    - Do you offer extra cheese or sauce?
+    - I want more toppings on my pizza.
+    - Can I get additional olives or jalapeños?
+    - Is it possible to add more sauce or cheese?
+    - What are the available extra toppings?
+    - Can I customize my pizza with extra toppings?
+    - Do you have an option for extra meat toppings?
+    - Can I add mushrooms or extra vegetables to my pizza?
+    - What extra toppings do you offer for pizzas?
+    - Can I get extra cheese on my pizza?
+    - I want double the amount of sauce. Is that possible?
+    - Do you have an option to add more mushrooms?
+    - Can I customize my pizza with spicy toppings?
+    - What are the premium toppings I can add?
+    - Is there an option for extra meat on my pizza?
+    - Can I add pineapple as an extra topping?
+    - I’d like to add some jalapeños. Is that available?
+    - Do you offer extra toppings for pasta as well?
+    - I want more cheese and chicken on my pizza.
+    - Can I have extra toppings on a half-and-half pizza?
+    - Is it possible to add extra onions or tomatoes?
+    - What’s the cost for additional toppings?
+    - Can I mix and match extra toppings?
+    - Are there vegan toppings available to add?
+    - Can I get double mozzarella as a topping?
+    - Do you offer extra pepperoni slices?
+    - Can I add garlic or herbs as toppings?
+    - Are there any spicy topping options available?
+    - Can I order just extra toppings without a pizza?
+    - I need more sauce. Is it possible?
+    - I want more chicken as a extra topping. can i do that?
 
-- intent: worthless
+- intent: ask_about_delivery
   examples: |
-    - I feel so worthless.
-    - No one likes me.
-    - I can't do anything right.
-    - I am so useless.
-    - Nothing makes sense anymore.
-    - I feel like a failure.
-    - I don't have any value.
-    - I can't seem to achieve anything.
-    - I'm not good at anything.
-    - I feel insignificant.
-    - I feel like I'm not enough.
-    - I don't matter to anyone.
-    - I'm always messing things up.
-    - I feel like I can't contribute.
-    - I'm not making a difference.
-    - I feel like I'm failing at everything.
-    - I can't find my purpose.
-    - I feel inadequate.
-    - I feel like I'm worth nothing.
-    - I don't see the point in trying.
+    - How does your delivery service work?
+    - Do you offer home delivery?
+    - What are the delivery charges?
+    - How long does it take to deliver a pizza?
+    - Can you deliver to my location?
+    - What is your delivery radius?
+    - Do you have free delivery options?
+    - Can I schedule a delivery for later?
+    - What’s the minimum order amount for delivery?
+    - How can I track my delivery?
+    - Is there an option for express delivery?
+    - Where can I find your delivery details?
+    - Does your website provide delivery updates?
+    - Can I change my delivery address after placing the order?
+    - Is delivery available 24/7?
+   
+- intent: ask_to_customize
+  examples: |
+    - Can I customize my pizza?
+    - I want to make some changes to my pizza.
+    - Is it possible to customize my order?
+    - Can I add my own toppings to the pizza?
+    - I’d like to remove mushrooms from the pizza. Is that okay?
+    - Can I request extra cheese and no onions?
+    - Can you make my pizza half and half?
+    - I want a gluten-free crust. Is that an option?
+    - Can I substitute one topping for another?
+    - Is it possible to have a lighter sauce on the pizza?
+    - Can I have less spicy sauce and extra veggies?
+    - Do you offer a build-your-own pizza option?
+    - I’d like to make a special request for my order.
+    - Is it possible to add garlic butter to the crust?
+    - Can I customize my pasta or other dishes too?
 
-- intent: depressed
+- intent: ask_available_offers
   examples: |
-    - I can't take it anymore.
-    - I am so depressed.
-    - I feel completely hopeless.
-    - I'm struggling with depression.
-    - I can't seem to find joy in anything.
-    - Everything feels so overwhelming.
-    - I feel empty inside.
-    - I don't see a way out of this.
-    - I'm just so down all the time.
-    - I feel like there's no way out.
-    - I feel like giving up.
-    - I can't escape these dark thoughts.
-    - I feel trapped in my own mind.
-    - I feel like I'm in a deep hole.
-    - I'm constantly feeling sad.
-    - I don't have the energy to do anything.
-    - I feel like I'm losing control.
-    - I can't stop feeling this way.
-    - I'm struggling to get out of bed.
-    - I feel isolated and alone.
+    - What are the current offers?
+    - Can you tell me about the discounts today?
+    - Are there any deals on pizzas?
+    - Do you have any offers right now?
+    - Tell me about today's discounts.
+    - What promotions are running currently?
+    - Are there any special deals available?
+    - What pizza deals are available?
+    - Do you have any discounts for today?
+    - Show me the offers on large pizzas.
+    - Are there any weekend deals?
+    - Any special discounts for combo orders?
+    - What are the deals for family meals?
+    - Is there a discount for first-time customers?
+    - Do you have any festival offers?
+    - What's the deal for two medium pizzas?
+    - Any offers on extra toppings?
+    - Can you tell me about any current promotions?
+    - What are the best deals today?
+    - Is there a discount if I order a lot?
+    - I want to know if you have any offers?
+    - Want to know about available offers.
+    - What about seasonal offers?
+
+- intent: ask_opening_hours
+  examples: |
+    - What are your opening hours?
+    - When do you open?
+    - What time do you close?
+    - Do you operate on weekends?
+    - Are you open on holidays?
+    - Are you closed during holidays?
+    - Do you work on Poya days?
+    - Are you closed on weekends?
+    - Until what time do you open?
+    - Are you open on weekends?
+    - At what time do you open the restaurant?
+    - At what time do you close ?
 
 - intent: casual
   examples: |
     - Oh I see.
+    - Yes
+    - I like
     - ok
     - okay
     - nice
@@ -273,135 +767,6 @@ nlu:
     - Alright then
     - Alright, no worries
 
-- intent: anxious
-  examples: |
-    - I feel so anxious.
-    - I'm so anxious because of this.
-    - I'm feeling really anxious right now.
-    - This situation makes me anxious.
-    - I can't stop feeling anxious.
-    - I'm anxious about what's going to happen.
-    - My anxiety is really bad today.
-    - I'm worried and anxious.
-    - I'm feeling a lot of anxiety.
-    - I get anxious when I think about it.
-    - This is making me really anxious.
-    - I'm too anxious to focus.
-    - Anxiety is overwhelming me.
-    - I can't shake off this anxious feeling.
-
-- intent: not-talking
-  examples: |
-    - I don't want to talk about it.
-    - No, just stay away.
-    - I can't bring myself to open up.
-    - Just shut up.
-    - I'd rather not discuss it.
-    - I need some space right now.
-    - Please drop the subject.
-    - I'm not in the mood to talk.
-    - I don't feel like sharing.    
-    - I'd prefer to be alone right now.
-    - I don't want to go into details.
-    - I'm not ready to talk about this.
-    - Let's not talk about it.
-    - I need a break from this conversation.
-    - Please leave me alone.
-    - I'm not interested in talking right now.
-    - I’d rather keep it to myself.
-    - Can we not talk about this?
-    - I don’t feel like discussing it.
-
-- intent: sleep
-  examples: |
-    - I have insomnia.
-    - I am suffering from insomnia.
-    - I can't sleep.
-    - I haven't slept for the last few days.
-    - I can't seem to go to sleep.
-    - I haven't had proper sleep for the past few days.
-    - I'm struggling to fall asleep.
-    - My sleep schedule is all messed up.
-    - I keep waking up in the middle of the night.
-    - I'm having trouble getting a good night's sleep.
-    - I feel exhausted because of my sleep issues.
-    - I'm dealing with sleepless nights.
-    - I can't get any rest.
-    - I’m lying awake all night.
-    - My insomnia is really affecting me.
-    - I can't seem to get enough sleep.
-    - I’m having trouble with my sleep patterns.
-    - I feel restless at night.
-    - I haven’t been able to get a full night’s sleep.
-    - My lack of sleep is impacting my daily life.
-
-- intent: scared
-  examples: |
-    - I'm scared.
-    - I am scared for myself.
-    - I feel afraid.
-    - I am really frightened right now.
-    - I'm anxious and scared.
-    - I don't know what to do; I'm scared.
-    - I feel nervous and scared.
-    - I'm terrified of what's going to happen.
-    - I can't stop feeling scared.
-    - I feel uneasy and scared.
-    - I am scared about the future.
-    - I am afraid of something bad happening.
-    - I feel like something terrible is going to happen.
-    - I'm scared to be alone.
-    - I'm worried and scared.
-    - I feel a lot of fear right now.
-    - I'm scared and overwhelmed.
-    - I'm experiencing fear and anxiety.
-    - I feel a sense of dread.
-    - I'm scared and unsure about everything.
-    
-- intent: death
-  examples: |
-    - My mom died.
-    - My brother died.
-    - My dad passed away.
-    - My sister passed away.
-    - My friend passed away.
-    - I lost someone close to me.
-    - I’m grieving the loss of my loved one.
-    - My loved one is no longer here.
-    - I’m mourning the death of someone special.
-    - Someone important to me has passed away.
-    - I’m dealing with the death of a family member.
-    - I’ve recently experienced a death in the family.
-    - My relative has passed away.
-    - I’m struggling with the loss of a loved one.
-    - My partner died.
-    - I’m heartbroken over a recent death.
-    - I feel the absence of someone who has died.
-    - I’m going through a tough time after a death.
-    - I’m trying to cope with a recent loss.
-    - I lost someone dear to me.
-
-- intent: not_understand
-  examples: |
-    - You don't understand me.
-    - You're just some robot. How would you know?
-    - You can't possibly know what I'm going through.
-    - Nobody understands me.
-    - You wouldn't get it.
-    - You don’t know what it’s like for me.
-    - You can't relate to my situation.
-    - It feels like you don’t understand my struggles.
-    - How can you understand what I’m feeling?
-    - You’re not capable of understanding my problems.
-    - You don’t get how hard this is for me.
-    - You’re just a machine, you can’t understand.
-    - I don’t think you understand what I’m saying.
-    - You’re not equipped to understand my situation.
-    - You don’t seem to grasp what I’m going through.
-    - You don’t have the capacity to understand my feelings.
-    - How could you possibly understand my pain?
-    - You’re not able to comprehend my struggles.
-
 - intent: done
   examples: |
     - That's all.
@@ -419,32 +784,6 @@ nlu:
     - I'm done for today.
     - There's nothing more from my side.
     - That's all I needed to say.
-
-- intent: suicide
-  examples: |
-    - I want to kill myself
-    - I've thought about killing myself
-    - I want to die
-    - I am going to kill myself
-    - I am going to commit suicide
-    - I can't go on anymore
-    - Ending it all seems like the only option
-    - I wish I wasn't here anymore
-    - Life isn't worth living
-    - I don't want to live anymore
-    - No one would care if I was gone
-    - I'm done with everything
-
-- intent: jokes
-  examples: |
-    - Tell me a joke.
-    - Tell me another joke.
-    - Can you make me laugh?
-    - Give me a funny joke.
-    - Do you know any jokes?
-    - Make me laugh.
-    - Tell me something funny.
-    - Do you have a joke for me?
 
 - intent: repeat
   examples: |
@@ -468,62 +807,6 @@ nlu:
     - That's incorrect.
     - No, that's wrong.
     - You're wrong about that.
-
-- intent: hate
-  examples: |
-    - Are you stupid?
-    - You're crazy.
-    - You are dumb.
-    - Are you dumb?
-    - I hate you.
-    - I don't like you.
-    - I don't trust you.
-    - I despise you.
-    - You're worthless.
-    - You're useless.
-    - You're annoying.
-    - You're terrible.
-    - You make me sick.
-    - I can't stand you.
-    - You're no help at all.
-
-- intent: something-else
-  examples: |
-    - I want to talk about something else
-    - Let's talk about something else.
-    - Can we not talk about this?
-    - I don't want to talk about this.
-    - Let's change the topic.
-    - Can we move on to another subject?
-    - I'd rather discuss something different.
-    - I don't feel comfortable talking about this.
-    - Let's drop this and talk about something else.
-    - I'd like to switch topics.
-
-- intent: friends
-  examples: |
-    - I don't have any friends.
-    - I feel alone because I have no friends.
-    - I don't have anyone to talk to.
-    - I don't have any close friends.
-    - I feel isolated and friendless.
-    - I don't have a social circle.
-    - I struggle with making friends.
-    - I feel like I don't belong.
-    - I haven't made any friends.
-    - I don't feel connected to anyone.
-
-- intent: mental-health-fact
-  examples: | 
-    - Tell me a fact about mental health.
-    - Share a mental health fact.
-    - Give me a mental health fact.
-    - What is a fact about mental health?
-    - Tell me another mental health fact.
-    - Provide a fact about mental health.
-    - What’s a fact related to mental health?
-    - Share another mental health fact.
-    - Give me more information about mental health.
 
 - intent: bot_challenge
   examples: |
