@@ -57,6 +57,7 @@ intents:
   - provide_city
   - view_reservation
   - provide_reservation_id
+  - update_reservation
 
 
 entities:
@@ -372,6 +373,14 @@ responses:
   utter_ask_reservation_id:
     - text: "Please provide your reservation ID"
 
+  utter_ask_reservation_details:
+    - text: |
+              Please provide the following details to update your reservation:
+                - Name
+                - Contact number
+                - Date
+                - City
+
 actions:
   - action_location_details
   - action_provide_menu
@@ -379,6 +388,7 @@ actions:
   - action_provide_drinks_menu
   - action_save_reservation
   - action_reservation_view_form
+  - action_update_reservation
 
 session_config:
   session_expiration_time: 60

@@ -874,3 +874,15 @@ nlu:
     - [6789](reservation_id)
     - [1456](reservation_id)
 
+- intent: update_reservation
+  examples: |
+    - I want to update my reservation
+    - Can I change my reservation
+    - Update my booking
+    - Modify my reservation
+    - Change reservation details
+    - I want to edit my booking
+    - Edit my reservation
+    - Update booking information
+    - Change my reservation
+    

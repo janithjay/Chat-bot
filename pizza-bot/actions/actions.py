@@ -1,7 +1,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, FollowupAction
 from pymongo import MongoClient
 from datetime import datetime
 from rasa_sdk.types import DomainDict
@@ -302,3 +302,65 @@ class ReservationViewForm(FormValidationAction):
             dispatcher.utter_message(text="Error retrieving reservation details.")
             
         return []
+    
+class ActionUpdateReservation(Action):
+    def name(self) -> Text:
+        return "action_update_reservation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
+            
+            reservation_id = tracker.get_slot("reservation_id")
+            
+            if not reservation_id:
+                dispatcher.utter_message(text="Please provide your reservation ID to update.")
+                return []
+            
+            reservation = collection.find_one({"reservation_id": reservation_id})
+            
+            if reservation:
+                # Get updated details from slots
+                name = tracker.get_slot("name")
+                contact = tracker.get_slot("contact")
+                date = tracker.get_slot("date")
+                city = tracker.get_slot("city")
+                
+                if not all([name, contact, date, city]):
+                    dispatcher.utter_message(text=f"Current reservation details:\n"
+                                               f"Name: {reservation['name']}\n"
+                                               f"Contact: {reservation['contact']}\n"
+                                               f"Date: {reservation['date']}\n"
+                                               f"City: {reservation['city']}\n"
+                                               f"Please provide new details to update.")
+                    return [FollowupAction("utter_ask_reservation_details")]
+                
+                # Update reservation
+                update_data = {
+                    "name": name,
+                    "contact": contact,
+                    "date": date,
+                    "city": city,
+                    "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                }
+                
+                collection.update_one(
+                    {"reservation_id": reservation_id},
+                    {"$set": update_data}
+                )
+                
+                dispatcher.utter_message(text="✅ Reservation updated successfully!")
+                return []
+            
+            else:
+                dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
+                return []
+                
+        except Exception as e:
+            dispatcher.utter_message(text="Error updating reservation.")
+            return []
