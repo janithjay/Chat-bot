@@ -97,6 +97,10 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: city
+  reservation_id:
+    type: text
+    mappings:
+    - type: from_text
 
 forms:
   reservation_form:

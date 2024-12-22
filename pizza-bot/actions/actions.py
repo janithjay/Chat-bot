@@ -5,6 +5,9 @@ from rasa_sdk.events import SlotSet
 from pymongo import MongoClient
 from datetime import datetime
 from rasa_sdk.types import DomainDict
+import random
+import string
+from datetime import datetime
 
 class ActionGiveOutletDetails(Action):
     def name(self) -> Text:
@@ -161,8 +164,6 @@ class ActionProvideDrinksMenu(Action):
         dispatcher.utter_message(text=response)
         return []
     
-
-
 class ValidateReservationForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_reservation_form"
@@ -195,6 +196,17 @@ class ValidateReservationForm(FormValidationAction):
             dispatcher.utter_message(text="Please provide date in YYYY-MM-DD format")
             return {"date": None}
 
+class GenerateReservationID:
+    @staticmethod
+    def generate_id():
+        # Generate random 4-digit number
+        return ''.join(random.choices(string.digits, k=4))
+    
+    @staticmethod
+    def check_unique(db, reservation_id):
+        # Check if ID exists in database
+        return db.reservations.find_one({"reservation_id": reservation_id}) is None
+
 class SaveReservation(Action):
     def name(self) -> Text:
         return "action_save_reservation"
@@ -202,20 +214,41 @@ class SaveReservation(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        client = MongoClient('mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/')
-        db = client["pizza-bot"]
-        collection = db["reservations"]
-        
-        reservation = {
-            'name': tracker.get_slot('name'),
-            'contact': tracker.get_slot('contact'), 
-            'date': tracker.get_slot('date'),
-            'city': tracker.get_slot('city'),
-            'created_at': datetime.now()
-        }
+        try:
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
 
-        collection.insert_one(reservation)
-        
-        dispatcher.utter_message("Thank you for your reservation. We will contact you shortly to confirm.")
-        return []
+            # Generate unique reservation ID
+            while True:
+                reservation_id = GenerateReservationID.generate_id()
+                if GenerateReservationID.check_unique(db, reservation_id):
+                    break
+
+            reservation = {
+                "reservation_id": reservation_id,
+                "name": tracker.get_slot('name'),
+                "contact": tracker.get_slot('contact'),
+                "date": tracker.get_slot('date'),
+                "city": tracker.get_slot('city'),
+                "created_at": datetime.now()
+            }
+
+            collection.insert_one(reservation)
+
+            response = (
+                f"✅ Reservation Confirmed!\n"
+                f"Your Reservation ID: {reservation_id}\n"
+                f"Please keep this ID for future reference.\n\n"
+                f"Details:\n"
+                f"Name: {reservation['name']}\n"
+                f"Date: {reservation['date']}\n"
+                f"City: {reservation['city']}"
+            )
+            
+            dispatcher.utter_message(text=response)
+            return [SlotSet("reservation_id", reservation_id)]
+
+        except Exception as e:
+            dispatcher.utter_message(text="Error saving reservation.")
+            return []
