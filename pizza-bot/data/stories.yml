@@ -199,8 +199,11 @@ stories:
 - story: update reservation
   steps:
   - intent: update_reservation
-  - action: action_update_reservation
-  - action: reservation_view_form
-  - active_loop: reservation_view_form
+  - action: get_reservation_id_form
+  - active_loop: get_reservation_id_form
+  - active_loop: null
+  - action: action_get_updated_details
+  - action: reservation_update_form
+  - active_loop: reservation_update_form
   - active_loop: null
   - action: action_update_reservation

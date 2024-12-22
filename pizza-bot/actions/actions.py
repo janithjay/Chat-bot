@@ -242,12 +242,19 @@ class SaveReservation(Action):
                 f"Please keep this ID for future reference.\n\n"
                 f"Reservation Details:\n"
                 f"Name: {reservation['name']}\n"
+                f"Contact: {reservation['contact']}\n"
                 f"Date: {reservation['date']}\n"
                 f"City: {reservation['city']}"
             )
             
             dispatcher.utter_message(text=response)
-            return [SlotSet("reservation_id", reservation_id)]
+            return [
+                    SlotSet("name", None),
+                    SlotSet("contact", None),
+                    SlotSet("date", None),
+                    SlotSet("city", None),
+                    SlotSet("reservation_id", None),
+                ]
 
         except Exception as e:
             dispatcher.utter_message(text="Error saving reservation.")
@@ -295,6 +302,13 @@ class ReservationViewForm(FormValidationAction):
                     f"Created at: {reservation['created_at']}"
                 )
                 dispatcher.utter_message(text=response)
+                return [
+                    SlotSet("name", None),
+                    SlotSet("contact", None),
+                    SlotSet("date", None),
+                    SlotSet("city", None),
+                    SlotSet("reservation_id", None),
+                ]
             else:
                 dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
                 
@@ -303,6 +317,43 @@ class ReservationViewForm(FormValidationAction):
             
         return []
     
+class ActionGetUpdatedDetails(Action):
+    def name(self) -> Text:
+        return "action_get_updated_details"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
+            
+            reservation_id = tracker.get_slot("reservation_id")
+            reservation = collection.find_one({"reservation_id": reservation_id})
+            
+            if reservation:
+                dispatcher.utter_message(text=f"Current reservation details:\n"
+                                           f"Name: {reservation['name']}\n"
+                                           f"Contact: {reservation['contact']}\n"
+                                           f"Date: {reservation['date']}\n"
+                                           f"City: {reservation['city']}\n"
+                                           f"Please provide new details to update.")
+                return [
+                    SlotSet("name", None),
+                    SlotSet("contact", None),
+                    SlotSet("date", None),
+                    SlotSet("city", None),
+                ]
+            else:
+                dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
+                return []
+                
+        except Exception as e:
+            dispatcher.utter_message(text="Error fetching reservation details.")
+            return []
+
 class ActionUpdateReservation(Action):
     def name(self) -> Text:
         return "action_update_reservation"
@@ -317,49 +368,34 @@ class ActionUpdateReservation(Action):
             collection = db["reservations"]
             
             reservation_id = tracker.get_slot("reservation_id")
+            name = tracker.get_slot("name")
+            contact = tracker.get_slot("contact")
+            date = tracker.get_slot("date")
+            city = tracker.get_slot("city")
             
-            if not reservation_id:
-                dispatcher.utter_message(text="Please provide your reservation ID to update.")
+            if not all([reservation_id, name, contact, date, city]):
+                dispatcher.utter_message(text="Missing required details for update.")
                 return []
             
-            reservation = collection.find_one({"reservation_id": reservation_id})
+            update_data = {
+                "name": name,
+                "contact": contact,
+                "date": date,
+                "city": city,
+                "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
             
-            if reservation:
-                # Get updated details from slots
-                name = tracker.get_slot("name")
-                contact = tracker.get_slot("contact")
-                date = tracker.get_slot("date")
-                city = tracker.get_slot("city")
-                
-                if not all([name, contact, date, city]):
-                    dispatcher.utter_message(text=f"Current reservation details:\n"
-                                               f"Name: {reservation['name']}\n"
-                                               f"Contact: {reservation['contact']}\n"
-                                               f"Date: {reservation['date']}\n"
-                                               f"City: {reservation['city']}\n"
-                                               f"Please provide new details to update.")
-                    return [FollowupAction("utter_ask_reservation_details")]
-                
-                # Update reservation
-                update_data = {
-                    "name": name,
-                    "contact": contact,
-                    "date": date,
-                    "city": city,
-                    "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                }
-                
-                collection.update_one(
-                    {"reservation_id": reservation_id},
-                    {"$set": update_data}
-                )
-                
+            result = collection.update_one(
+                {"reservation_id": reservation_id},
+                {"$set": update_data}
+            )
+            
+            if result.modified_count > 0:
                 dispatcher.utter_message(text="✅ Reservation updated successfully!")
-                return []
-            
             else:
-                dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
-                return []
+                dispatcher.utter_message(text="❌ No reservation found to update.")
+            
+            return []
                 
         except Exception as e:
             dispatcher.utter_message(text="Error updating reservation.")

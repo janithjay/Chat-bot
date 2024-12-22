@@ -80,12 +80,16 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: name
+      - active_loop: reservation_update_form
+        requested_slot: name
   contact:
     type: text
     mappings:
     - type: from_text
       conditions:
       - active_loop: reservation_form
+        requested_slot: contact
+      - active_loop: reservation_update_form
         requested_slot: contact
   date:
     type: text
@@ -94,6 +98,8 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: date
+      - active_loop: reservation_update_form
+        requested_slot: date
   city:
     type: text
     mappings:
@@ -101,12 +107,16 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: city
+      - active_loop: reservation_update_form
+        requested_slot: city
   reservation_id:
     type: text
     mappings:
     - type: from_text
       conditions:
       - active_loop: reservation_view_form
+        requested_slot: reservation_id
+      - active_loop: get_reservation_id_form
         requested_slot: reservation_id
 
 forms:
@@ -117,6 +127,15 @@ forms:
       - date
       - city
   reservation_view_form:
+    required_slots:
+      - reservation_id
+  reservation_update_form:
+    required_slots:
+      - name
+      - contact
+      - date
+      - city
+  get_reservation_id_form:
     required_slots:
       - reservation_id
       
@@ -388,6 +407,7 @@ actions:
   - action_provide_drinks_menu
   - action_save_reservation
   - action_reservation_view_form
+  - action_get_updated_details
   - action_update_reservation
 
 session_config:
