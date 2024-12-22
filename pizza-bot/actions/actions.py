@@ -240,7 +240,7 @@ class SaveReservation(Action):
                 f"✅ Reservation Confirmed!\n"
                 f"Your Reservation ID: {reservation_id}\n"
                 f"Please keep this ID for future reference.\n\n"
-                f"Details:\n"
+                f"Reservation Details:\n"
                 f"Name: {reservation['name']}\n"
                 f"Date: {reservation['date']}\n"
                 f"City: {reservation['city']}"
