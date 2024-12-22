@@ -38,6 +38,14 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - absolutely
+    - sure
+    - ok
+    - yeah
+    - yep
+    - ya
+    - right
+    - definitely
 
 - intent: deny
   examples: |
@@ -48,6 +56,10 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nope
+    - definitely no
+    - no no
+
 
 - intent: mood_great
   examples: |
@@ -816,3 +828,28 @@ nlu:
     - am I talking to a human?
     - Who are you?
     - What are you?
+
+- intent: provide_name
+  examples: |
+    - My name is [John](name)
+    - [Sarah](name)
+    - Name is [Mike](name)
+    - [David](name)
+
+- intent: provide_contact
+  examples: |
+    - [0712345678](contact)
+    - my number is [0723456789](contact)
+    - [0756789012](contact)
+
+- intent: provide_date
+  examples: |
+    - [2024-04-15](date)
+    - [2024-05-20](date)
+    - [2024-06-01](date)
+
+- intent: provide_city
+  examples: |
+    - [Colombo](city)
+    - [Kandy](city)
+    - [Galle](city)

@@ -50,6 +50,11 @@ intents:
   - ask_opening_hours
   - ask_loyalty
   - asking_about_outlets
+  - make_reservation
+  - provide_name
+  - provide_contact
+  - provide_date
+  - provide_city
 
 
 entities:
@@ -57,7 +62,50 @@ entities:
     - location
     - pizza
     - food_type
+    - name
+    - phone
+    - date
+    - city
+    - contact
 
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: name
+  contact:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: contact
+  date:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: date
+  city:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: city
+
+forms:
+  reservation_form:
+    required_slots:
+      - name
+      - contact
+      - date
+      - city
+      
 responses:
   utter_greet:
   - text: "Hello! 👋, Welcome to PizzaBot! Ready to satisfy your pizza craving?"
@@ -296,11 +344,24 @@ responses:
   utter_iamabot:
     - text: "I am Pizza Bot. I am here to help you with your pizza cravings."
 
+  utter_ask_city:
+    - text: "Which is nearest city would you like to make a reservation for?"
+
+  utter_ask_name:
+    - text: "What is your name?"
+
+  utter_ask_contact:
+    - text: "Please provide your contact number?"
+
+  utter_ask_date:
+    - text: "For which date would you like to make the reservation? (YYYY-MM-DD)"
+
 actions:
   - action_location_details
   - action_provide_menu
   - action_provide_pizza_details
   - action_provide_drinks_menu
+  - action_save_reservation
 
 session_config:
   session_expiration_time: 60

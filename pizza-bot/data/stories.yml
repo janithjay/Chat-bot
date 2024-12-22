@@ -38,7 +38,6 @@ stories:
   - action: utter_ordering_pizza
   - intent: order_online
   - action: utter_order_online
-  - action: utter_did_that_help
 
 - story: ordering pizza by phone
   steps:
@@ -46,7 +45,6 @@ stories:
   - action: utter_ordering_pizza
   - intent: ordering_by_phone
   - action: utter_ordering_by_phone
-  - action: utter_did_that_help
 
 - story: ordering pizza by app
   steps:
@@ -54,7 +52,6 @@ stories:
   - action: utter_ordering_pizza
   - intent: ordering_by_app
   - action: utter_ordering_by_app
-  - action: utter_did_that_help
 
 - story: asking pizza size
   steps:
@@ -81,12 +78,7 @@ stories:
   - intent: asking_about_combo_meals
   - action: utter_combo_packages
 
-- story: ask for reservation 1
-  steps:
-  - intent: asking_about_reservation
-  - action: utter_hotline_number
-
-- story: ask for reservation 2
+- story: ask busy timeslots
   steps:
   - intent: ask_busy_timeslots
   - action: utter_busy_timeslots
@@ -187,3 +179,11 @@ stories:
   steps:
   - intent: wrong
   - action: utter_wrong
+
+- story: reservation happy path
+  steps:
+  - intent: asking_about_reservation
+  - action: reservation_form
+  - active_loop: reservation_form
+  - active_loop: null
+  - action: action_save_reservation

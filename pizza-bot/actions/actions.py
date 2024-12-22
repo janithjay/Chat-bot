@@ -1,7 +1,10 @@
 from typing import Any, Text, Dict, List
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 from pymongo import MongoClient
+from datetime import datetime
+from rasa_sdk.types import DomainDict
 
 class ActionGiveOutletDetails(Action):
     def name(self) -> Text:
@@ -156,4 +159,63 @@ class ActionProvideDrinksMenu(Action):
 
         # Send the response
         dispatcher.utter_message(text=response)
+        return []
+    
+
+
+class ValidateReservationForm(FormValidationAction):
+    def name(self) -> Text:
+        return "validate_reservation_form"
+
+    def validate_contact(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        if slot_value.isdigit() and len(slot_value) >= 10:
+            dispatcher.utter_message(text="For which date would you like to make the reservation? (YYYY-MM-DD)")
+            return {"contact": slot_value}
+        dispatcher.utter_message(text="Please provide a valid contact number")
+        return {"contact": None}
+
+    def validate_date(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        try:
+            datetime.strptime(slot_value, '%Y-%m-%d')
+            dispatcher.utter_message(text="Which city?")
+            return {"date": slot_value}
+        except ValueError:
+            dispatcher.utter_message(text="Please provide date in YYYY-MM-DD format")
+            return {"date": None}
+
+class SaveReservation(Action):
+    def name(self) -> Text:
+        return "action_save_reservation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        client = MongoClient('mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/')
+        db = client["pizza-bot"]
+        collection = db["reservations"]
+        
+        reservation = {
+            'name': tracker.get_slot('name'),
+            'contact': tracker.get_slot('contact'), 
+            'date': tracker.get_slot('date'),
+            'city': tracker.get_slot('city'),
+            'created_at': datetime.now()
+        }
+
+        collection.insert_one(reservation)
+        
+        dispatcher.utter_message("Thank you for your reservation. We will contact you shortly to confirm.")
         return []
