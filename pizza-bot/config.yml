@@ -1,5 +1,5 @@
 recipe: default.v1
-assistant_id: MentalHealth_bot
+assistant_id: PizzaBot
 language: en
 
 pipeline:
@@ -15,7 +15,6 @@ pipeline:
   constrain_similarities: True
 - name: FallbackClassifier
   threshold: 0.7
-
 
 policies:
 - name: MemoizationPolicy
