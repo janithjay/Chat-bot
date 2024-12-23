@@ -231,7 +231,7 @@ class SaveReservation(Action):
                 "contact": tracker.get_slot('contact'),
                 "date": tracker.get_slot('date'),
                 "city": tracker.get_slot('city'),
-                "created_at": datetime()
+                "created_at": datetime.now()
             }
 
             collection.insert_one(reservation)
@@ -255,7 +255,7 @@ class SaveReservation(Action):
                     SlotSet("city", None),
                     SlotSet("reservation_id", None),
                 ]
-
+        
         except Exception as e:
             dispatcher.utter_message(text="Error saving reservation.")
             return []

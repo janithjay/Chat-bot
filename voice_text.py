@@ -17,7 +17,7 @@ class VoiceBot:
         """Configure text-to-speech settings"""
         voices = self.engine.getProperty('voices')
         self.engine.setProperty('voice', voices[1].id)  # Index 1 for female voice
-        self.engine.setProperty('rate', 150)    # Speed of speech
+        self.engine.setProperty('rate', 250)    # Speed of speech
         self.engine.setProperty('volume', 0.9)  # Volume level
 
     def speak(self, text):
