@@ -45,7 +45,7 @@ class VoiceBot:
             print("Adjusting for ambient noise...")
             self.recognizer.adjust_for_ambient_noise(source, duration=1)
         
-            # Use unique filenames for sound effects
+            # Play start and end sound effects
             start_sound = "start_sound.wav"
             end_sound = "end_sound.wav"
         
