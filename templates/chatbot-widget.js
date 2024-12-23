@@ -198,6 +198,11 @@
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
+
+        #pizza-hut-chatbot .rw-message.error {
+        background-color: #ffebee !important;
+        color: #c62828 !important;
+    }
     `;
     document.head.appendChild(styles);
 
@@ -342,36 +347,109 @@
         isDragging = false;
     }
 
-    function handleVoiceCommand() {
+    async function displayBotResponse(message) {
+        try {
+            const response = await fetch('http://localhost:5000/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            });
+            const data = await response.json();
+
+            // Create bot message element
+            const botMessage = document.createElement('div');
+            botMessage.className = 'rw-message rw-response';
+            botMessage.innerHTML = `
+                <div class="rw-message-text">${data.response}</div>
+            `;
+
+            // Add to messages container
+            const messagesContainer = document.querySelector('.rw-messages-container');
+            if (messagesContainer) {
+                messagesContainer.appendChild(botMessage);
+                scrollToBottom();
+            }
+
+            return data.response;
+        } catch (error) {
+            console.error('Error:', error);
+            // Show error message in chat
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'rw-message rw-response error';
+            errorMessage.innerHTML = `
+                <div class="rw-message-text">Sorry, I encountered an error. Please try again.</div>
+            `;
+            const messagesContainer = document.querySelector('.rw-messages-container');
+            if (messagesContainer) {
+                messagesContainer.appendChild(errorMessage);
+                scrollToBottom();
+            }
+        }
+    }
+
+    // Add this function to handle adding messages to the chat UI
+    function addMessageToChat(message, isUser = false) {
+        const messagesContainer = document.querySelector('.rw-messages-container');
+        if (!messagesContainer) return;
+
+        const messageElement = document.createElement('div');
+        messageElement.className = `rw-message ${isUser ? 'rw-client' : 'rw-response'}`;
+        messageElement.innerHTML = `
+        <div class="rw-message-text">${message}</div>
+    `;
+        messagesContainer.appendChild(messageElement);
+        scrollToBottom();
+    }
+
+    // Modified handleVoiceCommand function with sequential processing
+    async function handleVoiceCommand() {
         const voiceButton = document.getElementById('voiceButton');
         if (!voiceButton || isListening) return;
 
-        isListening = true;
-        voiceButton.classList.add('listening');
+        try {
+            isListening = true;
+            voiceButton.classList.add('listening');
 
-        fetch('http://localhost:5000/start_voice', {
-            method: 'POST'
-        })
-            .then(response => response.ok ? response.json() : null)
-            .then(data => {
-                if (data?.text) {
-                    const inputField = document.querySelector('.rw-new-message');
-                    if (inputField) {
-                        inputField.value = data.text;
-                        inputField.dispatchEvent(new KeyboardEvent('keydown', {
-                            key: 'Enter',
-                            code: 'Enter',
-                            keyCode: 13,
-                            bubbles: true
-                        }));
-                    }
-                }
-            })
-            .catch(error => console.error('Voice recognition error:', error))
-            .finally(() => {
-                isListening = false;
-                voiceButton.classList.remove('listening');
+            const response = await fetch('http://localhost:5000/start_voice', {
+                method: 'POST'
             });
+
+            if (response.ok) {
+                const data = await response.json();
+
+                if (data?.input_text) {
+                    // Immediately display user's voice input in chat
+                    addMessageToChat(data.input_text, true);
+
+                    // Add a slight delay before showing bot response
+                    setTimeout(() => {
+                        if (data?.bot_response) {
+                            addMessageToChat(data.bot_response, false);
+                        }
+                    }, 500); // 500ms delay to ensure user sees their input first
+                }
+            } else {
+                const errorData = await response.json();
+                console.error('Voice recognition error:', errorData.error);
+                addMessageToChat('Sorry, I couldn\'t understand that. Could you please try again?', false);
+            }
+        } catch (error) {
+            console.error('Voice recognition error:', error);
+            addMessageToChat('Sorry, there was an error processing your voice input.', false);
+        } finally {
+            isListening = false;
+            voiceButton.classList.remove('listening');
+        }
+    }
+
+    // Update scroll position after messages are added
+    function scrollToBottom() {
+        const messagesContainer = document.querySelector('.rw-messages-container');
+        if (messagesContainer) {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
     }
 
     function initializeChat() {
@@ -451,14 +529,6 @@
         chatWindow.classList.remove('active');
         chatButton.style.display = 'flex';
     });
-
-    // Utility functions
-    function scrollToBottom() {
-        const messagesContainer = document.querySelector('.rw-messages-container');
-        if (messagesContainer) {
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
-    }
 
     // Load Rasa Web Chat script
     const script = document.createElement('script');
