@@ -44,20 +44,31 @@ class VoiceBot:
         with sr.Microphone() as source:
             print("Adjusting for ambient noise...")
             self.recognizer.adjust_for_ambient_noise(source, duration=1)
-            
-            # Audio feedback for start of listening
-            pygame.mixer.Sound("start_sound.wav").play()
-            
+        
+            # Use unique filenames for sound effects
+            start_sound = "start_sound.wav"
+            end_sound = "end_sound.wav"
+        
+            if pygame.mixer.get_busy():
+                pygame.mixer.stop()
+        
+            if os.path.exists(start_sound):
+                pygame.mixer.Sound(start_sound).play()
+        
             print("Listening...")
             try:
-                audio = self.recognizer.listen(source, timeout=5, phrase_time_limit=10)
+                audio = self.recognizer.listen(source, timeout=10, phrase_time_limit=10)
+            
+                if pygame.mixer.get_busy():
+                    pygame.mixer.stop()
                 
-                # Audio feedback for end of listening
-                pygame.mixer.Sound("end_sound.wav").play()
-                
+                if os.path.exists(end_sound):    
+                    pygame.mixer.Sound(end_sound).play()
+            
                 user_message = self.recognizer.recognize_google(audio)
                 print(f"You said: {user_message}")
                 return user_message
+            
             except sr.UnknownValueError:
                 self.speak("Sorry, I couldn't understand that. Could you please repeat?")
             except sr.RequestError as e:
@@ -65,7 +76,6 @@ class VoiceBot:
                 print(f"Request error: {e}")
             except Exception as e:
                 print(f"Unexpected error: {e}")
-        return None
 
     def get_bot_response(self, message):
         """Get response from Rasa server"""
