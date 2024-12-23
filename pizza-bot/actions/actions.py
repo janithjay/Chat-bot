@@ -1,7 +1,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, FollowupAction
 from pymongo import MongoClient
 from datetime import datetime
 from rasa_sdk.types import DomainDict
@@ -231,7 +231,7 @@ class SaveReservation(Action):
                 "contact": tracker.get_slot('contact'),
                 "date": tracker.get_slot('date'),
                 "city": tracker.get_slot('city'),
-                "created_at": datetime.now()
+                "created_at": datetime()
             }
 
             collection.insert_one(reservation)
@@ -242,13 +242,176 @@ class SaveReservation(Action):
                 f"Please keep this ID for future reference.\n\n"
                 f"Reservation Details:\n"
                 f"Name: {reservation['name']}\n"
+                f"Contact: {reservation['contact']}\n"
                 f"Date: {reservation['date']}\n"
                 f"City: {reservation['city']}"
             )
             
             dispatcher.utter_message(text=response)
-            return [SlotSet("reservation_id", reservation_id)]
+            return [
+                    SlotSet("name", None),
+                    SlotSet("contact", None),
+                    SlotSet("date", None),
+                    SlotSet("city", None),
+                    SlotSet("reservation_id", None),
+                ]
 
         except Exception as e:
             dispatcher.utter_message(text="Error saving reservation.")
             return []
+        
+class ReservationViewForm(FormValidationAction):
+    def name(self) -> Text:
+        return "action_reservation_view_form"
+
+    def reservation_id(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        if slot_value.isdigit() and len(slot_value) == 4:
+            dispatcher.utter_message(text="Finding reservations for")
+            return {"reservation_id": slot_value}
+        dispatcher.utter_message(text="Please provide a valid reservation id")
+        return {"reservation_id": None}
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        try:
+            reservation_id = tracker.get_slot("reservation_id")
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
+            
+            reservation = collection.find_one({"reservation_id": reservation_id})
+            
+            if reservation:
+                response = (
+                    f"📋 Reservation Details:\n"
+                    f"Reservation ID: {reservation['reservation_id']}\n"
+                    f"Name: {reservation['name']}\n"
+                    f"Contact: {reservation['contact']}\n"
+                    f"Date: {reservation['date']}\n"
+                    f"City: {reservation['city']}"
+                )
+                dispatcher.utter_message(text=response)
+            else:
+                dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
+                
+        except Exception as e:
+            dispatcher.utter_message(text="Error retrieving reservation details.")
+            
+        return []
+    
+class ActionGetUpdatedDetails(Action):
+    def name(self) -> Text:
+        return "action_get_updated_details"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
+            
+            reservation_id = tracker.get_slot("reservation_id")
+            reservation = collection.find_one({"reservation_id": reservation_id})
+            
+            if reservation:
+                dispatcher.utter_message(text=f"Current reservation details:\n"
+                                           f"Name: {reservation['name']}\n"
+                                           f"Contact: {reservation['contact']}\n"
+                                           f"Date: {reservation['date']}\n"
+                                           f"City: {reservation['city']}\n"
+                                           f"Please provide new details to update.")
+                return [
+                    SlotSet("name", None),
+                    SlotSet("contact", None),
+                    SlotSet("date", None),
+                    SlotSet("city", None),
+                ]
+            else:
+                dispatcher.utter_message(text=f"❌ No reservation found with ID: {reservation_id}")
+                return []
+                
+        except Exception as e:
+            dispatcher.utter_message(text="Error fetching reservation details.")
+            return []
+
+class ActionUpdateReservation(Action):
+    def name(self) -> Text:
+        return "action_update_reservation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        try:
+            client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+            db = client["pizza-bot"]
+            collection = db["reservations"]
+            
+            reservation_id = tracker.get_slot("reservation_id")
+            name = tracker.get_slot("name")
+            contact = tracker.get_slot("contact")
+            date = tracker.get_slot("date")
+            city = tracker.get_slot("city")
+            
+            if not all([reservation_id, name, contact, date, city]):
+                dispatcher.utter_message(text="Missing required details for update.")
+                return []
+            
+            update_data = {
+                "name": name,
+                "contact": contact,
+                "date": date,
+                "city": city,
+                "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+            
+            result = collection.update_one(
+                {"reservation_id": reservation_id},
+                {"$set": update_data}
+            )
+            
+            if result.modified_count > 0:
+                dispatcher.utter_message(text="✅ Reservation updated successfully!")
+            else:
+                dispatcher.utter_message(text="❌ No reservation found to update.")
+            
+            return []
+                
+        except Exception as e:
+            dispatcher.utter_message(text="Error updating reservation.")
+            return []
+        
+class CancelReservation(Action):
+    def name(self) -> Text:
+        return "action_cancel_reservation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            _: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        reservation_id = tracker.get_slot("reservation_id")
+
+        client = MongoClient("mongodb+srv://janithjayashan018:janithjayashan018@cluster0.pvp1j.mongodb.net/")
+        db = client["pizza-bot"]
+        collection = db["reservations"]
+        
+        
+        result = collection.delete_one({"reservation_id": reservation_id})
+        if result.deleted_count > 0:
+                dispatcher.utter_message(text="✅ Reservation cancelled successfully!")
+        else:
+                dispatcher.utter_message(text="❌ Error cancelling reservation.")
+        return [SlotSet("reservation_id", None)]
+                    

@@ -55,6 +55,10 @@ intents:
   - provide_contact
   - provide_date
   - provide_city
+  - view_reservation
+  - provide_reservation_id
+  - update_reservation
+  - cancel_reservation
 
 
 entities:
@@ -67,6 +71,7 @@ entities:
     - date
     - city
     - contact
+    - reservation_id
 
 slots:
   name:
@@ -76,12 +81,16 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: name
+      - active_loop: reservation_update_form
+        requested_slot: name
   contact:
     type: text
     mappings:
     - type: from_text
       conditions:
       - active_loop: reservation_form
+        requested_slot: contact
+      - active_loop: reservation_update_form
         requested_slot: contact
   date:
     type: text
@@ -90,6 +99,8 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: date
+      - active_loop: reservation_update_form
+        requested_slot: date
   city:
     type: text
     mappings:
@@ -97,10 +108,19 @@ slots:
       conditions:
       - active_loop: reservation_form
         requested_slot: city
+      - active_loop: reservation_update_form
+        requested_slot: city
   reservation_id:
     type: text
     mappings:
     - type: from_text
+      conditions:
+      - active_loop: reservation_view_form
+        requested_slot: reservation_id
+      - active_loop: get_reservation_id_form
+        requested_slot: reservation_id
+      - active_loop: get_reservation_id_cancel_form
+        requested_slot: reservation_id
 
 forms:
   reservation_form:
@@ -109,6 +129,21 @@ forms:
       - contact
       - date
       - city
+  reservation_view_form:
+    required_slots:
+      - reservation_id
+  reservation_update_form:
+    required_slots:
+      - name
+      - contact
+      - date
+      - city
+  get_reservation_id_form:
+    required_slots:
+      - reservation_id
+  get_reservation_id_cancel_form:
+    required_slots:
+      - reservation_id
       
 responses:
   utter_greet:
@@ -360,12 +395,33 @@ responses:
   utter_ask_date:
     - text: "For which date would you like to make the reservation? (YYYY-MM-DD)"
 
+  utter_ask_reservation_id:
+    - text: "Please provide your reservation ID"
+
+  utter_ask_reservation_details:
+    - text: |
+              Please provide the following details to update your reservation:
+                - Name
+                - Contact number
+                - Date
+                - City
+    
+  utter_confirm_cancellation:
+    - text: "Are you sure you want to cancel the reservation with ID {reservation_id}?"
+
+  utter_cancel_rejected:
+    - text: "Okay, I won't cancel the reservation."
+
 actions:
   - action_location_details
   - action_provide_menu
   - action_provide_pizza_details
   - action_provide_drinks_menu
   - action_save_reservation
+  - action_reservation_view_form
+  - action_get_updated_details
+  - action_update_reservation
+  - action_cancel_reservation
 
 session_config:
   session_expiration_time: 60
