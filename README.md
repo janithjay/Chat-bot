@@ -46,17 +46,23 @@ Use this command to move into the pizza-bot dirrectory use:
    ```bash
    rasa run actions
    ```
+   
+6. **Start the Voice Server**
+   Open a new terminal, in the root directory run:
+   ```bash
+   python voice_server.py
+   ```
 
-6. **Install Tampermonkey Chrome Extension**
+7. **Install Tampermonkey Chrome Extension**
    - Visit [Tampermonkey in Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
    - Click "Add to Chrome" and follow the installation prompts
 
-7. **Enable Chrome Developer Mode**
+8. **Enable Chrome Developer Mode**
    - Open Chrome settings (⋮)
    - Go to Extensions > Manage extensions
    - Toggle on "Developer mode" in the top right corner
 
-8. **Configure the Chatbot Widget**
+9. **Configure the Chatbot Widget**
    1. Click on the Tampermonkey extension icon
    2. Select "Create a new script"
    3. Copy the content from [`templates/chatbot-widget.js`](https://github.com/janithjay/Chat-bot/blob/bc3dbef39e68cbf705673c05b0bd19f7bf917022/templates/chatbot-widget.js) in your project
@@ -66,7 +72,7 @@ Use this command to move into the pizza-bot dirrectory use:
    7. Go to the "Installed Userscripts" tab
    8. Enable the script using the toggle switch
 
-9. **Test the Chatbot**
+10. **Test the Chatbot**
    - Visit [PizzaHut Sri Lanka](https://www.pizzahut.lk/)
    - The chatbot widget should appear on the page
    - Start interacting with the bot to test its functionality
