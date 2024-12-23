@@ -389,60 +389,72 @@
         }
     }
 
-    // Add this function to handle adding messages to the chat UI
-    function addMessageToChat(message, isUser = false) {
-        const messagesContainer = document.querySelector('.rw-messages-container');
-        if (!messagesContainer) return;
+    // Modify the addMessageToChat function to use consistent styling
+function addMessageToChat(message, isUser = false) {
+    const messagesContainer = document.querySelector('.rw-messages-container');
+    if (!messagesContainer) return;
 
-        const messageElement = document.createElement('div');
-        messageElement.className = `rw-message ${isUser ? 'rw-client' : 'rw-response'}`;
-        messageElement.innerHTML = `
-        <div class="rw-message-text">${message}</div>
-    `;
-        messagesContainer.appendChild(messageElement);
-        scrollToBottom();
-    }
+    // Create wrapper div with consistent styling
+    const messageElement = document.createElement('div');
+    messageElement.className = `rw-message ${isUser ? 'rw-client' : 'rw-response'}`;
+    messageElement.style.width = 'auto';
+    messageElement.style.maxWidth = '80%';
+    messageElement.style.clear = 'both';
+    messageElement.style.float = isUser ? 'right' : 'left';
 
-    // Modified handleVoiceCommand function with sequential processing
-    async function handleVoiceCommand() {
-        const voiceButton = document.getElementById('voiceButton');
-        if (!voiceButton || isListening) return;
+    // Create message text div with consistent styling
+    const textElement = document.createElement('div');
+    textElement.className = 'rw-message-text';
+    textElement.style.margin = '0';
+    textElement.style.whiteSpace = 'pre-wrap';
+    textElement.style.fontFamily = 'monospace';
+    textElement.innerText = message; // Use innerText to preserve formatting
 
-        try {
-            isListening = true;
-            voiceButton.classList.add('listening');
+    messageElement.appendChild(textElement);
+    messagesContainer.appendChild(messageElement);
+    scrollToBottom();
+}
 
-            const response = await fetch('http://localhost:5000/start_voice', {
-                method: 'POST'
-            });
+// Update handleVoiceCommand function to use the consistent styling
+async function handleVoiceCommand() {
+    const voiceButton = document.getElementById('voiceButton');
+    if (!voiceButton || isListening) return;
 
-            if (response.ok) {
-                const data = await response.json();
+    try {
+        isListening = true;
+        voiceButton.classList.add('listening');
 
-                if (data?.input_text) {
-                    // Immediately display user's voice input in chat
-                    addMessageToChat(data.input_text, true);
+        const response = await fetch('http://localhost:5000/start_voice', {
+            method: 'POST'
+        });
 
-                    // Add a slight delay before showing bot response
+        if (response.ok) {
+            const data = await response.json();
+
+            if (data?.input_text) {
+                // Add user's voice input with consistent styling
+                addMessageToChat(data.input_text, true);
+
+                // Add bot's response with consistent styling after a short delay
+                if (data?.bot_response) {
                     setTimeout(() => {
-                        if (data?.bot_response) {
-                            addMessageToChat(data.bot_response, false);
-                        }
-                    }, 500); // 500ms delay to ensure user sees their input first
+                        addMessageToChat(data.bot_response, false);
+                    }, 500);
                 }
-            } else {
-                const errorData = await response.json();
-                console.error('Voice recognition error:', errorData.error);
-                addMessageToChat('Sorry, I couldn\'t understand that. Could you please try again?', false);
             }
-        } catch (error) {
-            console.error('Voice recognition error:', error);
-            addMessageToChat('Sorry, there was an error processing your voice input.', false);
-        } finally {
-            isListening = false;
-            voiceButton.classList.remove('listening');
+        } else {
+            const errorData = await response.json();
+            console.error('Voice recognition error:', errorData.error);
+            addMessageToChat('Sorry, I couldn\'t understand that. Could you please try again?', false);
         }
+    } catch (error) {
+        console.error('Voice recognition error:', error);
+        addMessageToChat('Sorry, there was an error processing your voice input.', false);
+    } finally {
+        isListening = false;
+        voiceButton.classList.remove('listening');
     }
+}
 
     // Update scroll position after messages are added
     function scrollToBottom() {
