@@ -153,7 +153,7 @@ responses:
   - text: "We also offer vegetarian pizzas! Check our menu for more details."
 
   utter_ordering_pizza:
-  - text: "You can order a pizza by phone, online, or through our mobile app. What would you like to order today?"
+  - text: "You can order a pizza by phone, online, or through our mobile app. How do you like to order today?"
 
   utter_order_online:
   - text: "You can order a pizza online at https://www.pizzahut.lk. "
