@@ -207,3 +207,25 @@ stories:
   - active_loop: reservation_update_form
   - active_loop: null
   - action: action_update_reservation
+
+- story: cancel reservation flow
+  steps:
+    - intent: cancel_reservation
+    - action: get_reservation_id_cancel_form
+    - active_loop: get_reservation_id_cancel_form
+    - active_loop: null
+    - action: action_reservation_view_form
+    - action: utter_confirm_cancellation
+    - intent: affirm 
+    - action: action_cancel_reservation
+
+- story: cancel reservation rejected
+  steps:
+    - intent: cancel_reservation
+    - action: get_reservation_id_cancel_form
+    - active_loop: get_reservation_id_cancel_form
+    - active_loop: null
+    - action: action_reservation_view_form
+    - action: utter_confirm_cancellation
+    - intent: deny 
+    - action: utter_cancel_rejected

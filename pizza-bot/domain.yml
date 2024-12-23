@@ -58,6 +58,7 @@ intents:
   - view_reservation
   - provide_reservation_id
   - update_reservation
+  - cancel_reservation
 
 
 entities:
@@ -118,6 +119,8 @@ slots:
         requested_slot: reservation_id
       - active_loop: get_reservation_id_form
         requested_slot: reservation_id
+      - active_loop: get_reservation_id_cancel_form
+        requested_slot: reservation_id
 
 forms:
   reservation_form:
@@ -136,6 +139,9 @@ forms:
       - date
       - city
   get_reservation_id_form:
+    required_slots:
+      - reservation_id
+  get_reservation_id_cancel_form:
     required_slots:
       - reservation_id
       
@@ -399,6 +405,12 @@ responses:
                 - Contact number
                 - Date
                 - City
+    
+  utter_confirm_cancellation:
+    - text: "Are you sure you want to cancel the reservation with ID {reservation_id}?"
+
+  utter_cancel_rejected:
+    - text: "Okay, I won't cancel the reservation."
 
 actions:
   - action_location_details
@@ -409,6 +421,7 @@ actions:
   - action_reservation_view_form
   - action_get_updated_details
   - action_update_reservation
+  - action_cancel_reservation
 
 session_config:
   session_expiration_time: 60

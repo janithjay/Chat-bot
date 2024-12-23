@@ -759,13 +759,11 @@ nlu:
 - intent: casual
   examples: |
     - Oh I see.
-    - Yes
     - I like
     - ok
     - okay
     - nice
     - Whatever
-    - Sure
     - That's fine
     - Cool
     - Alright
@@ -885,4 +883,20 @@ nlu:
     - Edit my reservation
     - Update booking information
     - Change my reservation
-    
+
+- intent: cancel_reservation
+  examples: |
+    - cancel my reservation
+    - i want to cancel my booking
+    - delete my reservation
+    - cancel booking
+    - cancel reservation
+    - cancel my booking
+    - delete my booking
+    - cancel my table reservation
+    - cancel my table booking
+    - cancel my table
+    - cancel my reservation
+    - cancel my table reservation
+    - delete my table reservation
+    - delete my table booking
