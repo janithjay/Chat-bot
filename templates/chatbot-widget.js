@@ -8,7 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     // Create a container for our chatbot
     const chatbotContainer = document.createElement('div');
     chatbotContainer.id = 'pizza-hut-chatbot';
@@ -141,6 +141,17 @@
         #pizza-hut-chatbot .rw-response {
             background-color: #ee3124 !important;
             color: white !important;
+            float: left !important;
+            clear: both !important;
+            margin-right: 20% !important;
+            font-family: monospace !important;
+            white-space: pre !important;
+        }
+
+        #pizza-hut-chatbot .rw-message-text {
+            margin: 0 !important;
+            white-space: pre-wrap !important;
+            font-family: monospace !important;
         }
 
         #pizza-hut-chatbot .rw-input {
@@ -343,13 +354,13 @@
     }
 
     // Event listeners
-    chatButton.addEventListener('click', function() {
+    chatButton.addEventListener('click', function () {
         chatWindow.classList.add('active');
         chatButton.style.display = 'none';
         initializeChat();
     });
 
-    closeChatButton.addEventListener('click', function() {
+    closeChatButton.addEventListener('click', function () {
         chatWindow.classList.remove('active');
         chatButton.style.display = 'flex';
     });

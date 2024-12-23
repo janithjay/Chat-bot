@@ -9,6 +9,12 @@ This guide will help you set up and run the PizzaBot chat-bot on your local mach
 - Chrome browser
 - Git (for cloning the repository)
 
+  
+Use this command to move into the pizza-bot dirrectory use:
+ ```bash
+  cd pizza-bot
+ ```
+
 ## Installation Steps
 
 1. **Clone the Repository**
@@ -16,30 +22,36 @@ This guide will help you set up and run the PizzaBot chat-bot on your local mach
    git clone https://github.com/janithjay/Chat-bot
    cd pizza-bot
    ```
+   
+2. **Install Dependencies**
+   Open new terminal, run:
+   ```bash
+   pip install speechrecognition pyttsx3 gTts pygame pyaudio requests
+   ```
 
-2. **Train the Model**
+3. **Train the Model**
    In the pizza-bot directory, run:
    ```bash
    rasa train
    ```
 
-3. **Start the Rasa Core Server**
+4. **Start the Rasa Core Server**
    In the pizza-bot directory, run:
    ```bash
    rasa run -m models --enable-api --cors "*" --port 5005
    ```
 
-4. **Start the Rasa Action Server**
+5. **Start the Rasa Action Server**
    Open a new terminal, navigate to the pizza-bot directory, and run:
    ```bash
    rasa run actions
    ```
 
-5. **Install Tampermonkey Chrome Extension**
+6. **Install Tampermonkey Chrome Extension**
    - Visit [Tampermonkey in Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
    - Click "Add to Chrome" and follow the installation prompts
 
-6. **Enable Chrome Developer Mode**
+7. **Enable Chrome Developer Mode**
    - Open Chrome settings (⋮)
    - Go to Extensions > Manage extensions
    - Toggle on "Developer mode" in the top right corner
