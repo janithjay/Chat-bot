@@ -1,71 +1,110 @@
 import requests
-import speech_recognition as sr  # Import library for speech recognition
+import speech_recognition as sr
+import pyttsx3
+import time
+from gtts import gTTS
+import os
+import pygame
 
-def get_bot_response(message):
-    """
-    Sends the user message to the Rasa server and gets the bot's response.
-    """
-    try:
-        response = requests.post('http://localhost:5056/webhooks/rest/webhook', json={"message": message})
-        if response.status_code == 200:
-            bot_responses = [item['text'] for item in response.json()]
-            if bot_responses:
-                return "\n".join(bot_responses)
-            else:
-                return "The bot didn't return a response. Please try again."
-        else:
-            print(f"Error: HTTP {response.status_code} - {response.text}")
-            return "Could not connect to the bot. Please check the server logs for details."
-    except Exception as e:
-        return f"Exception occurred: {e}"
+class VoiceBot:
+    def __init__(self):
+        self.recognizer = sr.Recognizer()
+        self.engine = pyttsx3.init()
+        self.setup_voice()
+        pygame.mixer.init()
 
+    def setup_voice(self):
+        """Configure text-to-speech settings"""
+        voices = self.engine.getProperty('voices')
+        self.engine.setProperty('voice', voices[1].id)  # Index 1 for female voice
+        self.engine.setProperty('rate', 150)    # Speed of speech
+        self.engine.setProperty('volume', 0.9)  # Volume level
 
-def voice_to_text():
-    """
-    Captures voice input from the user and converts it to text.
-    """
-    recognizer = sr.Recognizer()
-    with sr.Microphone() as source:
-        recognizer.adjust_for_ambient_noise(source, duration=1)
-        print("Speak Anything: ")
+    def speak(self, text):
+        """Convert text to speech"""
         try:
-            audio = recognizer.listen(source, timeout=5, phrase_time_limit=10)
-            user_message = recognizer.recognize_google(audio)
-            print(f"You said: {user_message}")
-            return user_message
-        except sr.UnknownValueError:
-            print("Sorry, I could not understand your speech.")
-        except sr.RequestError as e:
-            print(f"Could not request results; {e}")
+            self.engine.say(text)
+            self.engine.runAndWait()
         except Exception as e:
-            print(f"Unexpected error during speech recognition: {e}")
-    return None
+            print(f"Speech synthesis error: {e}")
+            # Fallback to gTTS if pyttsx3 fails
+            try:
+                tts = gTTS(text=text, lang='en')
+                tts.save("response.mp3")
+                pygame.mixer.music.load("response.mp3")
+                pygame.mixer.music.play()
+                while pygame.mixer.music.get_busy():
+                    continue
+                os.remove("response.mp3")
+            except Exception as e:
+                print(f"Backup speech synthesis error: {e}")
 
+    def listen(self):
+        """Enhanced voice input capture"""
+        with sr.Microphone() as source:
+            print("Adjusting for ambient noise...")
+            self.recognizer.adjust_for_ambient_noise(source, duration=1)
+            
+            # Audio feedback for start of listening
+            pygame.mixer.Sound("start_sound.wav").play()
+            
+            print("Listening...")
+            try:
+                audio = self.recognizer.listen(source, timeout=5, phrase_time_limit=10)
+                
+                # Audio feedback for end of listening
+                pygame.mixer.Sound("end_sound.wav").play()
+                
+                user_message = self.recognizer.recognize_google(audio)
+                print(f"You said: {user_message}")
+                return user_message
+            except sr.UnknownValueError:
+                self.speak("Sorry, I couldn't understand that. Could you please repeat?")
+            except sr.RequestError as e:
+                self.speak("Sorry, there was an error with the speech recognition service.")
+                print(f"Request error: {e}")
+            except Exception as e:
+                print(f"Unexpected error: {e}")
+        return None
 
-def main():
-    print("Welcome to PizzaBot! (Type 'exit' to quit)")
-    print("You can either type your message or speak it (if you want to use voice input, just press Enter without typing anything).")
+    def get_bot_response(self, message):
+        """Get response from Rasa server"""
+        try:
+            response = requests.post(
+                'http://localhost:5005', 
+                json={"message": message},
+                timeout=5
+            )
+            if response.status_code == 200:
+                bot_responses = [item['text'] for item in response.json()]
+                if bot_responses:
+                    return "\n".join(bot_responses)
+                return "I didn't get a response. Please try again."
+            else:
+                return f"Error: HTTP {response.status_code}"
+        except requests.exceptions.Timeout:
+            return "The server is taking too long to respond. Please try again."
+        except requests.exceptions.ConnectionError:
+            return "Unable to connect to the server. Is it running?"
+        except Exception as e:
+            return f"An error occurred: {e}"
 
-    while True:
-        user_input = input("Your input (or press Enter for voice input): ").strip()
-
-        # If the user chooses voice input
-        if not user_input:
-            print("Switching to voice input...")
-            user_input = voice_to_text()
-
-        # If the user chooses to exit or there's no valid input
-        if user_input is None:
-            print("No input detected. Please try again.")
-            continue
-        if user_input.lower() == 'exit':
-            print("Goodbye! Thanks for using PizzaBot.")
-            break
-
-        # Get bot response
-        bot_response = get_bot_response(user_input)
-        print(f"Bot says: {bot_response}")
-
+    def run(self):
+        """Main loop for the voice bot"""
+        self.speak("Hello! I'm Pizza bot. How can I help you?")
+        
+        while True:
+            user_input = self.listen()
+            
+            if user_input:
+                if user_input.lower() in ['exit', 'quit', 'goodbye']:
+                    self.speak("Goodbye! Have a great day!")
+                    break
+                
+                response = self.get_bot_response(user_input)
+                print(f"Bot: {response}")
+                self.speak(response)
 
 if __name__ == "__main__":
-    main()
+    bot = VoiceBot()
+    bot.run()
