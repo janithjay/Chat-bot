@@ -46,8 +46,8 @@ class VoiceBot:
             self.recognizer.adjust_for_ambient_noise(source, duration=1)
         
             # Use unique filenames for sound effects
-            start_sound = "start_listen.wav"
-            end_sound = "end_listen.wav"
+            start_sound = "start_sound.wav"
+            end_sound = "end_sound.wav"
         
             if pygame.mixer.get_busy():
                 pygame.mixer.stop()
