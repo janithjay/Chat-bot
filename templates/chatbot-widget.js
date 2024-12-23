@@ -121,10 +121,13 @@
         }
 
         #pizza-hut-chatbot .rw-sender {
-            padding: 16px !important;
-            background: white !important;
-            border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-        }
+    padding: 16px !important;
+    background: white !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
 
         #pizza-hut-chatbot .rw-message {
             padding: 12px 16px !important;
@@ -165,6 +168,35 @@
             border-radius: 50% !important;
             width: 40px !important;
             height: 40px !important;
+        }
+
+        #pizza-hut-chatbot .voice-button {
+            background: #ee3124 !important;
+    border: none;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+        }
+
+        #pizza-hut-chatbot .voice-button:hover {
+            opacity: 0.9;
+        }
+
+        #pizza-hut-chatbot .voice-button.listening {
+            background-color: #ff4433 !important;
+    animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     `;
     document.head.appendChild(styles);
@@ -210,6 +242,7 @@
 
     // Resize functionality
     let isResizing = false;
+    let isListening = false;
     let originalWidth;
     let originalHeight;
     let originalX;
@@ -309,6 +342,38 @@
         isDragging = false;
     }
 
+    function handleVoiceCommand() {
+        const voiceButton = document.getElementById('voiceButton');
+        if (!voiceButton || isListening) return;
+
+        isListening = true;
+        voiceButton.classList.add('listening');
+
+        fetch('http://localhost:5000/start_voice', {
+            method: 'POST'
+        })
+            .then(response => response.ok ? response.json() : null)
+            .then(data => {
+                if (data?.text) {
+                    const inputField = document.querySelector('.rw-new-message');
+                    if (inputField) {
+                        inputField.value = data.text;
+                        inputField.dispatchEvent(new KeyboardEvent('keydown', {
+                            key: 'Enter',
+                            code: 'Enter',
+                            keyCode: 13,
+                            bubbles: true
+                        }));
+                    }
+                }
+            })
+            .catch(error => console.error('Voice recognition error:', error))
+            .finally(() => {
+                isListening = false;
+                voiceButton.classList.remove('listening');
+            });
+    }
+
     function initializeChat() {
         if (!chatInitialized && window.WebChat) {
             window.WebChat.default(
@@ -351,6 +416,28 @@
             );
             chatInitialized = true;
         }
+        function addVoiceButton() {
+            const sender = document.querySelector('.rw-sender');
+            if (sender && !document.getElementById('voiceButton')) {
+                const voiceButton = document.createElement('button');
+                voiceButton.id = 'voiceButton';
+                voiceButton.className = 'voice-button';
+                voiceButton.title = 'Voice Command';
+                voiceButton.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                `;
+                sender.insertBefore(voiceButton, sender.firstChild);
+
+                // Re-attach voice button event listener
+                voiceButton.addEventListener('click', handleVoiceCommand);
+            }
+        }
+        setTimeout(addVoiceButton, 1000); // Add delay to ensure Rasa widget is loaded
     }
 
     // Event listeners

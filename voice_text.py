@@ -8,6 +8,7 @@ import pygame
 
 class VoiceBot:
     def __init__(self):
+        
         self.recognizer = sr.Recognizer()
         self.engine = pyttsx3.init()
         self.setup_voice()
